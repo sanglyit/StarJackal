@@ -167,8 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ee3ebef0c5be44796637f62765ae0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8870459017725309814, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
-  fireForce: 20
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +355,8 @@ GameObject:
   - component: {fileID: 1760284189}
   - component: {fileID: 1760284192}
   - component: {fileID: 1760284191}
+  - component: {fileID: 1760284193}
+  - component: {fileID: 1760284194}
   m_Layer: 0
   m_Name: Player_Ship
   m_TagString: Player
@@ -458,6 +458,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1760284193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760284187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fa7eea24719444d9a83452aeced9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPoint: {fileID: 243642935}
+  bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
+  bulletForce: 20
+--- !u!114 &1760284194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760284187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4812fb9007a51b64c9cdb743104d1534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2056608525
 GameObject:
   m_ObjectHideFlags: 0
