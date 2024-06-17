@@ -11,6 +11,11 @@ public class Ship_control : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
