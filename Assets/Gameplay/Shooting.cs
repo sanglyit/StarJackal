@@ -8,7 +8,8 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
-   
+    public float fireRate = 0.5f;
+
     // Update is called once per frame
     void Update()
     {
