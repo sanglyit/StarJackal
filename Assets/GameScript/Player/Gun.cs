@@ -81,6 +81,13 @@ public class Gun : MonoBehaviour
         // Apply force to the bullet
         bulletCopy.GetComponent<Rigidbody2D>().AddForce(spreadDirection * shootForce, ForceMode2D.Impulse);
 
+        // Set bullet damage
+        Bullet bulletComponent = bulletCopy.GetComponent<Bullet>();
+        if (bulletComponent != null)
+        {
+            bulletComponent.Damage = Damage;
+        }
+
         bulletsLeft--;
         Invoke("ResetShot", shootingCooldown);
     }

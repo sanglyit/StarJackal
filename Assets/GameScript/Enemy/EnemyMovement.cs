@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
-    [SerializeField] float enemySpeed = 5f;
-    [SerializeField] float rotateSpeed = 0.025f;
+    [SerializeField] private float enemySpeed = 5f;
+    [SerializeField] private float rotateSpeed = 0.025f;
     private Rigidbody2D rb;
     
     private void Start()
@@ -49,12 +49,5 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.gameObject.CompareTag("Player"))
-    //    {
-    //        Destroy(other.gameObject);
-    //        target = null;
-    //    } 
-    //}
+
 }

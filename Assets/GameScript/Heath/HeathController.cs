@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class HeathController : MonoBehaviour
 {
-    [SerializeField] float currentHeath;
-    [SerializeField] float maxHeath;
+    [SerializeField] private float currentHeath;
+    [SerializeField] private float maxHeath;
 
     //coi phan tram mau
     public float RemainingHeathPercentage
@@ -20,7 +20,11 @@ public class HeathController : MonoBehaviour
     public bool IsInvincible { get; set; }
     public UnityEvent OnDied;
     public UnityEvent OnDamaged;
-
+    public UnityEvent OnHealthChanged;
+    private void Start()
+    {
+        OnDied.AddListener(DestroyEnemy);
+    }
     public void TakeDamage(float damageAmount)
     {
         //Stop heath go below 0
@@ -33,7 +37,10 @@ public class HeathController : MonoBehaviour
         {
             return;
         }
+
         currentHeath -= damageAmount;
+        OnHealthChanged.Invoke();
+
         if (currentHeath < 0)
         {
             currentHeath = 0;
@@ -48,18 +55,24 @@ public class HeathController : MonoBehaviour
         }
     }
 
-    
-
     public void Heal(float HealAmount) 
     {
         if (currentHeath == maxHeath)
         {
             return ;
         }
+
         currentHeath += HealAmount;
+        OnHealthChanged.Invoke();
+
         if (currentHeath > maxHeath) 
         {
             currentHeath = maxHeath;
         }
+    }
+    public void DestroyEnemy()
+    {
+        // Destroy the enemy GameObject
+        Destroy(gameObject);
     }
 }

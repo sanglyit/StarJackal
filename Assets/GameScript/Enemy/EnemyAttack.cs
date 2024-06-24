@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] float E_DamageAmount;
+    [SerializeField] private float E_DamageAmount;
 
     private void OnCollisionStay2D(Collision2D collision)
     {

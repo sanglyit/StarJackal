@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerIFrame : MonoBehaviour
 {
-    [SerializeField] float _invincibilityDuration;
+    [SerializeField] private float _invincibilityDuration;
     private InvincibilityController _invincibilityController;
     
 
