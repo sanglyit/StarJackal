@@ -23,7 +23,7 @@ public class HeathController : MonoBehaviour
     public UnityEvent OnHealthChanged;
     private void Start()
     {
-        OnDied.AddListener(DestroyEnemy);
+        OnDied.AddListener(Destroy);
     }
     public void TakeDamage(float damageAmount)
     {
@@ -70,7 +70,7 @@ public class HeathController : MonoBehaviour
             currentHeath = maxHeath;
         }
     }
-    public void DestroyEnemy()
+    public void Destroy()
     {
         // Destroy the enemy GameObject
         Destroy(gameObject);

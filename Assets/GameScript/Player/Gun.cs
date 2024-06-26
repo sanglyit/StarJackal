@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Gun : MonoBehaviour
@@ -24,15 +25,19 @@ public class Gun : MonoBehaviour
     private float amountOfSpread;
 
     private int bulletsLeft;
+    private ObjectPool bulletPool;
 
     private bool shooting;
     private bool reloading;
     private bool canShoot;
+    public Text ammoDisplay;
 
     private void Start()
     {
         bulletsLeft = magSize;
         canShoot = true;
+        bulletPool = FindObjectOfType<ObjectPool>();
+        UpdateAmmoDisplay();
     }
 
     private void Update()
@@ -72,14 +77,18 @@ public class Gun : MonoBehaviour
         Vector3 spreadDirection = rotAfterSpread * shootingPoint.up;
 
         // Spawn bullet
-        GameObject bulletCopy = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
-        Destroy(bulletCopy, 4f);
+        // Get bullet from pool
+        GameObject bulletCopy = bulletPool.GetObject();
+        bulletCopy.transform.position = shootingPoint.position;
+        bulletCopy.transform.rotation = Quaternion.identity;
         
         // Set bullet direction
         bulletCopy.transform.up = spreadDirection;
 
         // Apply force to the bullet
-        bulletCopy.GetComponent<Rigidbody2D>().AddForce(spreadDirection * shootForce, ForceMode2D.Impulse);
+        Rigidbody2D bulletRb = bulletCopy.GetComponent<Rigidbody2D>();
+        bulletRb.velocity = Vector2.zero; // Reset velocity in case it's a reused bullet
+        bulletRb.AddForce(spreadDirection * shootForce, ForceMode2D.Impulse);
 
         // Set bullet damage
         Bullet bulletComponent = bulletCopy.GetComponent<Bullet>();
@@ -89,6 +98,7 @@ public class Gun : MonoBehaviour
         }
 
         bulletsLeft--;
+        UpdateAmmoDisplay();
         Invoke("ResetShot", shootingCooldown);
     }
 
@@ -107,5 +117,14 @@ public class Gun : MonoBehaviour
     {
         reloading = false;
         bulletsLeft = magSize;
+        UpdateAmmoDisplay();
+    }
+
+    private void UpdateAmmoDisplay()
+    {
+        if (ammoDisplay != null)
+        {
+            ammoDisplay.text = $"{bulletsLeft}/{magSize}";
+        }
     }
 }
