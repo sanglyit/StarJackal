@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class Gun : MonoBehaviour
 {
     [SerializeField] int Damage;
+    [SerializeField] string weaponName;
 
     [SerializeField] float shootingCooldown;
     [SerializeField] float spread;
@@ -21,7 +22,6 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform shootingPoint;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] LayerMask  whatIsEnemy;
-
     private float amountOfSpread;
 
     private int bulletsLeft;
@@ -30,7 +30,9 @@ public class Gun : MonoBehaviour
     private bool shooting;
     private bool reloading;
     private bool canShoot;
-    public Text ammoDisplay;
+
+    [SerializeField] Text ammoDisplay;
+    //[SerializeField] bool isActiveWeapon;
 
     private void Start()
     {
@@ -124,7 +126,16 @@ public class Gun : MonoBehaviour
     {
         if (ammoDisplay != null)
         {
-            ammoDisplay.text = $"{bulletsLeft}/{magSize}";
+            ammoDisplay.text = $"{weaponName}: {bulletsLeft}/{magSize}";
+            ammoDisplay.resizeTextForBestFit = true; 
+            ammoDisplay.resizeTextMinSize = 5;
+            ammoDisplay.resizeTextMaxSize = 150;
+            ammoDisplay.gameObject.SetActive(true); //Show ammo display
+        }
+        else
+        {
+            ammoDisplay.gameObject.SetActive(false); // Hide unuse ammo display
         }
     }
+
 }
