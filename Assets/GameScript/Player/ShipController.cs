@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Ship_control : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
+    [SerializeField]
+    private float _speed;
+
+    private Rigidbody2D _rigidbody;
     public Camera cam;
+    private Vector2 _movementInput;
 
     Vector2 movement;
     Vector2 mousePos;
 
     void Start()
     {
+        _rigidbody = GetComponent<Rigidbody2D>();
         
     }
 
@@ -24,13 +29,18 @@ public class Ship_control : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         //di chuyen
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        _rigidbody.velocity = _movementInput * _speed;
         //Look at mouse position
-        Vector2 lookDir = mousePos - rb.position;
+        Vector2 lookDir = mousePos - _rigidbody.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        _rigidbody.rotation = angle;
+    }
+
+    private void OnMove(InputValue inputValue)
+    {
+        _movementInput = inputValue.Get<Vector2>();
     }
 }
