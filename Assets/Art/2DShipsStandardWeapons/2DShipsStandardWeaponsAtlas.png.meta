@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,406 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 911
+        width: 343
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe8858b6f341cf4d9b8fda6ef70067d
+      internalID: 1644574556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 979
+        width: 78
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10e8b59656418045be180d1e252719d
+      internalID: 232335114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 875
+        width: 61
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf09b5a1dea8b849b3a8ca6d3a83c05
+      internalID: 281950574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 973
+        width: 204
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ec8ec2acae5c6468a673c2474a5a59
+      internalID: -328697955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 708
+        width: 132
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2767596cef6f0d47b884d3821735adb
+      internalID: 1725228639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 924
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d044a5b45c58f5d4c9ba4254eb693df9
+      internalID: 1813756766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 906
+        width: 185
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607e070f7993d394b9cc6bc5a4de2345
+      internalID: 509977292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 891
+        width: 78
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95847b497ab388a4fb66e50b3e22c4cd
+      internalID: 2103725730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 708
+        width: 343
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c553ca185eee4a649bbbd968602e6803
+      internalID: -21731302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 837
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece4b45dfcc4e364baecb720d3925269
+      internalID: -511342389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 851
+        width: 204
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff36e155fcd37ae4ba896c2189ac9129
+      internalID: -1893562141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 784
+        width: 185
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb565ae973c89aa4193787f3cbaefd3e
+      internalID: -237855911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 390
+        width: 409
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9914c65ad38def743abe95d3d3418bc6
+      internalID: 1097228482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 10
+        width: 262
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87a2b6897db8c44ba58377cebbc5393
+      internalID: 1469028794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 58
+        width: 126
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f693046ef88d9a4aad9deb1f64d6944
+      internalID: -673303458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 237
+        width: 393
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3e0748da2c663449d61832eaa4996b
+      internalID: -1960669724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 163
+        width: 409
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee001d17ade0e34eac8c9f964c4f49f
+      internalID: 1731499888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 14
+        width: 261
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07865ba898c6bd43bea15b0c4ff0880
+      internalID: -253452435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2DShipsStandardWeaponsAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 10
+        width: 393
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe02ddc7193a8249b65dc5015f2b31b
+      internalID: -1034718868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +518,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2DShipsStandardWeaponsAtlas_0: 1644574556
+      2DShipsStandardWeaponsAtlas_1: 232335114
+      2DShipsStandardWeaponsAtlas_10: -1893562141
+      2DShipsStandardWeaponsAtlas_11: -237855911
+      2DShipsStandardWeaponsAtlas_12: 1097228482
+      2DShipsStandardWeaponsAtlas_13: 1469028794
+      2DShipsStandardWeaponsAtlas_14: -673303458
+      2DShipsStandardWeaponsAtlas_15: -1960669724
+      2DShipsStandardWeaponsAtlas_16: 1731499888
+      2DShipsStandardWeaponsAtlas_17: -253452435
+      2DShipsStandardWeaponsAtlas_18: -1034718868
+      2DShipsStandardWeaponsAtlas_2: 281950574
+      2DShipsStandardWeaponsAtlas_3: -328697955
+      2DShipsStandardWeaponsAtlas_4: 1725228639
+      2DShipsStandardWeaponsAtlas_5: 1813756766
+      2DShipsStandardWeaponsAtlas_6: 509977292
+      2DShipsStandardWeaponsAtlas_7: 2103725730
+      2DShipsStandardWeaponsAtlas_8: -21731302
+      2DShipsStandardWeaponsAtlas_9: -511342389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

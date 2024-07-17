@@ -12,7 +12,7 @@ public class Ship_control : MonoBehaviour
     public Camera cam;
     private Vector2 _movementInput;
 
-    Vector2 movement;
+    public Vector2 movement;
     Vector2 mousePos;
 
     void Start()
