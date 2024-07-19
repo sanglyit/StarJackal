@@ -5,22 +5,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Gun : MonoBehaviour
+public class GunController : MonoBehaviour
 {
-    [SerializeField] int Damage;
+    public WeaponScriptableObject weaponData;
+    /*[SerializeField] int Damage;
     [SerializeField] string weaponName;
 
     [SerializeField] float shootingCooldown;
     [SerializeField] float spread;
     [SerializeField] float reloadTime;
     [SerializeField] float shootForce;
+    [SerializeField] float pierce;
 
     [SerializeField] int magSize;
     [SerializeField] bool isAutomatic;
     [SerializeField] bool AutoReload;
-
-    [SerializeField] Transform shootingPoint;
     [SerializeField] GameObject bulletPrefab;
+    */
+    [SerializeField] Transform shootingPoint;
     [SerializeField] LayerMask  whatIsEnemy;
     private float amountOfSpread;
 
@@ -34,9 +36,9 @@ public class Gun : MonoBehaviour
     [SerializeField] Text ammoDisplay;
     //[SerializeField] bool isActiveWeapon;
 
-    private void Start()
+    protected virtual void Start()
     {
-        bulletsLeft = magSize;
+        bulletsLeft = weaponData.magSize;
         canShoot = true;
         bulletPool = FindObjectOfType<ObjectPool>();
         UpdateAmmoDisplay();
@@ -44,19 +46,19 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if (isAutomatic)
+        if (weaponData.isAutomatic)
         {
             shooting = Input.GetKey(KeyCode.Mouse0);
         } else {
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magSize && !reloading)
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < weaponData.magSize && !reloading)
         {
             Reload();
         }
 
-        if (AutoReload && bulletsLeft == 0 && !reloading) 
+        if (weaponData.AutoReload && bulletsLeft == 0 && !reloading) 
         {
             Reload();
         }
@@ -72,7 +74,7 @@ public class Gun : MonoBehaviour
         canShoot = false;
 
         // Recoil Spread
-        float spreadAngle = Random.Range(-spread, spread);
+        float spreadAngle = Random.Range(-weaponData.spread, weaponData.spread);
         Quaternion rotAfterSpread = Quaternion.Euler(0, 0, spreadAngle);
 
         // Calculate the direction with spread
@@ -80,7 +82,7 @@ public class Gun : MonoBehaviour
 
         // Spawn bullet
         // Get bullet from pool
-        GameObject bulletCopy = bulletPool.GetObject();
+        GameObject bulletCopy = Instantiate(weaponData.bulletPrefab);
         bulletCopy.transform.position = shootingPoint.position;
         bulletCopy.transform.rotation = Quaternion.identity;
         
@@ -90,18 +92,18 @@ public class Gun : MonoBehaviour
         // Apply force to the bullet
         Rigidbody2D bulletRb = bulletCopy.GetComponent<Rigidbody2D>();
         bulletRb.velocity = Vector2.zero; // Reset velocity in case it's a reused bullet
-        bulletRb.AddForce(spreadDirection * shootForce, ForceMode2D.Impulse);
+        bulletRb.AddForce(spreadDirection * weaponData.shootForce, ForceMode2D.Impulse);
 
         // Set bullet damage
         Bullet bulletComponent = bulletCopy.GetComponent<Bullet>();
         if (bulletComponent != null)
         {
-            bulletComponent.Damage = Damage;
+            bulletComponent.Damage = weaponData.Damage;
         }
 
         bulletsLeft--;
         UpdateAmmoDisplay();
-        Invoke("ResetShot", shootingCooldown);
+        Invoke("ResetShot", weaponData.shootingCooldown);
     }
 
     private void ResetShot()
@@ -112,13 +114,13 @@ public class Gun : MonoBehaviour
     private void Reload ()
     {
         reloading = true;
-        Invoke("FinishReload", reloadTime);
+        Invoke("FinishReload", weaponData.reloadTime);
     }
 
     private void FinishReload()
     {
         reloading = false;
-        bulletsLeft = magSize;
+        bulletsLeft = weaponData.magSize;
         UpdateAmmoDisplay();
     }
 
@@ -126,7 +128,7 @@ public class Gun : MonoBehaviour
     {
         if (ammoDisplay != null)
         {
-            ammoDisplay.text = $"{weaponName}: {bulletsLeft}/{magSize}";
+            ammoDisplay.text = $"{weaponData.weaponName}: {bulletsLeft}/{weaponData.magSize}";
             ammoDisplay.resizeTextForBestFit = true; 
             ammoDisplay.resizeTextMinSize = 5;
             ammoDisplay.resizeTextMaxSize = 150;

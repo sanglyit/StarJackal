@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
+  m_Name: HyperSpaceCannon
+  m_EditorClassIdentifier: 
+  Damage: 5
+  weaponName: MG
+  shootingCooldown: 0
+  spread: 0
+  reloadTime: 0
+  shootForce: 0
+  pierce: 0
+  magSize: 0
+  isAutomatic: 0
+  AutoReload: 0
+  bulletPrefab: {fileID: 0}

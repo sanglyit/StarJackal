@@ -10,9 +10,9 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            var HeathController = collision.gameObject.GetComponent<HeathController>();
+            var HealthController = collision.gameObject.GetComponent<HealthController>();
 
-            HeathController.TakeDamage(E_DamageAmount);
+            HealthController.TakeDamage(E_DamageAmount);
         }
     }
 }

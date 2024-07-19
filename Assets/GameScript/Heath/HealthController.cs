@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HeathController : MonoBehaviour
+public class HealthController : MonoBehaviour
 {
-    [SerializeField] private float currentHeath;
-    [SerializeField] private float maxHeath;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth;
 
     //coi phan tram mau
-    public float RemainingHeathPercentage
+    public float RemainingHealthPercentage
     {
         get
         {
-            return (currentHeath / maxHeath);
+            return (currentHealth / maxHealth);
         }
     }
 
@@ -27,8 +27,8 @@ public class HeathController : MonoBehaviour
     }
     public void TakeDamage(float damageAmount)
     {
-        //Stop heath go below 0
-        if (currentHeath == 0)
+        //Stop Health go below 0
+        if (currentHealth == 0)
         {
             return;
         }
@@ -38,15 +38,15 @@ public class HeathController : MonoBehaviour
             return;
         }
 
-        currentHeath -= damageAmount;
+        currentHealth -= damageAmount;
         OnHealthChanged.Invoke();
 
-        if (currentHeath < 0)
+        if (currentHealth < 0)
         {
-            currentHeath = 0;
+            currentHealth = 0;
         }
         // check player die
-        if (currentHeath == 0) 
+        if (currentHealth == 0) 
         { 
             OnDied.Invoke();
         } else
@@ -57,17 +57,17 @@ public class HeathController : MonoBehaviour
 
     public void Heal(float HealAmount) 
     {
-        if (currentHeath == maxHeath)
+        if (currentHealth == maxHealth)
         {
             return ;
         }
 
-        currentHeath += HealAmount;
+        currentHealth += HealAmount;
         OnHealthChanged.Invoke();
 
-        if (currentHeath > maxHeath) 
+        if (currentHealth > maxHealth) 
         {
-            currentHeath = maxHeath;
+            currentHealth = maxHealth;
         }
     }
     public void Destroy()

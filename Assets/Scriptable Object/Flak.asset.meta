@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: 3b0780736a12e654eb11264e4db73818
-labels:
-- SpaceShip
-- Ship
-- Station
-TextScriptImporter:
+guid: fce20de9fd9a57f4a999bc5f7d64c66a
+NativeFormatImporter:
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

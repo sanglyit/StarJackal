@@ -18,14 +18,24 @@ public class Bullet : MonoBehaviour
     {
         if (collision.GetComponent<EnemyMovement>())
         {
-            var HeathController = collision.gameObject.GetComponent<HeathController>();
-            if (HeathController != null)
+            var HealthController = collision.gameObject.GetComponent<HealthController>();
+            if (HealthController != null)
             {
-                HeathController.TakeDamage(Damage); // Apply damage
+                HealthController.TakeDamage(Damage); // Apply damage
+                pool.ReturnObject(gameObject); // Return bullet to the pool
+            }
+        }
+        else if (collision.GetComponent<Asteroid>())
+        {
+            Asteroid asteroid = collision.GetComponent<Asteroid>();
+            if (asteroid != null)
+            {
+                asteroid.Split(); // Split the asteroid
                 pool.ReturnObject(gameObject); // Return bullet to the pool
             }
         }
     }
+
     private void OnBecameInvisible()
     {
         pool.ReturnObject(gameObject); // Return bullet to the pool when it goes off screen

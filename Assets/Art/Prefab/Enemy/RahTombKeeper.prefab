@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   E_DamageAmount: 20
+  pushbackForce: 20
 --- !u!114 &4862501954034727552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  enemySpeed: 4
+  enemySpeed: 3
   rotateSpeed: 0.025
 --- !u!114 &4041884737788101387
 MonoBehaviour:
@@ -205,8 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b854006b447a195478b1574b7df197db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHeath: 100
-  maxHeath: 100
+  currentHealth: 110
+  maxHealth: 110
   OnDied:
     m_PersistentCalls:
       m_Calls:

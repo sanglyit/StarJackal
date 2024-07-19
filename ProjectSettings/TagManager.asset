@@ -46,11 +46,11 @@ TagManager:
   - name: Background
     uniqueID: 696719027
     locked: 0
-  - name: Collectable
-    uniqueID: 1770802593
-    locked: 0
   - name: Bullet
     uniqueID: 802300761
+    locked: 0
+  - name: Collectable
+    uniqueID: 1770802593
     locked: 0
   - name: Player
     uniqueID: 1846477767

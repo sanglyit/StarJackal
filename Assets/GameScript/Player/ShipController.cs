@@ -5,20 +5,21 @@ using UnityEngine.InputSystem;
 
 public class Ship_control : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed;
+    [SerializeField] private float _speed;
 
-    private Rigidbody2D _rigidbody;
     public Camera cam;
+    private Rigidbody2D _shipRigidbody;
     private Vector2 _movementInput;
+    private Vector2 _smoothedMovementInput;
+    private Vector2 _smoothvelocityInput;
 
     public Vector2 movement;
-    Vector2 mousePos;
+    private Vector2 mousePos;
 
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        
+        _shipRigidbody = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -32,11 +33,12 @@ public class Ship_control : MonoBehaviour
     private void FixedUpdate()
     {
         //di chuyen
-        _rigidbody.velocity = _movementInput * _speed;
+        _shipRigidbody.velocity = _movementInput * _speed;
+
         //Look at mouse position
-        Vector2 lookDir = mousePos - _rigidbody.position;
+        Vector2 lookDir = mousePos - _shipRigidbody.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        _rigidbody.rotation = angle;
+        _shipRigidbody.rotation = angle;
     }
 
     private void OnMove(InputValue inputValue)

@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemySpeed: 2.5
-  rotateSpeed: 0.28
+  rotateSpeed: 0.2
 --- !u!114 &3854483024532385997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,14 +291,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b854006b447a195478b1574b7df197db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHeath: 10
-  maxHeath: 10
+  currentHealth: 10
+  maxHealth: 10
   OnDied:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6533456239841492603}
-        m_TargetAssemblyTypeName: HeathController, Assembly-CSharp
-        m_MethodName: DestroyEnemy
+        m_TargetAssemblyTypeName: HealthController, Assembly-CSharp
+        m_MethodName: Destroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

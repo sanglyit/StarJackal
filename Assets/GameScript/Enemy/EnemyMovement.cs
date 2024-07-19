@@ -18,20 +18,29 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        //Try to target player
+        //Try to target player 
         if (!target)
         {
             GetTarget();
         } else {
             RotateTowardsTarget();
         }
-        
     }
 
     private void FixedUpdate()
     {
         //Move forward till da player is destroyed
-        rb.velocity = transform.up * enemySpeed;
+        if (target != null)
+        {
+            rb.velocity = transform.up * enemySpeed;
+        }
+
+        if (target == null || !target.gameObject.activeInHierarchy)
+        {
+            target = null;
+            rb.velocity = Vector2.zero;
+            return;
+        }
     }
     private void RotateTowardsTarget()
     {
