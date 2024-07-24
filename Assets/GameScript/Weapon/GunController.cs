@@ -33,27 +33,25 @@ public class GunController : MonoBehaviour
     private bool reloading;
     private bool canShoot;
 
-    [SerializeField] Text ammoDisplay;
     //[SerializeField] bool isActiveWeapon;
 
     protected virtual void Start()
     {
-        bulletsLeft = weaponData.magSize;
+        bulletsLeft = weaponData.MagSize;
         canShoot = true;
         bulletPool = FindObjectOfType<ObjectPool>();
-        UpdateAmmoDisplay();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (weaponData.isAutomatic)
+        if (weaponData.IsAutomatic)
         {
             shooting = Input.GetKey(KeyCode.Mouse0);
         } else {
             shooting = Input.GetKeyDown(KeyCode.Mouse0);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < weaponData.magSize && !reloading)
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < weaponData.MagSize && !reloading)
         {
             Reload();
         }
@@ -69,12 +67,12 @@ public class GunController : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    protected virtual void Shoot()
     {
         canShoot = false;
 
         // Recoil Spread
-        float spreadAngle = Random.Range(-weaponData.spread, weaponData.spread);
+        float spreadAngle = Random.Range(-weaponData.Spread, weaponData.Spread);
         Quaternion rotAfterSpread = Quaternion.Euler(0, 0, spreadAngle);
 
         // Calculate the direction with spread
@@ -82,7 +80,7 @@ public class GunController : MonoBehaviour
 
         // Spawn bullet
         // Get bullet from pool
-        GameObject bulletCopy = Instantiate(weaponData.bulletPrefab);
+        GameObject bulletCopy = Instantiate(weaponData.BulletPrefab);
         bulletCopy.transform.position = shootingPoint.position;
         bulletCopy.transform.rotation = Quaternion.identity;
         
@@ -92,53 +90,30 @@ public class GunController : MonoBehaviour
         // Apply force to the bullet
         Rigidbody2D bulletRb = bulletCopy.GetComponent<Rigidbody2D>();
         bulletRb.velocity = Vector2.zero; // Reset velocity in case it's a reused bullet
-        bulletRb.AddForce(spreadDirection * weaponData.shootForce, ForceMode2D.Impulse);
-
-        // Set bullet damage
-        Bullet bulletComponent = bulletCopy.GetComponent<Bullet>();
-        if (bulletComponent != null)
-        {
-            bulletComponent.Damage = weaponData.Damage;
-        }
+        bulletRb.AddForce(spreadDirection * weaponData.ShootForce, ForceMode2D.Impulse);
 
         bulletsLeft--;
-        UpdateAmmoDisplay();
-        Invoke("ResetShot", weaponData.shootingCooldown);
+        Invoke("ResetShot", weaponData.ShootingCooldown);
     }
 
-    private void ResetShot()
+    protected virtual void ResetShot()
     {
         canShoot = true;
     }
 
-    private void Reload ()
+    protected virtual void Reload ()
     {
         reloading = true;
-        Invoke("FinishReload", weaponData.reloadTime);
+        Invoke("FinishReload", weaponData.ReloadTime);
     }
 
-    private void FinishReload()
+    protected virtual void FinishReload()
     {
         reloading = false;
-        bulletsLeft = weaponData.magSize;
-        UpdateAmmoDisplay();
+        bulletsLeft = weaponData.MagSize;
     }
 
-    private void UpdateAmmoDisplay()
-    {
-        if (ammoDisplay != null)
-        {
-            ammoDisplay.text = $"{weaponData.weaponName}: {bulletsLeft}/{weaponData.magSize}";
-            ammoDisplay.resizeTextForBestFit = true; 
-            ammoDisplay.resizeTextMinSize = 5;
-            ammoDisplay.resizeTextMaxSize = 150;
-            ammoDisplay.gameObject.SetActive(true); //Show ammo display
-        }
-        else
-        {
-            ammoDisplay.gameObject.SetActive(false); // Hide unuse ammo display
-        }
-    }
+
 
 }
 

@@ -9,10 +9,11 @@ public class Asteroid : MonoBehaviour
     private Rigidbody2D rb;
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
         //Ti le dua tren kich thuoc
         transform.localScale = 0.5f * size * Vector3.one;
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         Vector2 direction = new Vector2(Random.value, Random.value).normalized;
         float spawnSpeed = Random.Range(4f - size, 5f - size);
         rb.AddForce(direction *  spawnSpeed, ForceMode2D.Impulse);

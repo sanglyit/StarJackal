@@ -74,8 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a29454d57508c54bb5c7d133667b05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 3f67e9dd8a31d63479e5a243f0d08e65, type: 2}
   hitEffect: {fileID: 2171934335837041864, guid: 179b397897095474fb7802064521d760, type: 3}
-  Damage: 0
 --- !u!70 &8820043952625569337
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

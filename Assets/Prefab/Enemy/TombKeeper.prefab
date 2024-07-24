@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 216546591189367101}
   - component: {fileID: 1126404375630845927}
   - component: {fileID: 4862501954034727552}
-  - component: {fileID: 4041884737788101387}
   m_Layer: 0
-  m_Name: RahTombKeeper
-  m_TagString: Untagged
+  m_Name: TombKeeper
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,8 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3fc785d985fd24191a951b98585efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  E_DamageAmount: 20
-  pushbackForce: 20
+  enemyData: {fileID: 11400000, guid: 4e5611c1945e8a441868f9fcadecaaf1, type: 2}
 --- !u!114 &4862501954034727552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,44 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6959cb4463911478733029a74cbce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 4e5611c1945e8a441868f9fcadecaaf1, type: 2}
   target: {fileID: 0}
-  enemySpeed: 3
-  rotateSpeed: 0.025
---- !u!114 &4041884737788101387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878176555574026807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b854006b447a195478b1574b7df197db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 110
-  maxHealth: 110
-  OnDied:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4041884737788101387}
-        m_TargetAssemblyTypeName: HeathController, Assembly-CSharp
-        m_MethodName: Destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4640748197635654739
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
   m_Name: Gau-17A
   m_EditorClassIdentifier: 
-  Damage: 7
-  weaponName: Gau-17A
+  damage: 7
   shootingCooldown: 0.04
   spread: 20
   reloadTime: 9
   shootForce: 35
-  pierce: 0
+  pierce: 1
   magSize: 350
   isAutomatic: 1
-  AutoReload: 1
+  autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}

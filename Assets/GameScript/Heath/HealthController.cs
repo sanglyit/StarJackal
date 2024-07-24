@@ -72,7 +72,7 @@ public class HealthController : MonoBehaviour
     }
     public void Destroy()
     {
-        // Destroy the enemy GameObject
+
         Destroy(gameObject);
     }
 }

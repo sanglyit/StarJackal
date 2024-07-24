@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3462868978730573107}
   - component: {fileID: 1240177580376991372}
   - component: {fileID: 4174491805205687483}
-  - component: {fileID: 7465938037238655840}
   m_Layer: 0
   m_Name: Asteroid 3
   m_TagString: Untagged
@@ -165,8 +164,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 0.1
+  m_Mass: 80
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -193,17 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 3
-  friction: 0.97
---- !u!114 &7465938037238655840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763162844695786110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d3fc785d985fd24191a951b98585efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  E_DamageAmount: 1
+  friction: 0.99

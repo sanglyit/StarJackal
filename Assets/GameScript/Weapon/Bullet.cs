@@ -5,8 +5,14 @@ using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
+    public WeaponScriptableObject weaponData;
+
+    //Current stats
+    protected float currentDamage;
+    protected float currentShootingCooldown;
+    protected float currentPierce;
+    protected float currentSpread;
     public GameObject hitEffect;
-    public float Damage;
     private ObjectPool pool;
 
     private void OnEnable()
@@ -14,20 +20,47 @@ public class Bullet : MonoBehaviour
         pool = FindObjectOfType<ObjectPool>(); // Find the object pool in the scene
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.GetComponent<EnemyMovement>())
+    //    {
+    //        var HealthController = collision.gameObject.GetComponent<HealthController>();
+    //        if (HealthController != null)
+    //        {
+    //            HealthController.TakeDamage(Damage); // Apply damage
+    //            pool.ReturnObject(gameObject); // Return bullet to the pool
+    //        }
+    //    }
+    //    else if (collision.GetComponent<Asteroid>())
+    //    {
+    //        Asteroid asteroid = collision.GetComponent<Asteroid>();
+    //        if (asteroid != null)
+    //        {
+    //            asteroid.Split(); // Split the asteroid
+    //            pool.ReturnObject(gameObject); // Return bullet to the pool
+    //        }
+    //    }
+    //}
+
+    void Awake()
     {
-        if (collision.GetComponent<EnemyMovement>())
+        currentDamage = weaponData.Damage;
+        currentPierce = weaponData.Pierce;
+        currentSpread = weaponData.Spread;
+        currentShootingCooldown = weaponData.ShootingCooldown;
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy"))
         {
-            var HealthController = collision.gameObject.GetComponent<HealthController>();
-            if (HealthController != null)
-            {
-                HealthController.TakeDamage(Damage); // Apply damage
-                pool.ReturnObject(gameObject); // Return bullet to the pool
-            }
-        }
-        else if (collision.GetComponent<Asteroid>())
+            EnemyStat enemy = col.GetComponent<EnemyStat>();
+            enemy.TakeDamage(currentDamage);    //remember to use current damage
+            pool.ReturnObject(gameObject); // Return bullet to the pool
+        } 
+        else if (col.GetComponent<Asteroid>())
         {
-            Asteroid asteroid = collision.GetComponent<Asteroid>();
+            Asteroid asteroid = col.GetComponent<Asteroid>();
             if (asteroid != null)
             {
                 asteroid.Split(); // Split the asteroid
@@ -35,10 +68,8 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-
-    private void OnBecameInvisible()
+        private void OnBecameInvisible()
     {
         pool.ReturnObject(gameObject); // Return bullet to the pool when it goes off screen
     }
-
 }
