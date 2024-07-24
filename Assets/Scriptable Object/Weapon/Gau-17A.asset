@@ -17,7 +17,7 @@ MonoBehaviour:
   spread: 20
   reloadTime: 9
   shootForce: 35
-  pierce: 1
+  pierce: 2
   magSize: 350
   isAutomatic: 1
   autoReload: 1

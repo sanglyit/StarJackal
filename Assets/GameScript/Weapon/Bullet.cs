@@ -56,7 +56,7 @@ public class Bullet : MonoBehaviour
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             enemy.TakeDamage(currentDamage);    //remember to use current damage
-            pool.ReturnObject(gameObject); // Return bullet to the pool
+            ReducePierce();
         } 
         else if (col.GetComponent<Asteroid>())
         {
@@ -64,12 +64,21 @@ public class Bullet : MonoBehaviour
             if (asteroid != null)
             {
                 asteroid.Split(); // Split the asteroid
-                pool.ReturnObject(gameObject); // Return bullet to the pool
+                ReducePierce();
             }
         }
     }
         private void OnBecameInvisible()
     {
         pool.ReturnObject(gameObject); // Return bullet to the pool when it goes off screen
+    }
+
+    void ReducePierce()
+    {
+        currentPierce--;
+        if (currentPierce <= 0)
+        {
+            pool.ReturnObject(gameObject);
+        }
     }
 }

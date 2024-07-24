@@ -23,7 +23,6 @@ public class GunController : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     */
     [SerializeField] Transform shootingPoint;
-    [SerializeField] LayerMask  whatIsEnemy;
     private float amountOfSpread;
 
     private int bulletsLeft;

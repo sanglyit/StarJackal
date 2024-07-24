@@ -10,7 +10,7 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField] float spread;
     [SerializeField] float reloadTime;
     [SerializeField] float shootForce;
-    [SerializeField] float pierce;
+    [SerializeField] int pierce;
 
     [SerializeField] int magSize;
     [SerializeField] bool isAutomatic;
@@ -22,7 +22,7 @@ public class WeaponScriptableObject : ScriptableObject
     public float Spread { get => spread; private set => spread = value; }
     public float ReloadTime { get => reloadTime; private set => reloadTime = value; }
     public float ShootForce { get => shootForce; private set => shootForce = value; }
-    public float Pierce {  get => pierce; private set => pierce = value; }
+    public int Pierce {  get => pierce; private set => pierce = value; }
 
     public int MagSize { get => magSize; private set => magSize = value; }
     public bool IsAutomatic { get => isAutomatic; private set => isAutomatic = value; }
