@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 216546591189367101}
   - component: {fileID: 1126404375630845927}
   - component: {fileID: 4862501954034727552}
+  - component: {fileID: -6553858062628072242}
   m_Layer: 0
   m_Name: TombKeeper
   m_TagString: Enemy
@@ -191,6 +192,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 4e5611c1945e8a441868f9fcadecaaf1, type: 2}
   target: {fileID: 0}
+--- !u!114 &-6553858062628072242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878176555574026807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e0cf51f0519b648927d1f59f66a39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Small Gold
+    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
+    dropRate: 5
+  - name: Small Exp
+    itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
+    dropRate: 60
+  - name: Medkit
+    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
+    dropRate: 10
 --- !u!1 &4640748197635654739
 GameObject:
   m_ObjectHideFlags: 0

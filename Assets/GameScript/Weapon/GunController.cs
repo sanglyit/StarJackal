@@ -38,7 +38,7 @@ public class GunController : MonoBehaviour
     {
         bulletsLeft = weaponData.MagSize;
         canShoot = true;
-        bulletPool = FindObjectOfType<ObjectPool>();
+        bulletPool = ObjectPool.Instance;
     }
 
     protected virtual void Update()
@@ -77,17 +77,18 @@ public class GunController : MonoBehaviour
         // Calculate the direction with spread
         Vector3 spreadDirection = rotAfterSpread * shootingPoint.up;
 
-        // Spawn bullet
-        // Get bullet from pool
-        GameObject bulletCopy = Instantiate(weaponData.BulletPrefab);
-        bulletCopy.transform.position = shootingPoint.position;
-        bulletCopy.transform.rotation = Quaternion.identity;
-        
-        // Set bullet direction
-        bulletCopy.transform.up = spreadDirection;
+        // Use the bullet prefab from the weapon data
+        string bulletTag = weaponData.BulletPrefab.name;
+        GameObject bulletPrefab = bulletPool.GetFromPool(bulletTag);
+        if (bulletPrefab == null) return; // Handle null if pool is empty
+
+        // Set bullet position and direction
+        bulletPrefab.transform.position = shootingPoint.position;
+        bulletPrefab.transform.rotation = Quaternion.identity;
+        bulletPrefab.transform.up = spreadDirection;
 
         // Apply force to the bullet
-        Rigidbody2D bulletRb = bulletCopy.GetComponent<Rigidbody2D>();
+        Rigidbody2D bulletRb = bulletPrefab.GetComponent<Rigidbody2D>();
         bulletRb.velocity = Vector2.zero; // Reset velocity in case it's a reused bullet
         bulletRb.AddForce(spreadDirection * weaponData.ShootForce, ForceMode2D.Impulse);
 

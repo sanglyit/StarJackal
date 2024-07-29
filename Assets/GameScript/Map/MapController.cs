@@ -104,7 +104,7 @@ public class MapController : MonoBehaviour
                 noTerrainPosition = currentChunk.transform.Find("Left Down").position;
                 SpawnChunk();
             }
-        }
+        }   
     }
 
     void SpawnChunk()
@@ -134,6 +134,7 @@ public class MapController : MonoBehaviour
                 chunk.SetActive(true);
             }
         }
+        return;
     }
 
 

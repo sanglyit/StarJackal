@@ -9,17 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
-  m_Name: HyperSpaceCannon
+  m_Script: {fileID: 11500000, guid: a44f37a9a2cfb124c88e899b486e53db, type: 3}
+  m_Name: Jackal_Pioneer
   m_EditorClassIdentifier: 
-  Damage: 5
-  weaponName: MG
-  shootingCooldown: 0
-  spread: 0
-  reloadTime: 0
-  shootForce: 0
-  pierce: 0
-  magSize: 0
-  isAutomatic: 0
-  AutoReload: 0
-  bulletPrefab: {fileID: 0}
+  startingWeapon: {fileID: 3179681974919246262, guid: b7cd6ab54465f0041af18dbdb60e24c7, type: 3}
+  maxHealth: 100
+  heal: 0
+  moveSpeed: 7
+  fireRate: 0
+  strength: 0

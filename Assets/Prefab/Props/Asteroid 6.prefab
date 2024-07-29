@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7763762833715175146}
   - component: {fileID: -5956131316668018791}
   - component: {fileID: 5683021479558773277}
+  - component: {fileID: 680826219763336314}
   m_Layer: 0
   m_Name: Asteroid 6
   m_TagString: Untagged
@@ -187,3 +188,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 3
   friction: 0.99
+--- !u!114 &680826219763336314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443503519304995290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e0cf51f0519b648927d1f59f66a39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Medkit
+    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
+    dropRate: 35
+  - name: Small gold
+    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
+    dropRate: 5

@@ -9,17 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
-  m_Name: Flak
+  m_Script: {fileID: 11500000, guid: a44f37a9a2cfb124c88e899b486e53db, type: 3}
+  m_Name: Jackal_VoidRaider
   m_EditorClassIdentifier: 
-  Damage: 0
-  weaponName: 
-  shootingCooldown: 0
-  spread: 0
-  reloadTime: 0
-  shootForce: 0
-  pierce: 0
-  magSize: 0
-  isAutomatic: 0
-  AutoReload: 0
-  bulletPrefab: {fileID: 0}
+  startingWeapon: {fileID: 8410997914014218931, guid: ec43c6b33fd72dc40bfbb5878c58415c, type: 3}
+  maxHealth: 200
+  heal: 0
+  moveSpeed: 9
+  fireRate: 0
+  strength: 0

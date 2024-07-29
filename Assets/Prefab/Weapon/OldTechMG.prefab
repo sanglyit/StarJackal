@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1792443751974556467}
   - component: {fileID: 5225912428780832643}
   m_Layer: 0
-  m_Name: OTechMG
+  m_Name: OldTechMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3179681974919246262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.314, y: 0.603, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1.5000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -100,10 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 241beb97f9e21c64aa05ea03841e6ed1, type: 2}
   shootingPoint: {fileID: 1952749944039581829}
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 0
-  ammoDisplay: {fileID: 0}
 --- !u!1 &6984997577472815916
 GameObject:
   m_ObjectHideFlags: 0

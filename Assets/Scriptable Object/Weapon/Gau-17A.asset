@@ -15,9 +15,9 @@ MonoBehaviour:
   damage: 7
   shootingCooldown: 0.04
   spread: 20
-  reloadTime: 9
+  reloadTime: 11
   shootForce: 35
-  pierce: 2
+  pierce: 1
   magSize: 350
   isAutomatic: 1
   autoReload: 1

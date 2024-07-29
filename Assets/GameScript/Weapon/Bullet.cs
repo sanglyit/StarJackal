@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        pool = FindObjectOfType<ObjectPool>(); // Find the object pool in the scene
+        pool = ObjectPool.Instance;  // Find the object pool in the scene
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +68,7 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-        private void OnBecameInvisible()
+    private void OnBecameInvisible()
     {
         pool.ReturnObject(gameObject); // Return bullet to the pool when it goes off screen
     }

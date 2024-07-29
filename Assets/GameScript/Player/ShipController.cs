@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Ship_control : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    Rigidbody2D shipRigidbody;
+    public PlayerScriptableObject playerData; 
 
     public Camera cam;
-    private Rigidbody2D _shipRigidbody;
-    private Vector2 _movementInput;
-    private Vector2 _smoothedMovementInput;
-    private Vector2 _smoothvelocityInput;
+    private Vector2 movementInput;
+    private Vector2 smoothedMovementInput;
+    private Vector2 smoothvelocityInput;
 
     public Vector2 movement;
     private Vector2 mousePos;
 
     void Start()
     {
-        _shipRigidbody = GetComponent<Rigidbody2D>();
+        shipRigidbody = GetComponent<Rigidbody2D>();
 
     }
 
@@ -33,16 +34,17 @@ public class Ship_control : MonoBehaviour
     private void FixedUpdate()
     {
         //di chuyen
-        _shipRigidbody.velocity = _movementInput * _speed;
+        smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref smoothvelocityInput, 0.1f);
+        shipRigidbody.velocity = smoothedMovementInput * playerData.MoveSpeed;
 
         //Look at mouse position
-        Vector2 lookDir = mousePos - _shipRigidbody.position;
+        Vector2 lookDir = mousePos - shipRigidbody.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        _shipRigidbody.rotation = angle;
+        shipRigidbody.rotation = angle;
     }
 
     private void OnMove(InputValue inputValue)
     {
-        _movementInput = inputValue.Get<Vector2>();
+        movementInput = inputValue.Get<Vector2>();
     }
 }

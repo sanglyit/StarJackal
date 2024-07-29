@@ -34,10 +34,8 @@ public class EnemyStat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            var HealthController = collision.gameObject.GetComponent<HealthController>();
-
-            HealthController.TakeDamage(enemyData.Damage);
+            PlayerStat player = collision.gameObject.GetComponent<PlayerStat>();
+            player.TakeDamage(currentDamage);
         }
-
     }
 }
