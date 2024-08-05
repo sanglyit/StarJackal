@@ -11,9 +11,11 @@ public class EnemyMovement : MonoBehaviour
     //[SerializeField] private float enemySpeed = 5f;
     //[SerializeField] private float rotateSpeed = 0.025f;
     private Rigidbody2D rb;
+    EnemyStat enemy;
     
     private void Start()
     {
+        enemy = GetComponent<EnemyStat>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
         //Move forward till da player is destroyed
         if (target != null)
         {
-            rb.velocity = transform.up * enemyData.EnemySpeed;
+            rb.velocity = transform.up * enemy.currentMoveSpeed;
         }
 
         if (target == null || !target.gameObject.activeInHierarchy)

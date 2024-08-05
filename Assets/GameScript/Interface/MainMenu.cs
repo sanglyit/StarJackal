@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("GameBattle");
+        SceneManager.LoadSceneAsync("ShipSelection");
     }
 
     public void QuitGame()

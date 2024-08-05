@@ -22,4 +22,7 @@ public class PlayerScriptableObject : ScriptableObject
     //Ship damage bonus
     [SerializeField] float strength;
     public float Strength { get => strength; private set => strength = value; }
+    //Magnet
+    [SerializeField] float magnet;
+    public float Magnet { get => magnet; private set => magnet = value; }
 }

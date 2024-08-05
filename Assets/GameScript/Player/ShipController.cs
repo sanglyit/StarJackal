@@ -7,18 +7,20 @@ using UnityEngine.InputSystem;
 public class Ship_control : MonoBehaviour
 {
     Rigidbody2D shipRigidbody;
-    public PlayerScriptableObject playerData; 
+    //public PlayerScriptableObject playerData;
+    PlayerStat player;
 
     public Camera cam;
-    private Vector2 movementInput;
-    private Vector2 smoothedMovementInput;
-    private Vector2 smoothvelocityInput;
+    [HideInInspector] public Vector2 movementInput;
+    [HideInInspector] public Vector2 smoothedMovementInput;
+    [HideInInspector] public Vector2 smoothvelocityInput;
 
-    public Vector2 movement;
-    private Vector2 mousePos;
+    [HideInInspector] public Vector2 movement;
+    [HideInInspector] public Vector2 mousePos;
 
     void Start()
     {
+        player = GetComponent<PlayerStat>();
         shipRigidbody = GetComponent<Rigidbody2D>();
 
     }
@@ -35,7 +37,7 @@ public class Ship_control : MonoBehaviour
     {
         //di chuyen
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref smoothvelocityInput, 0.1f);
-        shipRigidbody.velocity = smoothedMovementInput * playerData.MoveSpeed;
+        shipRigidbody.velocity = smoothedMovementInput * player.currentMoveSpeed;
 
         //Look at mouse position
         Vector2 lookDir = mousePos - shipRigidbody.position;
