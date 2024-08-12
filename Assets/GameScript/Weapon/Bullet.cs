@@ -50,12 +50,16 @@ public class Bullet : MonoBehaviour
         currentShootingCooldown = weaponData.ShootingCooldown;
     }
 
+    public float GetCurrentDamage()
+    {
+        return currentDamage *= FindObjectOfType<PlayerStat>().currentStrength;
+    }
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Enemy"))
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
-            enemy.TakeDamage(currentDamage);    //remember to use current damage
+            enemy.TakeDamage(GetCurrentDamage());    //remember to use current damage
             ReducePierce();
         } 
         else if (col.GetComponent<Asteroid>())

@@ -17,5 +17,5 @@ MonoBehaviour:
   heal: 0
   moveSpeed: 9
   fireRate: 0
-  strength: 0
+  strength: 1
   magnet: 2
