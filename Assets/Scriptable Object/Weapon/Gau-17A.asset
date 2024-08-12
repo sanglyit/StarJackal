@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 7
   shootingCooldown: 0.04
-  spread: 20
+  spread: 15
   reloadTime: 11
   shootForce: 35
   pierce: 1

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "ScriptableObjects/PlayerShip")]
 public class PlayerScriptableObject : ScriptableObject
 {
+
     [SerializeField] GameObject startingWeapon;
     public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
 

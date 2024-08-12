@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
 {
-    public PlayerScriptableObject playerData;
+    PlayerScriptableObject playerData;
     //Current stats
     public float currentHealth;
     [HideInInspector] public float currentHeal;
@@ -13,9 +13,7 @@ public class PlayerStat : MonoBehaviour
     [HideInInspector] public float currentStrength;
     [HideInInspector] public float currentMagnet;
 
-    //Spawned Weapon
     public List<GameObject> spawnedWeapons;
-
     //Level system
     [Header("Experience/Level")]
     public int experience = 0;
@@ -37,8 +35,8 @@ public class PlayerStat : MonoBehaviour
     public List<LevelRange> levelRanges;
     void Awake()
     {
-        playerData = PlayerSelector.GetData();
-        PlayerSelector.instance.DestroySingleton();
+        playerData = ShipSelector.GetData();
+        ShipSelector.instance.DestroySingleTon();
 
         currentHealth = playerData.MaxHealth;
         currentHeal = playerData.Heal;
@@ -47,8 +45,7 @@ public class PlayerStat : MonoBehaviour
         currentStrength = playerData.Strength;
         currentMagnet = playerData.Magnet;
 
-        //Starting weapon
-        SpawnedWeapon(playerData.StartingWeapon);
+        SpawnWeapon(playerData.StartingWeapon);
     }
     void Start()
     {
@@ -133,11 +130,20 @@ public class PlayerStat : MonoBehaviour
             }
         }
     }
-
-    public void SpawnedWeapon(GameObject weapon)
+    public void SpawnWeapon(GameObject weapon)
     {
-        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
-        spawnedWeapon.transform.SetParent(transform);
-        spawnedWeapons.Add(spawnedWeapon); 
+        Transform weaponHolder = transform.Find("WeaponHolder");
+
+        if (weaponHolder != null)
+        {
+            // Instantiate the weapon and set its parent to WeaponHolder
+            GameObject spawnedWeapon = Instantiate(weapon, weaponHolder.position, Quaternion.identity);
+            spawnedWeapon.transform.SetParent(weaponHolder);
+            spawnedWeapons.Add(spawnedWeapon);
+        }
+        else
+        {
+            Debug.LogError("WeaponHolder not found in the player hierarchy.");
+        }
     }
 }
