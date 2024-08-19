@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
 {
-    PlayerScriptableObject playerData;
+    public PlayerScriptableObject playerData;
     //Current stats
     public float currentHealth;
-    [HideInInspector] public float currentHeal;
-    [HideInInspector] public float currentMoveSpeed;
-    [HideInInspector] public float currentFireRate;
-    [HideInInspector] public float currentStrength;
-    [HideInInspector] public float currentMagnet;
+    [SerializeField] public float currentHeal;
+    [SerializeField] public float currentMoveSpeed;
+    [SerializeField] public float currentFireRate;
+    [SerializeField] public float currentStrength;
+    [SerializeField] public float currentMagnet;
 
     public List<GameObject> spawnedWeapons;
     //Level system

@@ -51,9 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55263aded1a12af469f5f245caa43647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 8e5ba629daec9f045ba3de4f89e1e01e, type: 2}
   currentHealth: 0
   currentHeal: 0
-  currentMoveSpeed: 0
+  currentMoveSpeed: 5
   currentFireRate: 0
   currentStrength: 0
   currentMagnet: 0

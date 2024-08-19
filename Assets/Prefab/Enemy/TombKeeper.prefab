@@ -178,6 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 4e5611c1945e8a441868f9fcadecaaf1, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  despawnDistance: 100
 --- !u!114 &4862501954034727552
 MonoBehaviour:
   m_ObjectHideFlags: 0

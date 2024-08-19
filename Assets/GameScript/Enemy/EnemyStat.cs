@@ -6,10 +6,12 @@ public class EnemyStat : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
     //current stats
-    [HideInInspector] public float currentMoveSpeed;
-    [HideInInspector] public float currentHealth;
-    [HideInInspector] public float currentDamage;
+    [SerializeField] public float currentMoveSpeed;
+    [SerializeField] public float currentHealth;
+    [SerializeField] public float currentDamage;
 
+    public float despawnDistance = 30f;
+    Transform player;
     private void Awake()
     {
         currentDamage = enemyData.Damage;
@@ -17,6 +19,18 @@ public class EnemyStat : MonoBehaviour
         currentMoveSpeed = enemyData.EnemySpeed;
     }
 
+    void Start()
+    {
+        player = FindObjectOfType<PlayerStat>().transform;    
+    }
+
+    private void Update()
+    {
+        if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        {
+            ReturnEnemy();
+        }
+    }
     public void TakeDamage(float dmg)
     {
         currentHealth -= dmg;
@@ -42,5 +56,11 @@ public class EnemyStat : MonoBehaviour
     {
         EnemySpawner es = FindObjectOfType<EnemySpawner>();
         es.OnEnemyKilled();
+    }
+
+    void ReturnEnemy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 }

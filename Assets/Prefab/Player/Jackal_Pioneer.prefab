@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55263aded1a12af469f5f245caa43647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 0762b4c82f51d3c46bbea8aa55713d92, type: 2}
   currentHealth: 0
   currentHeal: 0
   currentMoveSpeed: 0
