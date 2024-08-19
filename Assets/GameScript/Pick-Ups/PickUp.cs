@@ -8,11 +8,28 @@ public class PickUp : MonoBehaviour
     public float lifespan = 0.5f;
     protected PlayerStat target;
     protected float speed;
+    Vector2 initalPosition;
+
+    [System.Serializable]
+    public struct BobbingAnimation
+    {
+        public float frequency;
+        public Vector2 direction;
+    }
+    public BobbingAnimation bobbingAnimation = new BobbingAnimation
+    {
+        frequency = 1.5f, direction = new Vector2(0, 0.3f)
+    };
 
     [Header("Bonuses")]
     public int exp;
     public int health;
     public int gold; 
+
+    protected virtual void Start()
+    {
+        initalPosition = transform.position;
+    }    
 
     protected virtual void Update()
     {
@@ -26,6 +43,10 @@ public class PickUp : MonoBehaviour
             } else {
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            transform.position = initalPosition + bobbingAnimation.direction * Mathf.Sin(Time.time * bobbingAnimation.frequency);
         }
     }
 
@@ -54,7 +75,7 @@ public class PickUp : MonoBehaviour
         }
         if (health != 0)
         {
-            target.HealHealth(health);
+            target.HealHealth(health); 
         }
     }
 }

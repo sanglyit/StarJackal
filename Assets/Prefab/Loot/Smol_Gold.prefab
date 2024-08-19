@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8344758674561472775}
   - component: {fileID: 4643394498935875465}
   - component: {fileID: -27043878749087598}
+  - component: {fileID: 5856491286875803302}
   m_Layer: 0
   m_Name: Smol_Gold
   m_TagString: Untagged
@@ -167,3 +168,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5856491286875803302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344431350712014413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202c443188977874b93ad2627afdd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifespan: 0.5
+  bobbingAnimation:
+    frequency: 1.5
+    direction: {x: 0, y: 0.3}
+  exp: 0
+  health: 0
+  gold: 1

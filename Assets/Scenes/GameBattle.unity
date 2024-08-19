@@ -296,15 +296,24 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Void Eyemond
-      enemyCount: 12
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    waveQuota: 0
+    spawnInterval: 1
+    spawnCount: 0
+  - waveName: Wave 2
+    enemyGroups:
+    - enemyName: Lost Wanderer
+      enemyCount: 3
+      spawnCount: 0
+      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     waveQuota: 0
     spawnInterval: 2
     spawnCount: 0
   currentWaveCount: 0
-  maxEnemyAllowed: 55
-  spawnInterval: 1
+  maxEnemyAllowed: 35
+  waveInterval: 3
   enemyAlive: 0
   maxEnemyReached: 0
   relativeSpawnPoints:

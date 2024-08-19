@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     {
         public string waveName;
         public List<EnemyGroup> enemyGroups;
-        public int waveQuota; //the total number of enemies in a wave
+        public int waveQuota; //the total number of enemies to spawn in a wave
         public float spawnInterval; //spawn delay
         public int spawnCount; //count enemy spawn
     }
@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     public class EnemyGroup
     {
         public string enemyName;
-        public int enemyCount; //number of enemy in a wave
+        public int enemyCount; //number of enemy to spawn in a wave
         public int spawnCount; //number of enemy type already spawned
         public GameObject enemyPrefab;
     }
@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawner Attributes")]
     public int maxEnemyAllowed;
-    public float spawnInterval;
+    public float waveInterval;
     public int enemyAlive;
     float spawnTimer;
     public bool maxEnemyReached = false;
@@ -41,17 +41,19 @@ public class EnemySpawner : MonoBehaviour
     {
         player = FindObjectOfType<PlayerStat>().transform;
         CalculateWaveQuota();
+        StartCoroutine(BeginNextWave());
     }
     void Update()
     {
-        //check if the wave has ended and the next wave should start
+        /*check if the wave has ended and the next wave should start
         if (currentWaveCount < waves.Count && waves[currentWaveCount].spawnCount == 0 && !isWaveActive)
         {
             StartCoroutine(BeginNextWave());
-        }
+        }*/
+
         spawnTimer += Time.deltaTime;
         //Check time to spawn next enemy
-        if (spawnTimer >= waves[currentWaveCount].spawnInterval)
+        if (isWaveActive && spawnTimer >= waves[currentWaveCount].spawnInterval)
         {
             spawnTimer = 0f;
             SpawnEnemies();
@@ -59,15 +61,11 @@ public class EnemySpawner : MonoBehaviour
     }
     IEnumerator BeginNextWave()
     {
+        yield return new WaitForSeconds(waveInterval);
         isWaveActive = true;
-        yield return new WaitForSeconds(spawnInterval);
-        if (currentWaveCount < waves.Count - 1)
-        {
-            isWaveActive = false;
-            currentWaveCount++;
-            CalculateWaveQuota();
-        }
+        CalculateWaveQuota();
     }
+
     void CalculateWaveQuota()
     {
         int currentWaveQuota = 0;
@@ -76,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
             currentWaveQuota += enemyGroup.enemyCount;
         }
         waves[currentWaveCount].waveQuota = currentWaveQuota;
-        Debug.LogWarning(currentWaveQuota);
+        Debug.LogWarning($"Wave {currentWaveCount + 1} Quota: {currentWaveQuota}");
     }
 
     void SpawnEnemies()
@@ -102,6 +100,22 @@ public class EnemySpawner : MonoBehaviour
                         return;
                     }
                 }
+            }
+        }
+        // Check if all enemies in the wave have been spawned
+        if (waves[currentWaveCount].spawnCount >= waves[currentWaveCount].waveQuota)
+        {
+            isWaveActive = false;
+            currentWaveCount++;
+
+            // If there are more waves, prepare the next wave
+            if (currentWaveCount < waves.Count)
+            {
+                StartCoroutine(BeginNextWave());
+            }
+            else
+            {
+                Debug.Log("All waves complete!");
             }
         }
     }

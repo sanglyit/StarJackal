@@ -115,7 +115,7 @@ public class PlayerStat : MonoBehaviour
     }
 
     public void HealHealth(float amount)
-    {
+    { 
         currentHealth += amount;
 
         if (currentHealth > playerData.MaxHealth) 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6911067752254285377}
   - component: {fileID: 1447201028031158813}
   - component: {fileID: 4939500523862275849}
-  - component: {fileID: -3639438185285656133}
+  - component: {fileID: 6368704088131247948}
   m_Layer: 0
   m_Name: Smol_Exp
   m_TagString: Untagged
@@ -169,7 +169,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3639438185285656133
+--- !u!114 &6368704088131247948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065256531555299820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26c417db17e40b14e96be90398a7c778, type: 3}
+  m_Script: {fileID: 11500000, guid: 202c443188977874b93ad2627afdd28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expGranted: 10
+  lifespan: 0.5
+  bobbingAnimation:
+    frequency: 1.5
+    direction: {x: 0, y: 0.3}
+  exp: 20
+  health: 0
+  gold: 0
