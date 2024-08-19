@@ -18,4 +18,4 @@ MonoBehaviour:
   moveSpeed: 7
   fireRate: 0
   strength: 1
-  magnet: 2
+  magnet: 2.5

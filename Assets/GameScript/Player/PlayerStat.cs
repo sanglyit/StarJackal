@@ -33,6 +33,8 @@ public class PlayerStat : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
     public List<LevelRange> levelRanges;
+
+    PlayerCollector collector;
     void Awake()
     {
         playerData = ShipSelector.GetData();
@@ -45,7 +47,10 @@ public class PlayerStat : MonoBehaviour
         currentStrength = playerData.Strength;
         currentMagnet = playerData.Magnet;
 
+        collector = GetComponentInChildren<PlayerCollector>();
+
         SpawnWeapon(playerData.StartingWeapon);
+        
     }
     void Start()
     {
