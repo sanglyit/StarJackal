@@ -305,17 +305,41 @@ MonoBehaviour:
   - waveName: Wave 2
     enemyGroups:
     - enemyName: Lost Wanderer
-      enemyCount: 3
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
+    - enemyName: Lost Wanderer
+      enemyCount: 22
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     waveQuota: 0
     spawnInterval: 2
     spawnCount: 0
+  - waveName: Wave 3
+    enemyGroups:
+    - enemyName: Lost Wanderer
+      enemyCount: 12
+      spawnCount: 0
+      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
+    - enemyName: Lost Wanderer
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Tomb Keeper
+      enemyCount: 4
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Lost Wanderer
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
+    waveQuota: 0
+    spawnInterval: 2.2
+    spawnCount: 0
   currentWaveCount: 0
   maxEnemyAllowed: 35
-  waveInterval: 3
+  waveInterval: 5
   enemyAlive: 0
-  maxEnemyReached: 0
   relativeSpawnPoints:
   - {fileID: 1312911988}
   - {fileID: 1566121827}

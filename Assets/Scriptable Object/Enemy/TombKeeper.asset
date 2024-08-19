@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TombKeeper
   m_EditorClassIdentifier: 
   enemySpeed: 4.5
-  rotateSpeed: 0.025
+  rotateSpeed: 0.03
   maxHealth: 110
   damage: 40

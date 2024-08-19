@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LostWanderer
   m_EditorClassIdentifier: 
   enemySpeed: 5.5
-  rotateSpeed: 0.04
+  rotateSpeed: 0.038
   maxHealth: 35
   damage: 30
