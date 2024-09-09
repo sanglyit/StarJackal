@@ -28,5 +28,15 @@ public class WeaponScriptableObject : ScriptableObject
     public bool IsAutomatic { get => isAutomatic; private set => isAutomatic = value; }
     public bool AutoReload { get => autoReload; private set => autoReload = value; }
 
-    public GameObject BulletPrefab { get => bulletPrefab; private set => bulletPrefab = value; } 
+    public GameObject BulletPrefab { get => bulletPrefab; private set => bulletPrefab = value; }
+    
+
+    [SerializeField]
+    int level; //Not meant to be modified in the game [Only in Editor]
+    public int Level { get => level; private set => level = value; }
+
+    [SerializeField]
+    GameObject nextLevelPrefab; //the prefab of the next level = what the object becomes when it levels up
+                                //Not to be confused with the prefab to be spawned at the next level.
+    public GameObject NextLevelPrefab { get => nextLevelPrefab; private set => nextLevelPrefab = value; }
 }

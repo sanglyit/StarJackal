@@ -166,6 +166,18 @@ PrefabInstance:
       propertyPath: playerData
       value: 
       objectReference: {fileID: 11400000, guid: 8e5ba629daec9f045ba3de4f89e1e01e, type: 2}
+    - target: {fileID: -638882324567093032, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
+      propertyPath: secondWeaponTest
+      value: 
+      objectReference: {fileID: 3179681974919246262, guid: b7cd6ab54465f0041af18dbdb60e24c7, type: 3}
+    - target: {fileID: -638882324567093032, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
+      propertyPath: firstPassiveItemTest
+      value: 
+      objectReference: {fileID: 3914814735371176461, guid: c383271c28583d44d8257107ff399537, type: 3}
+    - target: {fileID: -638882324567093032, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
+      propertyPath: secondPassiveItemTest
+      value: 
+      objectReference: {fileID: 8796992420236693823, guid: e1478f45cf5361d4c8e626916ac651ff, type: 3}
     - target: {fileID: 626455346550229658, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
       propertyPath: m_Name
       value: Jackal_VoidRaider
@@ -225,13 +237,49 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7225308356569866177, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1531495393}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 626455346550229658, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 51229177}
   m_SourcePrefab: {fileID: 100100000, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
 --- !u!4 &51229175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7225308356569866177, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
   m_PrefabInstance: {fileID: 51229174}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &51229176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 626455346550229658, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
+  m_PrefabInstance: {fileID: 51229174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &51229177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51229176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48321fd1a3c441c4681237b3cf69fb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  weaponLevels: 000000000000000000000000000000000000000000000000
+  passiveItemSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  passiveItemLevels: 000000000000000000000000000000000000000000000000
 --- !u!1 &120606731
 GameObject:
   m_ObjectHideFlags: 0

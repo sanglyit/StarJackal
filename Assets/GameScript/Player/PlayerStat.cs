@@ -13,7 +13,6 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] public float currentStrength;
     [SerializeField] public float currentMagnet;
 
-    public List<GameObject> spawnedWeapons;
     //Level system
     [Header("Experience/Level")]
     public int experience = 0;
@@ -34,12 +33,22 @@ public class PlayerStat : MonoBehaviour
     bool isInvincible;
     public List<LevelRange> levelRanges;
 
+    InventoryManager inventory;
+    public int weaponIndex;
+    public int passiveItemIndex;
+
+    public GameObject secondWeaponTest;
+    public GameObject firstPassiveItemTest, secondPassiveItemTest;
+
     PlayerCollector collector;
     void Awake()
     {
         playerData = ShipSelector.GetData();
         ShipSelector.instance.DestroySingleTon();
 
+        inventory = GetComponent <InventoryManager>();
+
+        //Assigning variables
         currentHealth = playerData.MaxHealth;
         currentHeal = playerData.Heal;
         currentMoveSpeed = playerData.MoveSpeed;
@@ -49,7 +58,12 @@ public class PlayerStat : MonoBehaviour
 
         collector = GetComponentInChildren<PlayerCollector>();
 
+        //Spawn starting weapon
         SpawnWeapon(playerData.StartingWeapon);
+
+        SpawnWeapon(secondWeaponTest);
+        SpawnPassiveItem(firstPassiveItemTest);
+        SpawnPassiveItem(secondPassiveItemTest);
         
     }
     void Start()
@@ -137,18 +151,35 @@ public class PlayerStat : MonoBehaviour
     }
     public void SpawnWeapon(GameObject weapon)
     {
-        Transform weaponHolder = transform.Find("WeaponHolder");
-
-        if (weaponHolder != null)
-        {
+       
+            //Check if the inventory slots are full, and returning if it is
+            if (weaponIndex >= inventory.weaponSlots.Count - 1) //Must be -1 because the list starts from 0
+            {
+                Debug.LogError("Inventory slots already full");
+                return;
+            }
             // Instantiate the weapon and set its parent to WeaponHolder
-            GameObject spawnedWeapon = Instantiate(weapon, weaponHolder.position, Quaternion.identity);
-            spawnedWeapon.transform.SetParent(weaponHolder);
-            spawnedWeapons.Add(spawnedWeapon);
+            GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+            spawnedWeapon.transform.SetParent(transform);
+            inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<GunController>()); //Add the weapon to it's inventory slot
+
+            weaponIndex++;
         }
-        else
+
+    public void SpawnPassiveItem(GameObject passiveItem)
+    {
+
+        //Check if the inventory slots are full, and returning if it is
+        if (passiveItemIndex >= inventory.passiveItemSlots.Count - 1) //Must be -1 because the list starts from 0
         {
-            Debug.LogError("WeaponHolder not found in the player hierarchy.");
+            Debug.LogError("Inventory slots already full");
+            return;
         }
+        // Instantiate the passive Item 
+        GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        spawnedPassiveItem.transform.SetParent(transform);
+        inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>()); //Add the passive item to it's inventory slot
+
+        passiveItemIndex++;
     }
 }

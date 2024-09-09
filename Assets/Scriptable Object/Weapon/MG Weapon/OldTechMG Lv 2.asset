@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
-  m_Name: OldTechMG
+  m_Name: OldTechMG Lv 2
   m_EditorClassIdentifier: 
-  damage: 5
-  shootingCooldown: 0.3
+  damage: 6
+  shootingCooldown: 0.1
   spread: 5
   reloadTime: 1
-  shootForce: 25
+  shootForce: 50
   pierce: 1
   magSize: 50
   isAutomatic: 1
   autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 4363e3785e1882a4bbbdb0f309343636, type: 3}
+  level: 2
+  nextLevelPrefab: {fileID: 0}
