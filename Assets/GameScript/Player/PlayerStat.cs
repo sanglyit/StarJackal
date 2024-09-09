@@ -49,6 +49,7 @@ public class PlayerStat : MonoBehaviour
 
         collector = GetComponentInChildren<PlayerCollector>();
 
+        collector.SetRadius(currentMagnet);
         SpawnWeapon(playerData.StartingWeapon);
         
     }

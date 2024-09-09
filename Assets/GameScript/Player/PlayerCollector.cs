@@ -8,10 +8,10 @@ public class PlayerCollector : MonoBehaviour
     PlayerStat player;
     CircleCollider2D detector;
     public float pullSpeed;
-    void Start()
+    private void Start()
     {
         player = GetComponentInParent<PlayerStat>();
-        detector = GetComponent<CircleCollider2D>();
+        
     }
     public void SetRadius(float r)
     {

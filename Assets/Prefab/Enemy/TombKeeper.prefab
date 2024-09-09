@@ -214,7 +214,7 @@ MonoBehaviour:
     dropRate: 5
   - name: Small Exp
     itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
-    dropRate: 60
+    dropRate: 70
   - name: Medkit
     itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
     dropRate: 10

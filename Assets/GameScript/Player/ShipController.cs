@@ -18,6 +18,8 @@ public class Ship_control : MonoBehaviour
     [HideInInspector] public Vector2 movement;
     [HideInInspector] public Vector2 mousePos;
 
+    public float rayDistance = 0.5f;  // Distance to cast rays for border detection
+    public LayerMask borderLayerMask; // LayerMask to specify which layer is considered a border
     void Start()
     {
         player = GetComponent<PlayerStat>();
