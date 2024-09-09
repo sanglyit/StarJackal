@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105214205194948254, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6493574041784100905, guid: 97bf6edeb22bd2b418bb160d7990ecb8, type: 3}
       propertyPath: cam
@@ -1013,15 +1013,10 @@ MonoBehaviour:
   - {fileID: 5368710298827011449, guid: b0ba111a0ff1d2b4e82f5d7753644fff, type: 3}
   - {fileID: 5368710298827011449, guid: 4478b97e97edbc447b216399ac8878fe, type: 3}
   - {fileID: 5368710298827011449, guid: f6804da0f81f209429207d05073d4dbc, type: 3}
-  player: {fileID: 530051361}
-  checkerRadius: 0.2
-  terrainMask:
-    serializedVersion: 2
-    m_Bits: 64
-  currentChunk: {fileID: 0}
-  spawnedChunks: []
-  maxOpDist: 70
-  opCooldownDuration: 1
+  Player: {fileID: 530051361}
+  mapWidth: 6
+  mapHeight: 6
+  chunkSize: 30
 --- !u!4 &1493654958
 Transform:
   m_ObjectHideFlags: 0

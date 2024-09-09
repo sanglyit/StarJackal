@@ -4,130 +4,67 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
-    public List<GameObject> terrainChunks;
-    public GameObject player;
-    public float checkerRadius;
-    public LayerMask terrainMask;
-    public GameObject currentChunk;
-    Vector3 playerLastPosition;
+    public List<GameObject> terrainChunks;    // List of possible terrain chunks to spawn
+    public GameObject Player;                 // Player GameObject
+    public int mapWidth = 5;                  // Number of chunks in the horizontal direction
+    public int mapHeight = 5;                 // Number of chunks in the vertical direction
+    public float chunkSize = 30.1f;           // Size of each chunk
 
-    [Header("Optimization")]
-    public List<GameObject> spawnedChunks;
-    GameObject latestChunk;
-    public float maxOpDist;
-    float opDist;
-    float opCooldown;
-    public float opCooldownDuration;
+    private GameObject[,] mapChunks;          // 2D array to hold the chunks
+    private Vector2 mapSize;                  // Size of the map in world coordinates
 
     void Start()
     {
-        playerLastPosition = player.transform.position;
+        // Calculate the size of the map in world coordinates
+        mapSize = new Vector2(mapWidth * chunkSize, mapHeight * chunkSize);
+
+        // Initialize the 2D array to hold the map chunks
+        mapChunks = new GameObject[mapWidth, mapHeight];
+
+        // Generate the map chunks
+        GenerateMap();
+
+        // Create the invisible borders
+        CreateBorders();
+
+        // Position the player at the center of the map
+        Player.transform.position = new Vector3(mapSize.x / 2, mapSize.y / 2, 0);
     }
-    void Update()
+
+    void GenerateMap()
     {
-        ChunkCheker();
-        ChunkOptimizer();
+        for (int x = 0; x < mapWidth; x++)
+        {
+            for (int y = 0; y < mapHeight; y++)
+            {
+                Vector3 spawnPosition = new Vector3(x * chunkSize, y * chunkSize, 0);
+                int rand = Random.Range(0, terrainChunks.Count);
+                mapChunks[x, y] = Instantiate(terrainChunks[rand], spawnPosition, Quaternion.identity);
+            }
+        }
     }
-    void ChunkCheker()
+
+    void CreateBorders()
     {
-        if (!currentChunk)
-        {
-            return;
-        }
-        Vector3 moveDir = player.transform.position - playerLastPosition;
-        playerLastPosition = player.transform.position;
+        // Left border
+        CreateBorder(new Vector2(-chunkSize / 2 + 20, (mapSize.y / 2) - 14.5f), new Vector2(1, mapSize.y));
 
-        string directionName = GetDirectionName(moveDir);
+        // Right border
+        CreateBorder(new Vector2((mapSize.x + chunkSize / 2) - 50, (mapSize.y / 2) - 14.5f), new Vector2(1, mapSize.y));
 
-        CheckAndSpawnChunk(directionName);
+        // Bottom border
+        CreateBorder(new Vector2(mapSize.x / 2 - 15.3f, -chunkSize / 2 + 20), new Vector2(mapSize.x, 1));
 
-        string[] directions = { "Up", "Down", "Left", "Right", "Right Up", "Right Down", "Left Up", "Left Down" };
-
-        foreach (string dir in directions)
-        {
-            CheckAndSpawnChunk(dir);
-        }
+        // Top border
+        CreateBorder(new Vector2(mapSize.x / 2 - 15.3f, mapSize.y + chunkSize / 2 - 50), new Vector2(mapSize.x, 1));
     }
-    void CheckAndSpawnChunk(string direction)
+
+    void CreateBorder(Vector2 position, Vector2 size)
     {
-        Transform directionTransform = currentChunk.transform.Find(direction);
-
-        if (directionTransform != null && !Physics2D.OverlapCircle(directionTransform.position, checkerRadius, terrainMask))
-        {
-            SpawnChunk(directionTransform.position);
-        }
+        GameObject border = new GameObject("Border");
+        border.transform.position = position;
+        BoxCollider2D collider = border.AddComponent<BoxCollider2D>();
+        collider.size = size;
+        collider.isTrigger = false;  // Ensure it's not a trigger so it blocks movement
     }
-    string GetDirectionName(Vector3 direction)
-    {
-        direction = direction.normalized;
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-        {
-            // Moving horizontally more than vertically
-            if (direction.y > 0.5f)
-            {
-                // Moving diagonally up
-                return direction.x > 0 ? "Right Up" : "Left Up";
-            }
-            else if (direction.y < -0.5f)
-            {
-                // Moving diagonally down
-                return direction.x > 0 ? "Right Down" : "Left Down";
-            }
-            else
-            {
-                // Moving straight horizontally
-                return direction.x > 0 ? "Right" : "Left";
-            }
-        }
-        else
-        {
-            // Moving vertically more than horizontally
-            if (direction.x > 0.5f)
-            {
-                // Moving diagonally right
-                return direction.y > 0 ? "Right Up" : "Right Down";
-            }
-            else if (direction.x < -0.5f)
-            {
-                // Moving diagonally left
-                return direction.y > 0 ? "Left Up" : "Left Down";
-            }
-            else
-            {
-                // Moving straight vertically
-                return direction.y > 0 ? "Up" : "Down";
-            }
-        }
-    }
-
-    void SpawnChunk(Vector3 spawnPosition)
-    {
-        int rand = Random.Range(0, terrainChunks.Count);
-        latestChunk = Instantiate(terrainChunks[rand], spawnPosition, Quaternion.identity);
-        spawnedChunks.Add(latestChunk);
-    }
-
-    void ChunkOptimizer()
-    {
-        opCooldown -= Time.deltaTime;
-        if (opCooldown <= 0f)
-        {
-            opCooldown = opCooldownDuration;
-        } else {
-            return;
-        }
-
-        foreach (GameObject chunk in spawnedChunks)
-        {
-            opDist = Vector3.Distance(player.transform.position, chunk.transform.position);
-            if (opDist > maxOpDist)
-            {
-                chunk.SetActive(false);
-            } else {
-                chunk.SetActive(true);
-            }
-        }
-    }
-
-
 }

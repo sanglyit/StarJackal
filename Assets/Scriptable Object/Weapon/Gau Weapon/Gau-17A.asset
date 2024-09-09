@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Gau-17A
   m_EditorClassIdentifier: 
   damage: 7
-  shootingCooldown: 0.04
-  spread: 15
-  reloadTime: 11
+  shootingCooldown: 0.07
+  spread: 17
+  reloadTime: 7
   shootForce: 35
   pierce: 1
-  magSize: 350
+  magSize: 170
   isAutomatic: 1
   autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}

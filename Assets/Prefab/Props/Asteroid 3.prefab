@@ -212,4 +212,4 @@ MonoBehaviour:
     dropRate: 7
   - name: Small gold
     itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
-    dropRate: 5
+    dropRate: 2
