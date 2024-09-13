@@ -23,4 +23,4 @@ MonoBehaviour:
   autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
   level: 1
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 8410997914014218931, guid: bfe9c3cc0bc25fd4fb60a8cc82b5997d, type: 3}
