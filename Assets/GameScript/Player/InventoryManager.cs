@@ -26,6 +26,11 @@ public class InventoryManager : MonoBehaviour
         if (weaponSlots.Count > slotIndex) 
         {
             GunController weapon = weaponSlots[slotIndex];
+            if (!weapon.weaponData.NextLevelPrefab) //checks if there is a next level for the current weapon
+            {
+                Debug.LogError("NO NEXT LEVEL FOR " + weapon.name);
+                return;
+            }
             GameObject upgradedWeapon = Instantiate(weapon.weaponData.NextLevelPrefab, transform.position, Quaternion.identity);
             upgradedWeapon.transform.SetParent(transform); //Set the weapon to be a child of the player
             AddWeapon(slotIndex, upgradedWeapon.GetComponent<GunController>());
@@ -39,6 +44,13 @@ public class InventoryManager : MonoBehaviour
         if (passiveItemSlots.Count > slotIndex)
         {
             PassiveItem passiveItem = passiveItemSlots[slotIndex];
+
+            if (!passiveItem.passiveItemData.NextLevelPrefab) //checks if there is a next level for the current passive
+            {
+                Debug.LogError("NO NEXT LEVEL FOR " + passiveItem.name);
+                return;
+            }
+
             GameObject upgradedPassiveItem = Instantiate(passiveItem.passiveItemData.NextLevelPrefab, transform.position, Quaternion.identity);
             upgradedPassiveItem.transform.SetParent(transform); //Set the weapon to be a child of the player
             AddPassiveItem(slotIndex, upgradedPassiveItem.GetComponent<PassiveItem>());
