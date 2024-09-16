@@ -31,21 +31,35 @@ public class InventoryManager : MonoBehaviour
 
     public void LevelUpWeapon(int slotIndex)
     {
-        if (weaponSlots.Count > slotIndex) 
+        if (weaponSlots.Count > slotIndex)
         {
             GunController weapon = weaponSlots[slotIndex];
-            if (!weapon.weaponData.NextLevelPrefab) //checks if there is a next level for the current weapon
+
+            // Check if there is a next level for the current weapon
+            if (!weapon.weaponData.NextLevelPrefab)
             {
                 Debug.LogError("NO NEXT LEVEL FOR " + weapon.name);
                 return;
             }
-            GameObject upgradedWeapon = Instantiate(weapon.weaponData.NextLevelPrefab, transform.position, Quaternion.identity);
-            upgradedWeapon.transform.SetParent(transform); //Set the weapon to be a child of the player
+
+            // Capture the original weapon's rotation
+            Quaternion originalRotation = weapon.transform.rotation;
+
+            // Instantiate the upgraded weapon with the same rotation
+            GameObject upgradedWeapon = Instantiate(weapon.weaponData.NextLevelPrefab, transform.position, originalRotation);
+            upgradedWeapon.transform.SetParent(transform); // Set the weapon to be a child of the player
+
+            // Update the weapon slot with the new upgraded weapon
             AddWeapon(slotIndex, upgradedWeapon.GetComponent<GunController>());
+
+            // Destroy the old weapon
             Destroy(weapon.gameObject);
-            weaponLevels[slotIndex] = upgradedWeapon.GetComponent<GunController>().weaponData.Level; //To make sure we have the right weapon level
+
+            // Update the weapon level in the inventory
+            weaponLevels[slotIndex] = upgradedWeapon.GetComponent<GunController>().weaponData.Level;
         }
     }
+
 
     public void LevelUpPassiveItem(int slotIndex)
     {
