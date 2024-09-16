@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050c3cc8924713a4280e4b09eeb7b695, type: 3}
-  m_Name: Void Eyemond
+  m_Script: {fileID: 11500000, guid: a44f37a9a2cfb124c88e899b486e53db, type: 3}
+  m_Name: Destro
   m_EditorClassIdentifier: 
-  enemySpeed: 3
-  rotateSpeed: 0.25
-  maxHealth: 10
-  damage: 5
+  startingWeapon: {fileID: 7306427231745474125, guid: 7b4ce878fa3b5414b872cc94ba95e9d0, type: 3}
+  maxHealth: 160
+  heal: 0
+  moveSpeed: 8
+  fireRate: 0
+  strength: 0
+  magnet: 2
