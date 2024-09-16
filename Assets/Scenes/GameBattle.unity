@@ -968,7 +968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &223516364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,6 +988,14 @@ MonoBehaviour:
       enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Ene
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
@@ -1001,6 +1009,10 @@ MonoBehaviour:
       enemyCount: 22
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Ene
+      enemyCount: 22
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     waveQuota: 0
     spawnInterval: 2
     spawnCount: 0
@@ -1022,6 +1034,27 @@ MonoBehaviour:
       enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
+    waveQuota: 0
+    spawnInterval: 2.2
+    spawnCount: 0
+  - waveName: Wave 4
+    enemyGroups:
+    - enemyName: Lost Wanderer
+      enemyCount: 12
+      spawnCount: 0
+      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
+    - enemyName: Ene
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Tomb Keeper
+      enemyCount: 4
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Guardian
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
     waveQuota: 0
     spawnInterval: 2.2
     spawnCount: 0
@@ -2157,6 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletMG: {fileID: 1404557391594076518, guid: 4363e3785e1882a4bbbdb0f309343636, type: 3}
   MinigunBullet: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
+  SAWPBullet: {fileID: 1404557391594076518, guid: 94df237b395b7734badca016dcb156d8, type: 3}
   Smol_Exp: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
   Smol_Gold: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
 --- !u!1 &632767212
