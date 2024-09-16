@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindObjectOfType<PlayerStat>().currentStrength;
+        return currentDamage *= FindObjectOfType<PlayerStat>().CurrentStrength;
     }
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
@@ -67,7 +67,7 @@ public class Bullet : MonoBehaviour
             Asteroid asteroid = col.GetComponent<Asteroid>();
             if (asteroid != null)
             {
-                asteroid.Split(); // Split the asteroid
+                asteroid.GetComponent<Asteroid>().TakeDamage(currentDamage);
                 ReducePierce();
             }
         }

@@ -39,7 +39,7 @@ public class Ship_control : MonoBehaviour
     {
         //di chuyen
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref smoothvelocityInput, 0.1f);
-        shipRigidbody.velocity = smoothedMovementInput * player.currentMoveSpeed;
+        shipRigidbody.velocity = smoothedMovementInput * player.CurrentMoveSpeed;
 
         //Look at mouse position
         Vector2 lookDir = mousePos - shipRigidbody.position;

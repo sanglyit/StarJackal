@@ -6,13 +6,89 @@ public class PlayerStat : MonoBehaviour
 {
     public PlayerScriptableObject playerData;
     //Current stats
-    public float currentHealth;
+    [SerializeField] public float currentHealth;
     [SerializeField] public float currentHeal;
     [SerializeField] public float currentMoveSpeed;
     [SerializeField] public float currentFireRate;
     [SerializeField] public float currentStrength;
     [SerializeField] public float currentMagnet;
 
+    #region Current Stat Property
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+        set
+        {
+            //check if health changed
+            if (CurrentHealth != value)
+            {
+                currentHealth = value;
+                //update real time of stat
+                
+            }
+        }
+    }
+
+    public float CurrentHeal
+    {
+        get { return currentHeal; }
+        set
+        {
+            //check if stat changed
+            if (CurrentHeal != value)
+            {
+                currentHeal = value;
+                //update real time of stat
+
+            }
+        }
+    }
+
+    public float CurrentMoveSpeed
+    {
+        get { return currentMoveSpeed; }
+        set
+        {
+            //check if stat changed
+            if (CurrentMoveSpeed != value)
+            {
+                currentMoveSpeed = value;
+                //update real time of stat
+                Debug.Log("Speed Changed");
+            }
+        }
+    }
+
+    public float CurrentFireRate
+    {
+        get { return currentFireRate; }
+        set
+        {
+            //check if stat changed
+            if (CurrentFireRate != value)
+            {
+                currentFireRate = value;
+                //update real time of stat
+
+            }
+        }
+    }
+
+    public float CurrentStrength
+    {
+        get { return currentStrength; }
+        set
+        {
+            //check if stat changed
+            if (CurrentStrength != value)
+            {
+                currentStrength = value;
+                //update real time of stat
+
+            }
+        }
+    }
+    #endregion
     //Level system
     [Header("Experience/Level")]
     public int experience = 0;
@@ -49,11 +125,11 @@ public class PlayerStat : MonoBehaviour
         inventory = GetComponent <InventoryManager>();
 
         //Assigning variables
-        currentHealth = playerData.MaxHealth;
-        currentHeal = playerData.Heal;
-        currentMoveSpeed = playerData.MoveSpeed;
-        currentFireRate = playerData.FireRate;
-        currentStrength = playerData.Strength;
+        CurrentHealth = playerData.MaxHealth;
+        CurrentHeal = playerData.Heal;
+        CurrentMoveSpeed = playerData.MoveSpeed;
+        CurrentFireRate = playerData.FireRate;
+        CurrentStrength = playerData.Strength;
         currentMagnet = playerData.Magnet;
 
         collector = GetComponentInChildren<PlayerCollector>();
@@ -111,12 +187,12 @@ public class PlayerStat : MonoBehaviour
     {
         if (!isInvincible)
         {
-            currentHealth -= dmg;
+            CurrentHealth -= dmg;
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
 
-            if (currentHealth <= 0)
+            if (CurrentHealth <= 0)
             {
                 kill();
             }
@@ -130,22 +206,26 @@ public class PlayerStat : MonoBehaviour
 
     public void HealHealth(float amount)
     { 
-        currentHealth += amount;
-
-        if (currentHealth > playerData.MaxHealth) 
+        if (CurrentHealth < playerData.MaxHealth)
         {
-            currentHealth = playerData.MaxHealth;
+            CurrentHealth += amount;
+
+            if (CurrentHealth > playerData.MaxHealth)
+            {
+                CurrentHealth = playerData.MaxHealth;
+            }
         }
+        
     }
 
     void Regen()
     {
-        if (currentHealth < playerData.MaxHealth)
+        if (CurrentHealth < playerData.MaxHealth)
         {
-            currentHealth += currentHeal * Time.deltaTime;
-            if (currentHealth > playerData.MaxHealth)
+            CurrentHealth += currentHeal * Time.deltaTime;
+            if (CurrentHealth > playerData.MaxHealth)
             { 
-                currentHealth = playerData.MaxHealth;
+                CurrentHealth = playerData.MaxHealth;
             }
         }
     }
