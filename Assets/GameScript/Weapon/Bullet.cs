@@ -67,7 +67,7 @@ public class Bullet : MonoBehaviour
             Asteroid asteroid = col.GetComponent<Asteroid>();
             if (asteroid != null)
             {
-                asteroid.Split(); // Split the asteroid
+                asteroid.GetComponent<Asteroid>().TakeDamage(currentDamage);
                 ReducePierce();
             }
         }
