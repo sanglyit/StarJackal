@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
 
     public float GetCurrentDamage()
     {
-        return currentDamage *= FindObjectOfType<PlayerStat>().currentStrength;
+        return currentDamage *= FindObjectOfType<PlayerStat>().CurrentStrength;
     }
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
