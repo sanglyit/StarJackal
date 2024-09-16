@@ -24,3 +24,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
   level: 2
   nextLevelPrefab: {fileID: 0}
+  icon: {fileID: 232335114, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}
