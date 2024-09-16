@@ -6,12 +6,12 @@ public class PlayerStat : MonoBehaviour
 {
     public PlayerScriptableObject playerData;
     //Current stats
-    [SerializeField] public float currentHealth;
-    [SerializeField] public float currentHeal;
-    [SerializeField] public float currentMoveSpeed;
-    [SerializeField] public float currentFireRate;
-    [SerializeField] public float currentStrength;
-    [SerializeField] public float currentMagnet;
+    float currentHealth;
+    float currentHeal;
+    float currentMoveSpeed;
+    float currentFireRate;
+    float currentStrength;
+    float currentMagnet;
 
     #region Current Stat Property
     public float CurrentHealth
@@ -24,11 +24,13 @@ public class PlayerStat : MonoBehaviour
             {
                 currentHealth = value;
                 //update real time of stat
-                
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentHealthDisplay.text = "HP: " + currentHealth;
+                }
             }
         }
     }
-
     public float CurrentHeal
     {
         get { return currentHeal; }
@@ -39,11 +41,13 @@ public class PlayerStat : MonoBehaviour
             {
                 currentHeal = value;
                 //update real time of stat
-
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentHealDisplay.text = "Regen: " + currentHeal;
+                }
             }
         }
     }
-
     public float CurrentMoveSpeed
     {
         get { return currentMoveSpeed; }
@@ -54,11 +58,14 @@ public class PlayerStat : MonoBehaviour
             {
                 currentMoveSpeed = value;
                 //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentMoveSpeedDisplay.text = "Speed: " + currentMoveSpeed;
+                }
                 Debug.Log("Speed Changed");
             }
         }
     }
-
     public float CurrentFireRate
     {
         get { return currentFireRate; }
@@ -69,11 +76,14 @@ public class PlayerStat : MonoBehaviour
             {
                 currentFireRate = value;
                 //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentFireRateDisplay.text = "Fire Rate: " + currentFireRate;
+                }
 
             }
         }
     }
-
     public float CurrentStrength
     {
         get { return currentStrength; }
@@ -84,10 +94,16 @@ public class PlayerStat : MonoBehaviour
             {
                 currentStrength = value;
                 //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
+                }
 
             }
         }
     }
+
+    
     #endregion
     //Level system
     [Header("Experience/Level")]
@@ -146,6 +162,13 @@ public class PlayerStat : MonoBehaviour
     {
         //initialize exp cap as the first exp cap increase
         experienceCap = levelRanges[0].experienceCapIncrease;
+
+        //set current stat display
+        GameManager.instance.currentHealthDisplay.text = "HP: " + currentHealth;
+        GameManager.instance.currentHealDisplay.text = "Regen: " + currentHeal;
+        GameManager.instance.currentMoveSpeedDisplay.text = "Speed: " + currentMoveSpeed;
+        GameManager.instance.currentFireRateDisplay.text = "Fire Rate: " + currentFireRate;
+        GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
     }
     void Update()
     {
@@ -222,7 +245,7 @@ public class PlayerStat : MonoBehaviour
     {
         if (CurrentHealth < playerData.MaxHealth)
         {
-            CurrentHealth += currentHeal * Time.deltaTime;
+            CurrentHealth += CurrentHeal * Time.deltaTime;
             if (CurrentHealth > playerData.MaxHealth)
             { 
                 CurrentHealth = playerData.MaxHealth;

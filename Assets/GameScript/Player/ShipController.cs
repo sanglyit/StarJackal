@@ -18,6 +18,9 @@ public class Ship_control : MonoBehaviour
     [HideInInspector] public Vector2 movement;
     [HideInInspector] public Vector2 mousePos;
 
+    public float rotationSmoothing = 0.1f;
+    private float currentAngle;
+
     public float rayDistance = 0.5f;  // Distance to cast rays for border detection
     public LayerMask borderLayerMask; // LayerMask to specify which layer is considered a border
     void Start()
@@ -37,14 +40,19 @@ public class Ship_control : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //di chuyen
+        // Movement smoothing
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput, movementInput, ref smoothvelocityInput, 0.1f);
-        shipRigidbody.velocity = smoothedMovementInput * player.CurrentMoveSpeed;
+        //di chuyen
+        Vector2 targetPosition = shipRigidbody.position + smoothedMovementInput * player.CurrentMoveSpeed * Time.fixedDeltaTime;
+        shipRigidbody.MovePosition(targetPosition);
 
-        //Look at mouse position
+        // Rotate the ship to face the mouse smoothly
         Vector2 lookDir = mousePos - shipRigidbody.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        shipRigidbody.rotation = angle;
+        float targetAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+
+        // Smooth rotation
+        currentAngle = Mathf.LerpAngle(shipRigidbody.rotation, targetAngle, rotationSmoothing);
+        shipRigidbody.rotation = currentAngle;
     }
 
     private void OnMove(InputValue inputValue)

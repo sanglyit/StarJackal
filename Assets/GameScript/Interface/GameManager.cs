@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     //State of the game
     public enum GameState
     {
@@ -20,8 +24,24 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject pauseScreen;
 
+    //current Stat display
+    public TextMeshProUGUI currentHealthDisplay;
+    public TextMeshProUGUI currentHealDisplay;
+    public TextMeshProUGUI currentMoveSpeedDisplay;
+    public TextMeshProUGUI currentFireRateDisplay;
+    public TextMeshProUGUI currentStrengthDisplay;
+
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Extra" + this + " Deleted");
+            Destroy(gameObject);
+        }
         DisableScreens();    
     }
     private void Update()
