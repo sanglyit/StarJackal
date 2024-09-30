@@ -762,7 +762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.6, y: 70}
+  m_AnchoredPosition: {x: -50, y: 70}
   m_SizeDelta: {x: 120, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618333457
@@ -1350,6 +1350,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   previousState: 0
+  pauseScreen: {fileID: 0}
+  resultsScreen: {fileID: 0}
+  currentHealthDisplay: {fileID: 0}
+  currentHealDisplay: {fileID: 0}
+  currentMoveSpeedDisplay: {fileID: 0}
+  currentFireRateDisplay: {fileID: 0}
+  currentStrengthDisplay: {fileID: 0}
+  chosenCharacterImage: {fileID: 0}
+  chosenCharacterName: {fileID: 0}
+  levelReachedDisplay: {fileID: 0}
+  chosenWeaponsUI: []
+  chosenPassiveItemsUI: []
+  isGameOver: 0
 --- !u!1 &1784887521
 GameObject:
   m_ObjectHideFlags: 0

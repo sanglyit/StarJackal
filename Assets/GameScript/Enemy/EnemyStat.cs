@@ -21,11 +21,18 @@ public class EnemyStat : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<PlayerStat>().transform;    
+        PlayerStat playerStat = FindObjectOfType<PlayerStat>();
+        if (playerStat != null)
+        {
+            player = playerStat.transform;  // Cache the player's transform
+        }
     }
 
     private void Update()
     {
+        if (player == null) return;  // Check if the player is null before accessing
+
+        // Check the distance from the player and despawn if needed
         if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
         {
             ReturnEnemy();
@@ -49,7 +56,10 @@ public class EnemyStat : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerStat player = collision.gameObject.GetComponent<PlayerStat>();
-            player.TakeDamage(currentDamage);
+            if (player != null)
+            {
+                player.TakeDamage(currentDamage);
+            }
         }
     }
     private void OnDestroy()
@@ -64,9 +74,20 @@ public class EnemyStat : MonoBehaviour
             Debug.LogWarning("EnemySpawner not found in the scene. OnEnemyKilled was not called.");
         }
     }
-        void ReturnEnemy()
+    void ReturnEnemy()
     {
+        // Make sure player is still valid before using its position
+        if (player == null)
+        {
+            Debug.LogWarning("Player is null, unable to respawn enemy.");
+            return;
+        }
+
         EnemySpawner es = FindObjectOfType<EnemySpawner>();
-        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
+        if (es != null)
+        {
+            // Reposition the enemy relative to the player
+            transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
+        }
     }
 }

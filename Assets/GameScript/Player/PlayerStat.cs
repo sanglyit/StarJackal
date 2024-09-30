@@ -169,6 +169,8 @@ public class PlayerStat : MonoBehaviour
         GameManager.instance.currentMoveSpeedDisplay.text = "Speed: " + currentMoveSpeed;
         GameManager.instance.currentFireRateDisplay.text = "Fire Rate: " + currentFireRate;
         GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
+
+        GameManager.instance.AssignChosenCharacterUI(playerData);
     }
     void Update()
     {
@@ -224,6 +226,12 @@ public class PlayerStat : MonoBehaviour
     public void kill()
     {
         Destroy(gameObject);
+        if (!GameManager.instance.isGameOver)
+        {
+            GameManager.instance.AssignLevelReachedUI(level);
+            GameManager.instance.AssignChosenWeaponsAndPassiveItemUI(inventory.weaponUISlots, inventory.passiveItemUISlots);
+            GameManager.instance.GameOver();
+        }
         Debug.Log("Player Got Skill Issued");
     }
 
