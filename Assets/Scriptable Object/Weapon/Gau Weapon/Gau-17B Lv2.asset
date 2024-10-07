@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
-  m_Name: Gau-17A Lv2
+  m_Name: Gau-17B Lv2
   m_EditorClassIdentifier: 
   damage: 8
   shootingCooldown: 0.04
-  spread: 13
-  reloadTime: 9
+  spread: 10
+  reloadTime: 7
   shootForce: 35
   pierce: 1
   magSize: 350
@@ -24,4 +24,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
   level: 2
   nextLevelPrefab: {fileID: 0}
-  icon: {fileID: 232335114, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}
+  name: Gau-17B Lv2
+  description: Shoot faster, deal more damage and a little more accurate.
+  icon: {fileID: 21300000, guid: 9d7dfb09158050b4f87f70dcc341698c, type: 3}

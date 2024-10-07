@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 100
   level: 1
   nextLevelPrefab: {fileID: 3914814735371176461, guid: 3d09e260fd8dbbf4da225e723f8b6a9c, type: 3}
+  name: Spinach
+  description: Increase ship strength by 100%. Strength boost all weapon damage
   icon: {fileID: 21300000, guid: ee8261317c1ff734daa9da91d24312b3, type: 3}

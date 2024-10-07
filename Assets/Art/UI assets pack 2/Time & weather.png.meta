@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cb211acccfb67074184e0163c9a07f42
+guid: 0f17a59aa0cd50147a62b91dc736c1df
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,9 +48,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -110,127 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ScifiFighterWeaponsAtlas_0
+      name: Time & weather_1
       rect:
         serializedVersion: 2
-        x: 29
-        y: 55
-        width: 82
-        height: 362
+        x: 224
+        y: 270
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 8, z: 7, w: 9}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7197585c4ae51a4eac210f9fbeec0cd
-      internalID: 379514394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cannon
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 56
-        width: 70
-        height: 388
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79e60f45a4bbb574fa178443f1e4cfbb
-      internalID: -1260646715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dual Cannon
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 52
-        width: 84
-        height: 297
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5508898dd1637f4a94a8f4144d7c8c4
-      internalID: 490470386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ScifiFighterWeaponsAtlas_3
-      rect:
-        serializedVersion: 2
-        x: 360
-        y: 224
-        width: 26
-        height: 133
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d463109ecefba345bd2879d4fe42573
-      internalID: -1089979322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ScifiFighterWeaponsAtlas_4
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 225
-        width: 76
-        height: 135
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e55e7dac8a0a6af408df117601e607af
-      internalID: -681338610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ScifiFighterWeaponsAtlas_5
-      rect:
-        serializedVersion: 2
-        x: 361
-        y: 64
-        width: 126
-        height: 136
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18731a1000b1112408d7526857005ae3
-      internalID: -1482910880
+      spriteID: 2906df976a5cebe4b9e398d13ca0a3f9
+      internalID: -227818664
       vertices: []
       indices: 
       edges: []
@@ -246,12 +141,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cannon: -1260646715
-      Dual Cannon: 490470386
-      ScifiFighterWeaponsAtlas_0: 379514394
-      ScifiFighterWeaponsAtlas_3: -1089979322
-      ScifiFighterWeaponsAtlas_4: -681338610
-      ScifiFighterWeaponsAtlas_5: -1482910880
+      Time & weather_0: -816429974
+      Time & weather_1: -227818664
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

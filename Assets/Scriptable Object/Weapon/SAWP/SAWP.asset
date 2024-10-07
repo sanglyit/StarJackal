@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
   m_Name: SAWP
   m_EditorClassIdentifier: 
-  damage: 90
+  damage: 80
   shootingCooldown: 1
   spread: 0
   reloadTime: 5
   shootForce: 40
-  pierce: 10
+  pierce: 3
   magSize: 10
   isAutomatic: 0
   autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 94df237b395b7734badca016dcb156d8, type: 3}
   level: 1
   nextLevelPrefab: {fileID: 0}
+  name: SAWP
+  description: A very big sniper cannon, require manual trigger.
+  icon: {fileID: 1725228639, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}
