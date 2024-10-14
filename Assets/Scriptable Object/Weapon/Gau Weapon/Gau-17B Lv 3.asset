@@ -10,17 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
-  m_Name: SAWP
+  m_Name: Gau-17B Lv 3
   m_EditorClassIdentifier: 
-  damage: 90
-  shootingCooldown: 1
-  spread: 0
-  reloadTime: 5
+  damage: 10
+  shootingCooldown: 0.04
+  spread: 5
+  reloadTime: 7
   shootForce: 40
-  pierce: 10
-  magSize: 10
-  isAutomatic: 0
+  pierce: 2
+  magSize: 500
+  isAutomatic: 1
   autoReload: 1
-  bulletPrefab: {fileID: 1404557391594076518, guid: 94df237b395b7734badca016dcb156d8, type: 3}
-  level: 1
+  bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
+  level: 3
   nextLevelPrefab: {fileID: 0}
+  name: Gau-17B Lv3
+  description: +2 damage, +1 pierce and a masive mag
+  icon: {fileID: 21300000, guid: 9d7dfb09158050b4f87f70dcc341698c, type: 3}

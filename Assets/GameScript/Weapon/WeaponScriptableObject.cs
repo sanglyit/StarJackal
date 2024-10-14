@@ -40,6 +40,13 @@ public class WeaponScriptableObject : ScriptableObject
                                 //Not to be confused with the prefab to be spawned at the next level.
     public GameObject NextLevelPrefab { get => nextLevelPrefab; private set => nextLevelPrefab = value; }
 
+    [SerializeField]
+    new string name;
+    public string Name { get => name; private set => name = value; }
+    [SerializeField]
+    new string description;
+    public string Description { get => description; private set => description = value; }
+
     [SerializeField] // not meant to be modified during run time
     Sprite icon;
     public Sprite Icon { get => icon; private set => icon = value; }

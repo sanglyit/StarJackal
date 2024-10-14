@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
+  m_Name: SAWP Lv 3
+  m_EditorClassIdentifier: 
+  damage: 150
+  shootingCooldown: 1.3
+  spread: 0
+  reloadTime: 5
+  shootForce: 55
+  pierce: 10
+  magSize: 20
+  isAutomatic: 1
+  autoReload: 1
+  bulletPrefab: {fileID: 1404557391594076518, guid: 94df237b395b7734badca016dcb156d8, type: 3}
+  level: 3
+  nextLevelPrefab: {fileID: 0}
+  name: SAWP Lv 3
+  description: +50 damage, +5 pierce, +automatic. A state of the art weapon design
+    for ORE.co Special Force, don't let any suit see you with this
+  icon: {fileID: 1725228639, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}

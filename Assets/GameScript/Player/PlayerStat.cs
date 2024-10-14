@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStat : MonoBehaviour
 {
@@ -129,6 +132,11 @@ public class PlayerStat : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public TextMeshProUGUI levelText;
+
     public GameObject secondWeaponTest;
     public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
@@ -153,8 +161,8 @@ public class PlayerStat : MonoBehaviour
         //Spawn starting weapon
         SpawnWeapon(playerData.StartingWeapon);
 
-        SpawnWeapon(secondWeaponTest);
-        SpawnPassiveItem(firstPassiveItemTest);
+        //SpawnWeapon(secondWeaponTest);
+        //SpawnPassiveItem(firstPassiveItemTest);
         SpawnPassiveItem(secondPassiveItemTest);
         
     }
@@ -171,6 +179,10 @@ public class PlayerStat : MonoBehaviour
         GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
 
         GameManager.instance.AssignChosenCharacterUI(playerData);
+
+        UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
     void Update()
     {
@@ -187,6 +199,7 @@ public class PlayerStat : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -205,7 +218,23 @@ public class PlayerStat : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            UpdateLevelText();
+
+            GameManager.instance.StartLevelUp();
         }
+    }
+
+    void UpdateExpBar()
+    {
+        // Update exp bar fill amount
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        // Update level text
+        levelText.text = "LV " + level.ToString(); 
     }
 
     public void TakeDamage(float dmg)
@@ -221,7 +250,14 @@ public class PlayerStat : MonoBehaviour
             {
                 kill();
             }
+            UpdateHealthBar();
         }
+    }
+
+    void UpdateHealthBar()
+    {
+        //Update the health bar
+        healthBar.fillAmount = currentHealth / playerData.MaxHealth;
     }
     public void kill()
     {
@@ -245,6 +281,7 @@ public class PlayerStat : MonoBehaviour
             {
                 CurrentHealth = playerData.MaxHealth;
             }
+            UpdateHealthBar();
         }
         
     }
@@ -258,24 +295,32 @@ public class PlayerStat : MonoBehaviour
             { 
                 CurrentHealth = playerData.MaxHealth;
             }
+            UpdateHealthBar();
         }
     }
     public void SpawnWeapon(GameObject weapon)
     {
-       
-            //Check if the inventory slots are full, and returning if it is
-            if (weaponIndex >= inventory.weaponSlots.Count - 1) //Must be -1 because the list starts from 0
-            {
-                Debug.LogError("Inventory slots already full");
-                return;
-            }
-            // Instantiate the weapon and set its parent to WeaponHolder
-            GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
-            spawnedWeapon.transform.SetParent(transform);
-            inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<GunController>()); //Add the weapon to it's inventory slot
-
-            weaponIndex++;
+        // Check if the inventory slots are full
+        if (weaponIndex >= inventory.weaponSlots.Count - 1)
+        {
+            Debug.LogError("Inventory slots already full");
+            return;
         }
+
+        // Instantiate the weapon with no rotation
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+
+        // Set the weapon's parent to the WeaponHolder (to avoid inheriting player's rotation)
+        spawnedWeapon.transform.SetParent(transform);
+
+        // Reset the local rotation of the weapon to zero after parenting
+        spawnedWeapon.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+        // Add the weapon to the inventory
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<GunController>());
+
+        weaponIndex++;
+    }
 
     public void SpawnPassiveItem(GameObject passiveItem)
     {
@@ -287,7 +332,7 @@ public class PlayerStat : MonoBehaviour
             return;
         }
         // Instantiate the passive Item 
-        GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.identity);
+        GameObject spawnedPassiveItem = Instantiate(passiveItem, transform.position, Quaternion.Euler(0, 0, 0));
         spawnedPassiveItem.transform.SetParent(transform);
         inventory.AddPassiveItem(passiveItemIndex, spawnedPassiveItem.GetComponent<PassiveItem>()); //Add the passive item to it's inventory slot
 

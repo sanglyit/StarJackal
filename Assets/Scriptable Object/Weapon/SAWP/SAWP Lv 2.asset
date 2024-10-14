@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
+  m_Name: SAWP Lv 2
+  m_EditorClassIdentifier: 
+  damage: 100
+  shootingCooldown: 1
+  spread: 5
+  reloadTime: 5
+  shootForce: 40
+  pierce: 5
+  magSize: 10
+  isAutomatic: 0
+  autoReload: 1
+  bulletPrefab: {fileID: 1404557391594076518, guid: 94df237b395b7734badca016dcb156d8, type: 3}
+  level: 2
+  nextLevelPrefab: {fileID: 7306427231745474125, guid: a4cb46eb7aff0c547bd762bf7e777b5f, type: 3}
+  name: SAWP Lv 2
+  description: +20 damage, +2 pierce. Using the real mass-produce SAWP of the ORE.co
+    PMC
+  icon: {fileID: 1725228639, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}

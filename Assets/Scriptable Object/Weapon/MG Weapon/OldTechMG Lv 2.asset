@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: OldTechMG Lv 2
   m_EditorClassIdentifier: 
   damage: 6
-  shootingCooldown: 0.1
+  shootingCooldown: 0.2
   spread: 5
   reloadTime: 1
   shootForce: 50
-  pierce: 1
+  pierce: 2
   magSize: 50
   isAutomatic: 1
   autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 4363e3785e1882a4bbbdb0f309343636, type: 3}
   level: 2
-  nextLevelPrefab: {fileID: 0}
-  icon: {fileID: 1469028794, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}
+  nextLevelPrefab: {fileID: 3179681974919246262, guid: 02c920dc5bae5404d83f344f375a3baf, type: 3}
+  name: OT-MG Lv2
+  description: -0.1 fire rate and +1 pierce/damage. Improve barrel size to fit bigger
+    bullet.
+  icon: {fileID: 21300000, guid: c8a99bdd0f08b8c47af88824e592097b, type: 3}

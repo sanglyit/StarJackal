@@ -24,4 +24,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1404557391594076518, guid: 4363e3785e1882a4bbbdb0f309343636, type: 3}
   level: 1
   nextLevelPrefab: {fileID: 3179681974919246262, guid: 273a0aaa4a5726a4c961337eb7054513, type: 3}
-  icon: {fileID: 1469028794, guid: 9305292dc2954c44cb60af81e49636c5, type: 3}
+  name: OT-MG
+  description: Old-tech machine gun with low damage and fire rate
+  icon: {fileID: 21300000, guid: c8a99bdd0f08b8c47af88824e592097b, type: 3}
