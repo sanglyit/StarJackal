@@ -13,9 +13,9 @@ public class ObjectPoolSetup : MonoBehaviour
         private void Start()
         {
             ObjectPool.Instance.CreatePool("BulletMG", BulletMG, 30);
-            ObjectPool.Instance.CreatePool("MinigunBullet", MinigunBullet, 200);
+            ObjectPool.Instance.CreatePool("MinigunBullet", MinigunBullet, 100);
             ObjectPool.Instance.CreatePool("SAWPBullet", SAWPBullet, 20);
-            ObjectPool.Instance.CreatePool("Smol_Exp", Smol_Exp, 300);
-            ObjectPool.Instance.CreatePool("Smol_Gold", Smol_Gold, 300);
+            ObjectPool.Instance.CreatePool("Smol_Exp", Smol_Exp, 200);
+            ObjectPool.Instance.CreatePool("Smol_Gold", Smol_Gold, 200);
         }
 }

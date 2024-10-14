@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStat : MonoBehaviour
 {
@@ -129,6 +132,11 @@ public class PlayerStat : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public TextMeshProUGUI levelText;
+
     public GameObject secondWeaponTest;
     public GameObject firstPassiveItemTest, secondPassiveItemTest;
 
@@ -171,6 +179,10 @@ public class PlayerStat : MonoBehaviour
         GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
 
         GameManager.instance.AssignChosenCharacterUI(playerData);
+
+        UpdateHealthBar();
+        UpdateExpBar();
+        UpdateLevelText();
     }
     void Update()
     {
@@ -187,6 +199,7 @@ public class PlayerStat : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -205,8 +218,23 @@ public class PlayerStat : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+
+            UpdateLevelText();
+
             GameManager.instance.StartLevelUp();
         }
+    }
+
+    void UpdateExpBar()
+    {
+        // Update exp bar fill amount
+        expBar.fillAmount = (float)experience / experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        // Update level text
+        levelText.text = "LV " + level.ToString(); 
     }
 
     public void TakeDamage(float dmg)
@@ -222,7 +250,14 @@ public class PlayerStat : MonoBehaviour
             {
                 kill();
             }
+            UpdateHealthBar();
         }
+    }
+
+    void UpdateHealthBar()
+    {
+        //Update the health bar
+        healthBar.fillAmount = currentHealth / playerData.MaxHealth;
     }
     public void kill()
     {
@@ -246,6 +281,7 @@ public class PlayerStat : MonoBehaviour
             {
                 CurrentHealth = playerData.MaxHealth;
             }
+            UpdateHealthBar();
         }
         
     }
@@ -259,6 +295,7 @@ public class PlayerStat : MonoBehaviour
             { 
                 CurrentHealth = playerData.MaxHealth;
             }
+            UpdateHealthBar();
         }
     }
     public void SpawnWeapon(GameObject weapon)

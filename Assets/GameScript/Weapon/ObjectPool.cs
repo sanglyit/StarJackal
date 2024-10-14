@@ -9,7 +9,9 @@ public class ObjectPool : MonoBehaviour
     {
         Instance = this;
     }
+
     private Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
+
     public void CreatePool(string tag, GameObject prefab, int size)
     {
         if (!poolDictionary.ContainsKey(tag))
@@ -24,6 +26,7 @@ public class ObjectPool : MonoBehaviour
             }
         }
     }
+
     public GameObject GetFromPool(string tag)
     {
         if (!poolDictionary.ContainsKey(tag))
@@ -34,8 +37,9 @@ public class ObjectPool : MonoBehaviour
 
         if (poolDictionary[tag].Count == 0)
         {
-            Debug.LogWarning("Pool with tag " + tag + " is empty.");
-            return null;
+            Debug.LogWarning("Pool with tag " + tag + " is empty, adding more objects.");
+            // If pool is empty, instantiate a new object and add it to the pool
+            return ExpandPool(tag);
         }
 
         GameObject objToSpawn = poolDictionary[tag].Dequeue();
@@ -46,7 +50,7 @@ public class ObjectPool : MonoBehaviour
         }
 
         objToSpawn.SetActive(true);
-        poolDictionary[tag].Enqueue(objToSpawn);
+        poolDictionary[tag].Enqueue(objToSpawn); // Return to the pool after being used
 
         return objToSpawn;
     }
@@ -57,16 +61,36 @@ public class ObjectPool : MonoBehaviour
         {
             return;
         }
+
         obj.SetActive(false);
         string tag = obj.name.Replace("(Clone)", "").Trim(); // Extract tag from the object name
+
         if (poolDictionary.ContainsKey(tag))
         {
-            poolDictionary[tag].Enqueue(obj);
+            poolDictionary[tag].Enqueue(obj); // Return object to the pool
         }
         else
         {
-            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
-            Destroy(obj); // Destroy the object if no pool exists for its tag
+            Debug.LogWarning("Pool with tag " + tag + " doesn't exist. Adding a new pool.");
+            // Create a new pool if it doesn't exist and add the object
+            CreatePool(tag, obj, 1);
+            poolDictionary[tag].Enqueue(obj);
         }
+    }
+
+    // Method to expand the pool dynamically when it's empty
+    private GameObject ExpandPool(string tag)
+    {
+        if (poolDictionary.ContainsKey(tag) && poolDictionary[tag].Count > 0)
+        {
+            GameObject prefab = poolDictionary[tag].Peek();
+            GameObject newObj = Instantiate(prefab);
+            newObj.SetActive(false);
+            poolDictionary[tag].Enqueue(newObj);
+            return newObj;
+        }
+
+        Debug.LogWarning("Cannot expand pool, tag " + tag + " does not exist or has no reference.");
+        return null;
     }
 }
