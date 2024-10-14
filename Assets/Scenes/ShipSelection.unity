@@ -296,7 +296,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GameBattle
+          m_StringArgument: LevelPanel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &213586944
@@ -830,7 +830,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GameBattle
+          m_StringArgument: LevelPanel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &618333458
@@ -1362,6 +1362,8 @@ MonoBehaviour:
   levelReachedDisplay: {fileID: 0}
   chosenWeaponsUI: []
   chosenPassiveItemsUI: []
+  timeLimits: 0
+  stopwatchDisplay: {fileID: 0}
   isGameOver: 0
 --- !u!1 &1784887521
 GameObject:
@@ -1815,19 +1817,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GameBattle
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShipSelector, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: LevelPanel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2099277885

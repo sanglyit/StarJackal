@@ -79,19 +79,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propSpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1980581462055389378}
+  - {fileID: 8799357696117846823}
   propPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2123652082759553595, guid: 4d723be5cb113054c8f39ef3ccc0a45d, type: 3}
+  - {fileID: 5370458610685347130, guid: 5cb2b3776fe652e4ab0d46fd0a2d21c4, type: 3}
+  - {fileID: 2763162844695786110, guid: a67b0301d1d98684faacc85341c1d621, type: 3}
+  - {fileID: 7598475668408391535, guid: 97c4575979337024eb47717da5d02a31, type: 3}
+  - {fileID: 8897771412524251852, guid: 7bb63c163223e2b4f91a654b72a47706, type: 3}
 --- !u!61 &7042085851431210025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284,7 +279,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 15.5, y: 15.421875, z: 0}
+  m_ChunkCullingBounds: {x: 14.558824, y: 14.485294, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
