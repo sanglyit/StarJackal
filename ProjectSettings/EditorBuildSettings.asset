@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShipSelection.unity
     guid: 9865cdb5177a9c84faf2e2c55c57ad36
+  - enabled: 1
+    path: Assets/Scenes/LevelPanel.unity
+    guid: 213c858c6e6e7b745b85c041419a093d
+  - enabled: 1
+    path: Assets/Scenes/GameBattle 2.unity
+    guid: 74d48ca820b0407498c67c0e1b786fd7
   m_configObjects: {}
