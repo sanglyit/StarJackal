@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 using UnityEngine.UI;
 
 public class PlayerStat : MonoBehaviour
 {
     public PlayerScriptableObject playerData;
+    public SpriteRenderer spriteRenderer;
     //Current stats
     float currentHealth;
     float currentHeal;
@@ -61,8 +63,9 @@ public class PlayerStat : MonoBehaviour
         CurrentFireRate = playerData.FireRate;
         CurrentStrength = playerData.Strength;
         currentMagnet = playerData.Magnet;
-        
 
+        // Set up player sprite based on selected character
+        UpdatePlayerSprite();
         collector = GetComponentInChildren<PlayerCollector>();
 
         //Spawn starting weapon
@@ -105,6 +108,14 @@ public class PlayerStat : MonoBehaviour
         UpdateExpBar();
     }
 
+    void UpdatePlayerSprite()
+    {
+        if (spriteRenderer != null && playerData.CharacterSprite != null)
+        {
+            // Assign the selected character's sprite
+            spriteRenderer.sprite = playerData.CharacterSprite;
+        }
+    }
     void LevelUpChecker()
     {
         if(experience >= experienceCap)

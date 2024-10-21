@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a189adcd4e3388643ab9a0a0ea0dc3fa, type: 3}
   m_Name: Gau-17B
   m_EditorClassIdentifier: 
+  name: Gau-17B
+  description: 'Minigun converted to be able to use in space. High fire rate, low
+    damage with a big magazine '
+  level: 1
   damage: 7
-  shootingCooldown: 0.07
+  shootingCooldown: 0.08
   spread: 15
   reloadTime: 7
   shootForce: 35
@@ -22,9 +26,5 @@ MonoBehaviour:
   isAutomatic: 1
   autoReload: 1
   bulletPrefab: {fileID: 1404557391594076518, guid: 671ed4c6072c77a449acc928e3fe1288, type: 3}
-  level: 1
   nextLevelPrefab: {fileID: 8410997914014218931, guid: bfe9c3cc0bc25fd4fb60a8cc82b5997d, type: 3}
-  name: Gau-17B
-  description: 'Minigun converted to be able to use in space. High fire rate, low
-    damage with a big magazine '
   icon: {fileID: 21300000, guid: 9d7dfb09158050b4f87f70dcc341698c, type: 3}

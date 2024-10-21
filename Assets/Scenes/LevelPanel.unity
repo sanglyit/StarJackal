@@ -354,13 +354,12 @@ RectTransform:
   m_LocalScale: {x: 0.5646143, y: 0.5646143, z: 0.39522988}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1818706955}
   - {fileID: 1591035962}
   m_Father: {fileID: 1784887522}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1224.123, y: 619.5498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &459056248
@@ -1384,7 +1383,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1698254073}
   - component: {fileID: 1698254074}
-  - component: {fileID: 1698254075}
   m_Layer: 0
   m_Name: Scene Controller
   m_TagString: Untagged
@@ -1419,35 +1417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08b2ba5415e08d4db36ae7d81b2f3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1698254075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698254072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 831b69844b845e341828203bfe43e1f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  previousState: 0
-  pauseScreen: {fileID: 0}
-  resultsScreen: {fileID: 0}
-  currentHealthDisplay: {fileID: 0}
-  currentHealDisplay: {fileID: 0}
-  currentMoveSpeedDisplay: {fileID: 0}
-  currentFireRateDisplay: {fileID: 0}
-  currentStrengthDisplay: {fileID: 0}
-  chosenCharacterImage: {fileID: 0}
-  chosenCharacterName: {fileID: 0}
-  levelReachedDisplay: {fileID: 0}
-  chosenWeaponsUI: []
-  chosenPassiveItemsUI: []
-  timeLimits: 0
-  stopwatchDisplay: {fileID: 0}
-  isGameOver: 0
 --- !u!1 &1711421889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,81 +1626,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784887521}
-  m_CullTransparentMesh: 1
---- !u!1 &1818706954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1818706955}
-  - component: {fileID: 1818706957}
-  - component: {fileID: 1818706956}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1818706955
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818706954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 459056247}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1818706956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818706954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fcbbb0548c134a74db00673d8f17f6bc, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1818706957
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818706954}
   m_CullTransparentMesh: 1
 --- !u!1 &1861762381
 GameObject:

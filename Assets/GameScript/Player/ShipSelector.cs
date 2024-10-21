@@ -14,7 +14,7 @@ public class ShipSelector : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         } else {
-            Debug.LogWarning("Extra " + this + " Deleted");
+            //Debug.LogWarning("Extra " + this + " Deleted");
             Destroy(gameObject);
         }
     }

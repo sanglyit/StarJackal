@@ -7,6 +7,8 @@ public class PlayerScriptableObject : ScriptableObject
 {
     [SerializeField] Sprite icon;
     public Sprite Icon { get => icon; private set => icon = value; }
+    [SerializeField] Sprite characterSprite;
+    public Sprite CharacterSprite { get => characterSprite; private set => characterSprite = value; } 
 
     [SerializeField] new string name;
     public string Name { get => name; private set => name = value; }
