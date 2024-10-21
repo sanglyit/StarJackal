@@ -19,7 +19,7 @@ public class DropRateManager : MonoBehaviour
         // Initialize the object pool for each drop item
         foreach (Drops drop in drops)
         {
-            ObjectPool.Instance.CreatePool(drop.name, drop.itemPrefab, 10);
+            ObjectPool.Instance.CreatePool(drop.itemPrefab, 10);
         }
     }
     void OnDestroy()
@@ -39,7 +39,7 @@ public class DropRateManager : MonoBehaviour
         if (possibleDrop.Count > 0)
         {
             Drops drop = possibleDrop[Random.Range(0, possibleDrop.Count)];
-            GameObject droppedItem = ObjectPool.Instance.GetFromPool(drop.name);
+            GameObject droppedItem = ObjectPool.Instance.GetFromPool(drop.itemPrefab);
             if (droppedItem != null)
             {
                 droppedItem.transform.position = transform.position;

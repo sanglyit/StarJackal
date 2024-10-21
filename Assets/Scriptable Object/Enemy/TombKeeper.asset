@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050c3cc8924713a4280e4b09eeb7b695, type: 3}
   m_Name: TombKeeper
   m_EditorClassIdentifier: 
-  enemySpeed: 4.5
-  rotateSpeed: 0.03
-  maxHealth: 110
+  enemySpeed: 4
+  rotateSpeed: 0.02
+  maxHealth: 1100
   damage: 40

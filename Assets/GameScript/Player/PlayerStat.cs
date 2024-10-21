@@ -16,98 +16,6 @@ public class PlayerStat : MonoBehaviour
     float currentStrength;
     float currentMagnet;
 
-    #region Current Stat Property
-    public float CurrentHealth
-    {
-        get { return currentHealth; }
-        set
-        {
-            //check if health changed
-            if (CurrentHealth != value)
-            {
-                currentHealth = value;
-                //update real time of stat
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentHealthDisplay.text = "HP: " + currentHealth;
-                }
-            }
-        }
-    }
-    public float CurrentHeal
-    {
-        get { return currentHeal; }
-        set
-        {
-            //check if stat changed
-            if (CurrentHeal != value)
-            {
-                currentHeal = value;
-                //update real time of stat
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentHealDisplay.text = "Regen: " + currentHeal;
-                }
-            }
-        }
-    }
-    public float CurrentMoveSpeed
-    {
-        get { return currentMoveSpeed; }
-        set
-        {
-            //check if stat changed
-            if (CurrentMoveSpeed != value)
-            {
-                currentMoveSpeed = value;
-                //update real time of stat
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentMoveSpeedDisplay.text = "Speed: " + currentMoveSpeed;
-                }
-                Debug.Log("Speed Changed");
-            }
-        }
-    }
-    public float CurrentFireRate
-    {
-        get { return currentFireRate; }
-        set
-        {
-            //check if stat changed
-            if (CurrentFireRate != value)
-            {
-                currentFireRate = value;
-                //update real time of stat
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentFireRateDisplay.text = "Fire Rate: " + currentFireRate;
-                }
-
-            }
-        }
-    }
-    public float CurrentStrength
-    {
-        get { return currentStrength; }
-        set
-        {
-            //check if stat changed
-            if (CurrentStrength != value)
-            {
-                currentStrength = value;
-                //update real time of stat
-                if (GameManager.instance != null)
-                {
-                    GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
-                }
-
-            }
-        }
-    }
-
-    
-    #endregion
     //Level system
     [Header("Experience/Level")]
     public int experience = 0;
@@ -137,9 +45,6 @@ public class PlayerStat : MonoBehaviour
     public Image expBar;
     public TextMeshProUGUI levelText;
 
-    public GameObject secondWeaponTest;
-    public GameObject firstPassiveItemTest, secondPassiveItemTest;
-
     PlayerCollector collector;
     void Awake()
     {
@@ -147,6 +52,7 @@ public class PlayerStat : MonoBehaviour
         ShipSelector.instance.DestroySingleTon();
 
         inventory = GetComponent <InventoryManager>();
+        collector = GetComponent <PlayerCollector>();
 
         //Assigning variables
         CurrentHealth = playerData.MaxHealth;
@@ -155,15 +61,12 @@ public class PlayerStat : MonoBehaviour
         CurrentFireRate = playerData.FireRate;
         CurrentStrength = playerData.Strength;
         currentMagnet = playerData.Magnet;
+        
 
         collector = GetComponentInChildren<PlayerCollector>();
 
         //Spawn starting weapon
         SpawnWeapon(playerData.StartingWeapon);
-
-        //SpawnWeapon(secondWeaponTest);
-        //SpawnPassiveItem(firstPassiveItemTest);
-        SpawnPassiveItem(secondPassiveItemTest);
         
     }
     void Start()
@@ -316,10 +219,10 @@ public class PlayerStat : MonoBehaviour
         // Reset the local rotation of the weapon to zero after parenting
         spawnedWeapon.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-        // Add the weapon to the inventory
         inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<GunController>());
 
         weaponIndex++;
+
     }
 
     public void SpawnPassiveItem(GameObject passiveItem)
@@ -338,4 +241,96 @@ public class PlayerStat : MonoBehaviour
 
         passiveItemIndex++;
     }
+    #region Current Stat Property
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+        set
+        {
+            //check if health changed
+            if (CurrentHealth != value)
+            {
+                currentHealth = value;
+                //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentHealthDisplay.text = "HP: " + currentHealth;
+                }
+            }
+        }
+    }
+    public float CurrentHeal
+    {
+        get { return currentHeal; }
+        set
+        {
+            //check if stat changed
+            if (CurrentHeal != value)
+            {
+                currentHeal = value;
+                //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentHealDisplay.text = "Regen: " + currentHeal;
+                }
+            }
+        }
+    }
+    public float CurrentMoveSpeed
+    {
+        get { return currentMoveSpeed; }
+        set
+        {
+            //check if stat changed
+            if (CurrentMoveSpeed != value)
+            {
+                currentMoveSpeed = value;
+                //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentMoveSpeedDisplay.text = "Speed: " + currentMoveSpeed;
+                }
+                Debug.Log("Speed Changed");
+            }
+        }
+    }
+    public float CurrentFireRate
+    {
+        get { return currentFireRate; }
+        set
+        {
+            //check if stat changed
+            if (CurrentFireRate != value)
+            {
+                currentFireRate = value;
+                //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentFireRateDisplay.text = "Fire Rate: " + currentFireRate;
+                }
+
+            }
+        }
+    }
+    public float CurrentStrength
+    {
+        get { return currentStrength; }
+        set
+        {
+            //check if stat changed
+            if (CurrentStrength != value)
+            {
+                currentStrength = value;
+                //update real time of stat
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.currentStrengthDisplay.text = "Strength: " + currentStrength;
+                }
+
+            }
+        }
+    }
+
+
+    #endregion
 }

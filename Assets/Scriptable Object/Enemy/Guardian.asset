@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Guardian
   m_EditorClassIdentifier: 
   enemySpeed: 3
-  rotateSpeed: 3
-  maxHealth: 150
+  rotateSpeed: 1
+  maxHealth: 200
   damage: 30

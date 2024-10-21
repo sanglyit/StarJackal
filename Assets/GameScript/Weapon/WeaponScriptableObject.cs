@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObjects/Gun")]
 public class WeaponScriptableObject : ScriptableObject
 {
+    [SerializeField] new string name;
+    [SerializeField] new string description;
+    [SerializeField] int level; //Not meant to be modified in the game [Only in Editor]
     [SerializeField] int damage;
     [SerializeField] float shootingCooldown;
     [SerializeField] float spread;
@@ -31,8 +34,7 @@ public class WeaponScriptableObject : ScriptableObject
     public GameObject BulletPrefab { get => bulletPrefab; private set => bulletPrefab = value; }
     
 
-    [SerializeField]
-    int level; //Not meant to be modified in the game [Only in Editor]
+    
     public int Level { get => level; private set => level = value; }
 
     [SerializeField]
@@ -40,11 +42,9 @@ public class WeaponScriptableObject : ScriptableObject
                                 //Not to be confused with the prefab to be spawned at the next level.
     public GameObject NextLevelPrefab { get => nextLevelPrefab; private set => nextLevelPrefab = value; }
 
-    [SerializeField]
-    new string name;
+    
     public string Name { get => name; private set => name = value; }
-    [SerializeField]
-    new string description;
+    
     public string Description { get => description; private set => description = value; }
 
     [SerializeField] // not meant to be modified during run time

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +26,7 @@ public class GunController : MonoBehaviour
     [SerializeField] Transform shootingPoint;
     private float amountOfSpread;
 
-    private int bulletsLeft;
+    public int bulletsLeft;
     private ObjectPool bulletPool;
 
     private bool shooting;
@@ -78,17 +79,16 @@ public class GunController : MonoBehaviour
         Vector3 spreadDirection = rotAfterSpread * shootingPoint.up;
 
         // Use the bullet prefab from the weapon data
-        string bulletTag = weaponData.BulletPrefab.name;
-        GameObject bulletPrefab = bulletPool.GetFromPool(bulletTag);
-        if (bulletPrefab == null) return; // Handle null if pool is empty
+        GameObject bullet = ObjectPool.Instance.GetFromPool(weaponData.BulletPrefab);
+        if (bullet == null) return;
 
         // Set bullet position and direction
-        bulletPrefab.transform.position = shootingPoint.position;
-        bulletPrefab.transform.rotation = Quaternion.identity;
-        bulletPrefab.transform.up = spreadDirection;
+        bullet.transform.position = shootingPoint.position;
+        bullet.transform.rotation = Quaternion.identity;
+        bullet.transform.up = spreadDirection;
 
         // Apply force to the bullet
-        Rigidbody2D bulletRb = bulletPrefab.GetComponent<Rigidbody2D>();
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.velocity = Vector2.zero; // Reset velocity in case it's a reused bullet
         bulletRb.AddForce(spreadDirection * weaponData.ShootForce, ForceMode2D.Impulse);
 
@@ -112,8 +112,6 @@ public class GunController : MonoBehaviour
         reloading = false;
         bulletsLeft = weaponData.MagSize;
     }
-
-
 
 }
 

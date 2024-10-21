@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gau-17B Lv 3
   m_EditorClassIdentifier: 
   damage: 10
-  shootingCooldown: 0.04
+  shootingCooldown: 0.05
   spread: 5
   reloadTime: 7
   shootForce: 40

@@ -19,6 +19,12 @@ public class Bullet : MonoBehaviour
     {
         pool = ObjectPool.Instance;  // Find the object pool in the scene
         AdjustFireRate();
+        ResetPierce();
+    }
+
+    void ResetPierce()
+    {
+        currentPierce = weaponData.Pierce; // Reset pierce to its base value
     }
 
     void Awake()
@@ -73,7 +79,7 @@ public class Bullet : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        pool.ReturnObject(gameObject); // Return bullet to the pool when it goes off screen
+        ObjectPool.Instance.ReturnObject(gameObject, weaponData.BulletPrefab); // Return bullet to the pool when it goes off screen
     }
 
     void ReducePierce()
@@ -81,7 +87,8 @@ public class Bullet : MonoBehaviour
         currentPierce--;
         if (currentPierce <= 0)
         {
-            pool.ReturnObject(gameObject); // Return bullet to the pool when pierce is 0
+            ObjectPool.Instance.ReturnObject(gameObject, weaponData.BulletPrefab); // Return bullet to the pool when pierce is 0
         }
     }
 }
+

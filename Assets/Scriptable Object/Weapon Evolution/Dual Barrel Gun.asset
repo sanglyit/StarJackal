@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b0a992546175e43aa8207eb52acca6, type: 3}
+  m_Name: Dual Barrel Gun
+  m_EditorClassIdentifier: 
+  baseWeaponData: {fileID: 11400000, guid: 241beb97f9e21c64aa05ea03841e6ed1, type: 2}
+  catalystPassiveItemData: {fileID: 11400000, guid: 2184bf44b01f4964cb8918a626357ff0, type: 2}
+  evolvedWeaponData: {fileID: 11400000, guid: 7a016edd3f7e7584a969727c9db8ea69, type: 2}
+  evolvedWeapon: {fileID: 3179681974919246262, guid: c6b08b196d7249b41982a68d3028bad6, type: 3}

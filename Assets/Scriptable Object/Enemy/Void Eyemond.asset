@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050c3cc8924713a4280e4b09eeb7b695, type: 3}
   m_Name: Void Eyemond
   m_EditorClassIdentifier: 
-  enemySpeed: 3
+  enemySpeed: 2
   rotateSpeed: 0.25
   maxHealth: 10
   damage: 5
