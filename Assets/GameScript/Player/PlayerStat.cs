@@ -10,6 +10,8 @@ public class PlayerStat : MonoBehaviour
 {
     public PlayerScriptableObject playerData;
     public SpriteRenderer spriteRenderer;
+    public ParticleSystem damageEffect;
+
     //Current stats
     float currentHealth;
     float currentHeal;
@@ -46,6 +48,7 @@ public class PlayerStat : MonoBehaviour
     public Image healthBar;
     public Image expBar;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI finalFireRateText;
 
     PlayerCollector collector;
     void Awake()
@@ -139,6 +142,20 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
+    public float GetAdjustedCooldown(float baseCooldown)
+    {
+        // Calculate the adjusted shooting cooldown using the player's fire rate
+        float adjustedCooldown = baseCooldown / Mathf.Max(CurrentFireRate, 0.1f);
+        // Update the UI with the calculated final fire rate (or fire rate per second)
+        if (finalFireRateText != null)
+        {
+            float fireRatePerSecond = 1f / adjustedCooldown;
+            finalFireRateText.text = "Fire Rate: " + fireRatePerSecond.ToString("F2") + " shots/sec";
+        }
+        return adjustedCooldown;
+
+    }
+
     void UpdateExpBar()
     {
         // Update exp bar fill amount
@@ -156,6 +173,8 @@ public class PlayerStat : MonoBehaviour
         if (!isInvincible)
         {
             CurrentHealth -= dmg;
+
+            if(damageEffect) Instantiate(damageEffect, transform.position, Quaternion.identity);
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
@@ -199,7 +218,6 @@ public class PlayerStat : MonoBehaviour
         }
         
     }
-
     void Regen()
     {
         if (CurrentHealth < playerData.MaxHealth)

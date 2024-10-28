@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipSelector : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class ShipSelector : MonoBehaviour
     }
     public void DestroySingleTon()
     {
+        instance.shipData = null;
         instance = null;
         Destroy(gameObject);
     }

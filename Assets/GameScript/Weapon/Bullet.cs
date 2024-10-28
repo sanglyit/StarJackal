@@ -44,10 +44,6 @@ public class Bullet : MonoBehaviour
             // Apply fire rate modifier: (shootingCooldown * fireRate) / 1.2
             currentShootingCooldown = (weaponData.ShootingCooldown * playerStat.CurrentFireRate) / 1.2f;
         }
-        else
-        {
-            Debug.LogWarning("PlayerStat not found. Using default shooting cooldown.");
-        }
     }
 
     public float GetCurrentDamage()
@@ -62,7 +58,8 @@ public class Bullet : MonoBehaviour
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             if (enemy != null)
             {
-                enemy.TakeDamage(GetCurrentDamage());  // Apply damage
+                enemy.TakeDamage(GetCurrentDamage(), transform.position);  // Apply damage
+                PlayHitEffect();  // Play the particle effect
                 ReducePierce();
             }
         }
@@ -72,6 +69,7 @@ public class Bullet : MonoBehaviour
             if (asteroid != null)
             {
                 asteroid.TakeDamage(currentDamage); // Apply damage to asteroid
+                PlayHitEffect();  // Play the particle effect
                 ReducePierce();
             }
         }
@@ -88,6 +86,14 @@ public class Bullet : MonoBehaviour
         if (currentPierce <= 0)
         {
             ObjectPool.Instance.ReturnObject(gameObject, weaponData.BulletPrefab); // Return bullet to the pool when pierce is 0
+        }
+    }
+
+    void PlayHitEffect()
+    {
+        if (hitEffect != null)
+        {
+            Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
     }
 }

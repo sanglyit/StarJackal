@@ -17,7 +17,7 @@ MonoBehaviour:
     damage with a big magazine '
   level: 1
   damage: 7
-  shootingCooldown: 0.08
+  shootingCooldown: 0.19
   spread: 15
   reloadTime: 7
   shootForce: 35

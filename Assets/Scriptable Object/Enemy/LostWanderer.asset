@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050c3cc8924713a4280e4b09eeb7b695, type: 3}
   m_Name: LostWanderer
   m_EditorClassIdentifier: 
-  enemySpeed: 5.5
+  enemySpeed: 5
   rotateSpeed: 0.03
   maxHealth: 35
   damage: 30

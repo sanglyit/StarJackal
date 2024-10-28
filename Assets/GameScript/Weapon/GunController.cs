@@ -93,7 +93,13 @@ public class GunController : MonoBehaviour
         bulletRb.AddForce(spreadDirection * weaponData.ShootForce, ForceMode2D.Impulse);
 
         bulletsLeft--;
-        Invoke("ResetShot", weaponData.ShootingCooldown);
+
+        // Get reference to the player's PlayerStat component
+        PlayerStat playerStats = GetComponentInParent<PlayerStat>();
+
+        // Calculate the adjusted shooting cooldown using the method from PlayerStat
+        float adjustedCooldown = playerStats.GetAdjustedCooldown(weaponData.ShootingCooldown);
+        Invoke("ResetShot", adjustedCooldown);
     }
 
     protected virtual void ResetShot()

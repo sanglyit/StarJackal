@@ -7,6 +7,10 @@ public class SceneController : MonoBehaviour
 {
     public void ScenceChange(string name)
     {
+        if (name == "ShipSelection")
+        {
+            ShipSelector.instance.DestroySingleTon();
+        }
         SceneManager.LoadScene(name);
         Time.timeScale = 1.0f;
     }

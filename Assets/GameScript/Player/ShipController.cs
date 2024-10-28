@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Ship_control : MonoBehaviour
+public class ShipController : MonoBehaviour
 {
     Rigidbody2D shipRigidbody;
     PlayerStat player;
