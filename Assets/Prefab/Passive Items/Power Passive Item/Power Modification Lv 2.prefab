@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3209854526717948177}
   - component: {fileID: 7658995426583563108}
   m_Layer: 0
-  m_Name: Spinach Lv 3
+  m_Name: Power Modification Lv 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c96fde3ac22ea47aad0a622907fb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passiveItemData: {fileID: 11400000, guid: cc36f4129cb85294eb7ac976c34da6bc, type: 2}
+  passiveItemData: {fileID: 11400000, guid: 33341108eebf94342bbc3da071ac6213, type: 2}

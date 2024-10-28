@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3209854526717948177}
   - component: {fileID: 7658995426583563108}
   m_Layer: 0
-  m_Name: Spinach
+  m_Name: Power Modification
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

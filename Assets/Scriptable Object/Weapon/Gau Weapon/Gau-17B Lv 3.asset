@@ -16,7 +16,7 @@ MonoBehaviour:
   description: +2 damage, +1 pierce and a masive mag
   level: 3
   damage: 9
-  shootingCooldown: 0.17
+  shootingCooldown: 0.1
   spread: 7
   reloadTime: 7
   shootForce: 40

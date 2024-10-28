@@ -17,7 +17,7 @@ public class EnemyStat : MonoBehaviour
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1); //color of the damage flash
     public float damageFlashDuration = 0.2f; //How long the flash last
-    public float deathFadeTime = 0.5f; //The time it will fade away when ded
+    public GameObject DeathEffect;
     Color originalColor;
     SpriteRenderer sr;
     EnemyMovement movement; 
@@ -52,7 +52,7 @@ public class EnemyStat : MonoBehaviour
             ReturnEnemy();
         }
     }
-    public void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5f, float knockbackDuration = 0.2f)
+    public void TakeDamage(float dmg, float knockbackForce = 5f, float knockbackDuration = 0.2f)
     {
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
@@ -64,10 +64,10 @@ public class EnemyStat : MonoBehaviour
         }
 
         //Apply knockback if it is not zero
-        if (knockbackForce > 0)
+        if (knockbackForce > 0 && player != null)
         {
             //Gets the direction of knockback
-            Vector2 dir = (Vector2)transform.position - sourcePosition;
+            Vector2 dir = (Vector2)transform.position - (Vector2)player.position;
             movement.KnockBack(dir.normalized * knockbackForce, knockbackDuration);
         }
 
@@ -87,24 +87,16 @@ public class EnemyStat : MonoBehaviour
 
     public void Kill()
     {
-        StartCoroutine(KillFade());
+        PlayDedEffect();
+        Destroy(gameObject);
     }
 
-    IEnumerator KillFade()
+    void PlayDedEffect()
     {
-        //wait for a single frame
-        WaitForEndOfFrame w = new WaitForEndOfFrame();
-        float t = 0, origAlpha = sr.color.a;
-
-        //This is a loop that fires every frame
-        while(t < deathFadeTime)
+        if (DeathEffect != null)
         {
-            yield return w;
-            t += Time.deltaTime;
-            //Set color for this frame
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (1 - t / deathFadeTime) * origAlpha);
+            Instantiate(DeathEffect, transform.position, Quaternion.identity);
         }
-        Destroy(gameObject);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -125,17 +117,12 @@ public class EnemyStat : MonoBehaviour
         {
             es.OnEnemyKilled();
         }
-        else
-        {
-            Debug.LogWarning("EnemySpawner not found in the scene. OnEnemyKilled was not called.");
-        }
     }
     void ReturnEnemy()
     {
         // Make sure player is still valid before using its position
         if (player == null)
         {
-            Debug.LogWarning("Player is null, unable to respawn enemy.");
             return;
         }
 

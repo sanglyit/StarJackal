@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
-  m_Name: Spinach Passive Item Lv 2
+  m_Name: Fire Rate Passive Item Lv2
   m_EditorClassIdentifier: 
-  multiplier: 125
+  multiplier: 100
   level: 2
-  nextLevelPrefab: {fileID: 3914814735371176461, guid: 89d017eee34ae784da38e8bd39a4b50e, type: 3}
-  name: Spinach Lv2
-  description: Increase ship strength 125%. Strength boost all weapon damage
-  icon: {fileID: 1261984484, guid: 712b6079a35c34d4d937318c4a0f2040, type: 3}
+  nextLevelPrefab: {fileID: 2628203511099005117, guid: 9474b82cebbf0ee48afbaa93157ee0cc, type: 3}
+  name: Shooting Drill Chip Lv 2
+  description: Fire rate +100%
+  icon: {fileID: -1553302280, guid: 5408682a2763add4ca2312810fbb2150, type: 3}

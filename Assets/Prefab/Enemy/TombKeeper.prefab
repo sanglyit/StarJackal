@@ -182,6 +182,9 @@ MonoBehaviour:
   currentHealth: 0
   currentDamage: 0
   despawnDistance: 100
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  DeathEffect: {fileID: 910488959929642725, guid: 3b6a52e676d939443a098bdf276e48ca, type: 3}
 --- !u!114 &4862501954034727552
 MonoBehaviour:
   m_ObjectHideFlags: 0

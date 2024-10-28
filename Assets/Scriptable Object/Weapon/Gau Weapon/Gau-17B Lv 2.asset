@@ -16,7 +16,7 @@ MonoBehaviour:
   description: +1 damage, -0.2 fire rate, with a bigger mag
   level: 2
   damage: 8
-  shootingCooldown: 0.17
+  shootingCooldown: 0.15
   spread: 10
   reloadTime: 7
   shootForce: 35

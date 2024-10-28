@@ -20,7 +20,7 @@ MonoBehaviour:
   shootingCooldown: 0.25
   spread: 5
   reloadTime: 1
-  shootForce: 50
+  shootForce: 40
   pierce: 2
   magSize: 50
   isAutomatic: 1

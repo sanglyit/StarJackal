@@ -82,6 +82,13 @@ public class GunController : MonoBehaviour
         GameObject bullet = ObjectPool.Instance.GetFromPool(weaponData.BulletPrefab);
         if (bullet == null) return;
 
+        // Update bullet data to match the current weapon's data
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        if (bulletScript != null)
+        {
+            bulletScript.SetWeaponData(weaponData);
+        }
+
         // Set bullet position and direction
         bullet.transform.position = shootingPoint.position;
         bullet.transform.rotation = Quaternion.identity;

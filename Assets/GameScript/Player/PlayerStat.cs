@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 using UnityEngine.UI;
@@ -150,7 +149,7 @@ public class PlayerStat : MonoBehaviour
         if (finalFireRateText != null)
         {
             float fireRatePerSecond = 1f / adjustedCooldown;
-            finalFireRateText.text = "Fire Rate: " + fireRatePerSecond.ToString("F2") + " shots/sec";
+            finalFireRateText.text = "Shots/sec: " + fireRatePerSecond.ToString("F2") ;
         }
         return adjustedCooldown;
 

@@ -201,3 +201,6 @@ MonoBehaviour:
   currentHealth: 0
   currentDamage: 0
   despawnDistance: 30
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  DeathEffect: {fileID: 910488959929642725, guid: 3b6a52e676d939443a098bdf276e48ca, type: 3}

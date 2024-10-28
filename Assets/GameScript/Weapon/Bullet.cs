@@ -15,10 +15,19 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     private ObjectPool pool;
 
+    public void SetWeaponData(WeaponScriptableObject newWeaponData)
+    {
+        weaponData = newWeaponData;
+        currentDamage = weaponData.Damage;
+        currentPierce = weaponData.Pierce;
+        currentSpread = weaponData.Spread;
+        ResetPierce();
+    }
+
+
     private void OnEnable()
     {
-        pool = ObjectPool.Instance;  // Find the object pool in the scene
-        AdjustFireRate();
+        pool = ObjectPool.Instance; // Find the object pool in the scene
         ResetPierce();
     }
 
@@ -27,24 +36,6 @@ public class Bullet : MonoBehaviour
         currentPierce = weaponData.Pierce; // Reset pierce to its base value
     }
 
-    void Awake()
-    {
-        currentDamage = weaponData.Damage;
-        currentPierce = weaponData.Pierce;
-        currentSpread = weaponData.Spread;
-        currentShootingCooldown = weaponData.ShootingCooldown;
-    }
-
-    // Adjusts the firing cooldown based on the player's fire rate stat
-    void AdjustFireRate()
-    {
-        PlayerStat playerStat = FindObjectOfType<PlayerStat>();
-        if (playerStat != null)
-        {
-            // Apply fire rate modifier: (shootingCooldown * fireRate) / 1.2
-            currentShootingCooldown = (weaponData.ShootingCooldown * playerStat.CurrentFireRate) / 1.2f;
-        }
-    }
 
     public float GetCurrentDamage()
     {
@@ -58,7 +49,7 @@ public class Bullet : MonoBehaviour
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             if (enemy != null)
             {
-                enemy.TakeDamage(GetCurrentDamage(), transform.position);  // Apply damage
+                enemy.TakeDamage(GetCurrentDamage());  // Apply damage
                 PlayHitEffect();  // Play the particle effect
                 ReducePierce();
             }
