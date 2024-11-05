@@ -20,5 +20,5 @@ MonoBehaviour:
   heal: 0
   moveSpeed: 8
   fireRate: 0.9
-  strength: 2.25
+  strength: 2
   magnet: 2.5

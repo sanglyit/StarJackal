@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 3
   rotateSpeed: 1
-  maxHealth: 200
-  damage: 30
+  maxHealth: 2000
+  damage: 35
+  range: 7
+  fireRate: 1

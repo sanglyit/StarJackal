@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 9143963162481519179}
   - component: {fileID: -5766243534697119702}
   - component: {fileID: 2931600499252132287}
-  - component: {fileID: 1284036298398591169}
   - component: {fileID: -8353694827795855099}
+  - component: {fileID: 254278658174454768}
+  - component: {fileID: 7465909944220132492}
   m_Layer: 0
   m_Name: Kai
   m_TagString: Enemy
@@ -33,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.5867, y: 3.6497, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8885839521574750343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9143963162481519179
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a507e4d319138d44482579bc5610a9e5, type: 3}
-  m_Color: {r: 0.9622642, g: 0.8725766, b: 0.05628333, a: 1}
+  m_Color: {r: 1, g: 0.9989455, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -159,31 +161,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.21, y: 0.14999999}
-      - {x: 0.16, y: 0.17}
-      - {x: -0.08, y: 0.17}
-      - {x: -0.21, y: 0.11}
-      - {x: -0.21, y: -0.02}
-      - {x: -0.19999999, y: -0.089999996}
-      - {x: -0.13, y: -0.17}
-      - {x: 0.13, y: -0.17}
-      - {x: 0.19, y: -0.08}
-      - {x: 0.21, y: -0.04}
+    - - {x: 0.11069464, y: 0.043919604}
+      - {x: 0.068639, y: 0.04395154}
+      - {x: 0.0014304221, y: 0.16251199}
+      - {x: -0.059055716, y: 0.057583816}
+      - {x: -0.11436104, y: 0.037631907}
+      - {x: -0.19510418, y: 0.08358438}
+      - {x: -0.19602777, y: -0.00638368}
+      - {x: -0.11411111, y: -0.16500793}
+      - {x: 0.11311807, y: -0.16625598}
+      - {x: 0.19496527, y: -0.015103728}
+      - {x: 0.19609724, y: 0.069824435}
   m_UseDelaunayMesh: 0
---- !u!114 &1284036298398591169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278554029798723930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6959cb4463911478733029a74cbce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 2de24a4ff0ec9c94a8f2138c105c483c, type: 2}
-  target: {fileID: 0}
 --- !u!114 &-8353694827795855099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +193,75 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   DeathEffect: {fileID: 910488959929642725, guid: 3b6a52e676d939443a098bdf276e48ca, type: 3}
+--- !u!114 &254278658174454768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278554029798723930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9327adbfcd7ab404783c2004ba3f17c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2de24a4ff0ec9c94a8f2138c105c483c, type: 2}
+  target: {fileID: 0}
+  projectilePrefab: {fileID: 6506622018552288176, guid: d684d53cec298ea409221b7802330a89, type: 3}
+  firePoint: {fileID: 8885839521574750343}
+--- !u!114 &7465909944220132492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278554029798723930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e0cf51f0519b648927d1f59f66a39b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: Small Gold
+    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
+    dropRate: 5
+  - name: Small Exp
+    itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
+    dropRate: 50
+  - name: Medkit
+    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
+    dropRate: 20
+  - name: Big Exp
+    itemPrefab: {fileID: 2065256531555299820, guid: 009ca42447de9da48ba055025aff3c84, type: 3}
+    dropRate: 20
+--- !u!1 &2132879959647495548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8885839521574750343}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8885839521574750343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132879959647495548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6089620160657244430}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

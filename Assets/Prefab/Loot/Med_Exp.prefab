@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5370458610685347130
+--- !u!1 &2065256531555299820
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9051442938535021773}
-  - component: {fileID: 1690136162858252643}
-  - component: {fileID: 7481149524935410765}
-  - component: {fileID: 5218067278851461986}
-  - component: {fileID: -4854057672087976036}
-  - component: {fileID: -8359701171336544528}
+  - component: {fileID: 7187807933148174020}
+  - component: {fileID: 6911067752254285377}
+  - component: {fileID: 1447201028031158813}
+  - component: {fileID: 4939500523862275849}
+  - component: {fileID: 6368704088131247948}
   m_Layer: 0
-  m_Name: Asteroid 2
+  m_Name: Med_Exp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9051442938535021773
+--- !u!4 &7187807933148174020
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370458610685347130}
+  m_GameObject: {fileID: 2065256531555299820}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,13 +35,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1690136162858252643
+--- !u!212 &6911067752254285377
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370458610685347130}
+  m_GameObject: {fileID: 2065256531555299820}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,27 +73,27 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1770802593
+  m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0f3a720ed8c07f14ea6b92d6fefc8c0c, type: 3}
+  m_Sprite: {fileID: 1651678218, guid: 88e65ffad97e24f48bc1b77d3ae0ca72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.76, y: 0.63}
+  m_Size: {x: 0.90625, y: 0.703125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7481149524935410765
+--- !u!60 &1447201028031158813
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370458610685347130}
+  m_GameObject: {fileID: 2065256531555299820}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -117,54 +116,47 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.375, y: 1.96875}
-    newSize: {x: 0.76, y: 0.63}
+    oldSize: {x: 0.796875, y: 0.890625}
+    newSize: {x: 0.90625, y: 0.703125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.1790543, y: 0.09164214}
-      - {x: 1.1800318, y: 0.34808683}
-      - {x: 1.0945892, y: 0.546875}
-      - {x: 0.72634125, y: 0.8678217}
-      - {x: 0.27532482, y: 0.96748257}
-      - {x: -0.12807465, y: 0.965178}
-      - {x: -0.62247944, y: 0.6549659}
-      - {x: -1.034626, y: 0.20396471}
-      - {x: -1.1621609, y: 0.09248257}
-      - {x: -1.1959467, y: -0.6414652}
-      - {x: -1.0116796, y: -0.84223104}
-      - {x: -0.78800106, y: -1.0012679}
-      - {x: 0.008446693, y: -0.89991117}
-      - {x: 0.18534088, y: -0.3769529}
-      - {x: 0.47466087, y: -0.20903587}
-      - {x: 0.82479954, y: -0.23688626}
-      - {x: 1.027874, y: -0.13976955}
+    - - {x: -0.19753484, y: 0.19789465}
+      - {x: -0.20779285, y: 0.15446037}
+      - {x: -0.18602839, y: -0.0034648925}
+      - {x: -0.20919278, y: -0.08307764}
+      - {x: -0.31292817, y: -0.15309377}
+      - {x: -0.318139, y: -0.23498045}
+      - {x: 0.27281603, y: -0.23529}
+      - {x: 0.31482077, y: -0.15281749}
+      - {x: 0.3117481, y: 0.018893206}
+      - {x: 0.08691731, y: 0.20404007}
   m_UseDelaunayMesh: 0
---- !u!50 &5218067278851461986
+--- !u!50 &4939500523862275849
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370458610685347130}
+  m_GameObject: {fileID: 2065256531555299820}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 500
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 5
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -177,37 +169,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4854057672087976036
+--- !u!114 &6368704088131247948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370458610685347130}
+  m_GameObject: {fileID: 2065256531555299820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30101a4dfb78e2f439b9839f06aa7c95, type: 3}
+  m_Script: {fileID: 11500000, guid: 202c443188977874b93ad2627afdd28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 3
-  friction: 0.99
-  maxHealth: 25
---- !u!114 &-8359701171336544528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5370458610685347130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e0cf51f0519b648927d1f59f66a39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drops:
-  - name: Medkit
-    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
-    dropRate: 50
-  - name: Small gold
-    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
-    dropRate: 2
+  lifespan: 1
+  pullSpeed: 1
+  bobbingAnimation:
+    frequency: 1.5
+    direction: {x: 0, y: 0.3}
+  exp: 50
+  health: 0
+  gold: 0

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    //protected bool hasCollected = false;
     public float lifespan = 0.5f;
-    protected PlayerStat target;
-    protected float speed;
-    Vector2 initalPosition;
+    public float pullSpeed;
+    private PlayerStat target;
+    private Vector2 initialPosition;
 
     [System.Serializable]
     public struct BobbingAnimation
@@ -18,64 +17,59 @@ public class PickUp : MonoBehaviour
     }
     public BobbingAnimation bobbingAnimation = new BobbingAnimation
     {
-        frequency = 1.5f, direction = new Vector2(0, 0.3f)
+        frequency = 1.5f,
+        direction = new Vector2(0, 0.3f)
     };
 
     [Header("Bonuses")]
     public int exp;
     public int health;
-    public int gold; 
+    public int gold;
+
+    private bool isBeingPulled = false;
 
     protected virtual void Start()
     {
-        initalPosition = transform.position;
-    }    
+        initialPosition = transform.position;
+    }
 
     protected virtual void Update()
     {
-        if (target)
-        {  
-            //Check distance between player and move item toward player
-            Vector2 distance = target.transform.position - transform.position;
-            if (distance.sqrMagnitude > speed * speed * Time.deltaTime) 
-            {
-                transform.position += (Vector3)distance.normalized * speed * Time.deltaTime;
-            } else {
-                Destroy(gameObject);
-            }
+        if (isBeingPulled && target != null)
+        {
+            // Pull towards the player
+            Vector2 direction = (target.transform.position - transform.position).normalized;
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, pullSpeed * Time.deltaTime * 0.07f);
         }
         else
         {
-            transform.position = initalPosition + bobbingAnimation.direction * Mathf.Sin(Time.time * bobbingAnimation.frequency);
+            // Bobbing animation
+            transform.position = initialPosition + bobbingAnimation.direction * Mathf.Sin(Time.time * bobbingAnimation.frequency);
         }
     }
 
-    public virtual bool Collect(PlayerStat target, float speed, float lifespan = 0f)
+    public void SetTarget(PlayerStat player, float speed)
     {
-        if (!this.target) 
-        {
-            this.target = target;
-            this.speed = speed;
-            if (lifespan > 0) this.lifespan = lifespan;
-            Destroy(gameObject, Mathf.Max(0.01f, this.lifespan));
-            return true;
-        }
-        return false;
+        // Set the player as the target and start moving towards them
+        target = player;
+        pullSpeed = speed;
+        isBeingPulled = true;
     }
 
-    protected virtual void OnDestroy()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!target)
+        // Check if the item has reached the player’s collection trigger
+        if (col.CompareTag("CollectionTrigger") && col.GetComponentInParent<PlayerStat>() == target)
         {
-            return; 
+            Collect();
         }
-        if (exp !=0)
-        {
-            target.IncreaseExperience(exp);
-        }
-        if (health != 0)
-        {
-            target.HealHealth(health); 
-        }
+    }
+
+    private void Collect()
+    {
+        // Apply the bonuses to the player
+        if (exp != 0) target.IncreaseExperience(exp);
+        if (health != 0) target.HealHealth(health);
+        Destroy(gameObject);
     }
 }

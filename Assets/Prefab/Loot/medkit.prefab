@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 0.5
+  pullSpeed: 1
   bobbingAnimation:
     frequency: 1.5
     direction: {x: 0, y: 0.3}

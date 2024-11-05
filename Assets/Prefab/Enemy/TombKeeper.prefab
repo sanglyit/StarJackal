@@ -212,15 +212,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Small Gold
-    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
-    dropRate: 5
-  - name: Small Exp
-    itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
-    dropRate: 70
-  - name: Medkit
-    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
-    dropRate: 10
+  - name: Diamond Exp
+    itemPrefab: {fileID: 2065256531555299820, guid: 51c240f30bd0e6f4bad0db2d2375674f, type: 3}
+    dropRate: 35
+  - name: Big Exp
+    itemPrefab: {fileID: 2065256531555299820, guid: 9a6c60cca372bd44bbe24cb032e1c0f0, type: 3}
+    dropRate: 65
 --- !u!1 &4640748197635654739
 GameObject:
   m_ObjectHideFlags: 0

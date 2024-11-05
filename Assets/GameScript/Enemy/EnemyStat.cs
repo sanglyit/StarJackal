@@ -64,7 +64,7 @@ public class EnemyStat : MonoBehaviour
         }
 
         //Apply knockback if it is not zero
-        if (knockbackForce > 0 && player != null)
+        if (knockbackForce > 0 && player != null && movement != null)
         {
             //Gets the direction of knockback
             Vector2 dir = (Vector2)transform.position - (Vector2)player.position;
@@ -95,7 +95,8 @@ public class EnemyStat : MonoBehaviour
     {
         if (DeathEffect != null)
         {
-            Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            GameObject instantiatedEffect = Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            Destroy(instantiatedEffect, 3f);
         }
     }
 

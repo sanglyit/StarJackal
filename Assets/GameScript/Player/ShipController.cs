@@ -17,7 +17,7 @@ public class ShipController : MonoBehaviour
     [HideInInspector] public Vector2 mousePos;
 
     public float movementSmoothing = 0.1f; // Movement smoothing time
-    public float rotationSmoothing = 0.19f; // Rotation smoothing time
+    public float rotationSmoothing = 0.2f; // Rotation smoothing time
     private float currentRotation;
 
     void Start()

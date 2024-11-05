@@ -9,7 +9,8 @@ public class PlayerStat : MonoBehaviour
 {
     public PlayerScriptableObject playerData;
     public SpriteRenderer spriteRenderer;
-    public ParticleSystem damageEffect;
+    public GameObject damageEffect;
+    public GameObject ShieldEffect;
 
     //Current stats
     float currentHealth;
@@ -72,6 +73,7 @@ public class PlayerStat : MonoBehaviour
 
         //Spawn starting weapon
         SpawnWeapon(playerData.StartingWeapon);
+        collector.SetRadius(playerData.Magnet);
         
     }
     void Start()
@@ -141,6 +143,27 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
+    public void LevelUp()
+    {
+        level++;
+        int experienceCapIncrease = 0;
+
+        foreach (LevelRange range in levelRanges)
+        {
+            if (level >= range.startLevel && level <= range.endLevel)
+            {
+                experienceCapIncrease = range.experienceCapIncrease;
+                break;
+            }
+        }
+        experienceCap += experienceCapIncrease;
+
+        UpdateLevelText();
+
+        // Trigger level-up effects, such as UI updates
+        GameManager.instance.StartLevelUp();
+    }
+
     public float GetAdjustedCooldown(float baseCooldown)
     {
         // Calculate the adjusted shooting cooldown using the player's fire rate
@@ -173,8 +196,12 @@ public class PlayerStat : MonoBehaviour
         {
             CurrentHealth -= dmg;
 
-            if(damageEffect) Instantiate(damageEffect, transform.position, Quaternion.identity);
-
+            if (damageEffect)
+            {
+                GameObject instantiatedEffect = Instantiate(damageEffect, transform.position, Quaternion.identity);
+                Destroy(instantiatedEffect, 3f);
+            }
+            
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
 
@@ -182,7 +209,18 @@ public class PlayerStat : MonoBehaviour
             {
                 kill();
             }
+            PlayShieldEffect();
             UpdateHealthBar();
+        }
+    }
+
+    void PlayShieldEffect()
+    {
+        if (ShieldEffect != null)
+        {
+            // Instantiate the shield effect as a child of the player to make it follow
+            GameObject instantiatedShield = Instantiate(ShieldEffect, transform.position, Quaternion.identity, transform);
+            Destroy(instantiatedShield, 3f);
         }
     }
 

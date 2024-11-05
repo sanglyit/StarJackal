@@ -84,7 +84,9 @@ public class Bullet : MonoBehaviour
     {
         if (hitEffect != null)
         {
-            Instantiate(hitEffect, transform.position, Quaternion.identity);
+            // Instantiate a new instance of the hitEffect prefab at the bullet's position
+            GameObject instantiatedEffect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(instantiatedEffect, 3f);
         }
     }
 }

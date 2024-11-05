@@ -5,26 +5,27 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class PlayerCollector : MonoBehaviour
 {
-    PlayerStat player;
-    CircleCollider2D detector;
     public float pullSpeed;
+    private PlayerStat player;
+    private CircleCollider2D detector;
+
     private void Start()
     {
         player = GetComponentInParent<PlayerStat>();
-        
     }
-    public void SetRadius(float r)
+
+    public void SetRadius(float radius)
     {
-        if(!detector) detector = GetComponent<CircleCollider2D>();
-        detector.radius = r;
+        if (!detector) detector = GetComponent<CircleCollider2D>();
+        detector.radius = radius;
     }
-    void OnTriggerEnter2D(Collider2D col)
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        //check if the Gobject has Icollectable interface
-        if(col.TryGetComponent(out PickUp collectable))
+        if (col.TryGetComponent(out PickUp pickUp))
         {
-            
-            collectable.Collect(player, pullSpeed);
+            // Set the player as the target, enabling movement towards the player
+            pickUp.SetTarget(player, pullSpeed);
         }
     }
 }

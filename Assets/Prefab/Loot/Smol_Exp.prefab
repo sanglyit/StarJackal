@@ -181,10 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202c443188977874b93ad2627afdd28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifespan: 0.5
+  lifespan: 1
+  pullSpeed: 1
   bobbingAnimation:
     frequency: 1.5
     direction: {x: 0, y: 0.3}
-  exp: 100
+  exp: 10
   health: 0
   gold: 0

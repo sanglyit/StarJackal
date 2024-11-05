@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5492947613982655074}
   - component: {fileID: 8288922093819925842}
   - component: {fileID: 1363234276083142766}
-  - component: {fileID: 1581045261823054918}
+  - component: {fileID: 6457910250461230702}
   - component: {fileID: 9074091461068274379}
   - component: {fileID: 2617961383280172643}
   m_Layer: 0
@@ -34,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.7551609, y: 1.3332534, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5418260231215038915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5492947613982655074
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f7eb00cb3ec9bab45b85d561558c4250, type: 3}
-  m_Color: {r: 0.9169811, g: 0.060555227, b: 0.060555227, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -185,7 +186,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1581045261823054918
+--- !u!114 &6457910250461230702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,11 +195,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3116548056135588423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6959cb4463911478733029a74cbce3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9327adbfcd7ab404783c2004ba3f17c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: e21e55ff408ba9e44ae85cf83d0cb60d, type: 2}
   target: {fileID: 0}
+  projectilePrefab: {fileID: 6506622018552288176, guid: 4427dc9fbe008ac498f482ba286e4235, type: 3}
+  firePoint: {fileID: 5418260231215038915}
 --- !u!114 &9074091461068274379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: e21e55ff408ba9e44ae85cf83d0cb60d, type: 2}
-  currentMoveSpeed: 5
-  currentHealth: 3
-  currentDamage: 12
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
   despawnDistance: 30
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
@@ -232,12 +235,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: 
-    itemPrefab: {fileID: 0}
-    dropRate: 0
-  - name: 
-    itemPrefab: {fileID: 0}
-    dropRate: 0
-  - name: 
-    itemPrefab: {fileID: 0}
-    dropRate: 0
+  - name: Small Exp
+    itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
+    dropRate: 50
+  - name: Medkit
+    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
+    dropRate: 30
+  - name: Medkit
+    itemPrefab: {fileID: 2065256531555299820, guid: 009ca42447de9da48ba055025aff3c84, type: 3}
+    dropRate: 10
+  - name: Medkit
+    itemPrefab: {fileID: 2065256531555299820, guid: 9a6c60cca372bd44bbe24cb032e1c0f0, type: 3}
+    dropRate: 10
+--- !u!1 &4852002193342242496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5418260231215038915}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5418260231215038915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852002193342242496}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3123194670554789459}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
