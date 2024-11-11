@@ -10,8 +10,6 @@ public class RangedEnemy : MonoBehaviour
 
     private Rigidbody2D rb;
     private EnemyStat enemy;
-    private Vector2 knockbackVelocity;
-    private float knockbackDuration;
     private float nextFireTime;
 
     private void Start()
@@ -23,15 +21,7 @@ public class RangedEnemy : MonoBehaviour
 
     private void Update()
     {
-        // Handle knockback
-        if (knockbackDuration > 0)
-        {
-            transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
-            knockbackDuration -= Time.deltaTime;
-            return; // Skip further logic while knockback is active
-        }
-
-        // Try to find or rotate towards the player
+        // Find or rotate towards the player
         if (target == null || !target.gameObject.activeInHierarchy)
         {
             GetTarget();
@@ -45,12 +35,11 @@ public class RangedEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Move towards the player if they are outside of attack range
+        // Move towards the player
         if (target != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, target.position);
 
-            // Move if the player is outside of attack range, stop if within attack range
             if (distanceToPlayer > enemyData.Range)
             {
                 rb.velocity = transform.up * enemy.currentMoveSpeed;
@@ -72,7 +61,6 @@ public class RangedEnemy : MonoBehaviour
 
     private void GetTarget()
     {
-        // Cache player transform if not already cached or player is inactive
         if (target == null || !target.gameObject.activeInHierarchy)
         {
             PlayerStat playerStat = FindObjectOfType<PlayerStat>();
@@ -85,12 +73,10 @@ public class RangedEnemy : MonoBehaviour
 
     private void CheckAttackRange()
     {
-        // Ensure range and fire rate are valid
         if (enemyData.Range > 0 && enemyData.FireRate > 0 && target != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, target.position);
 
-            // Check if the player is within attack range and if enough time has passed to fire again
             if (distanceToPlayer <= enemyData.Range && Time.time >= nextFireTime)
             {
                 Shoot();
@@ -115,14 +101,5 @@ public class RangedEnemy : MonoBehaviour
         {
             projectileScript.damage = enemy.currentDamage;
         }
-    }
-
-    public void KnockBack(Vector2 velocity, float duration)
-    {
-        if (knockbackDuration > 0) return;  // Ignore new knockback if already active
-
-        // Apply knockback
-        knockbackVelocity = velocity;
-        knockbackDuration = duration;
     }
 }

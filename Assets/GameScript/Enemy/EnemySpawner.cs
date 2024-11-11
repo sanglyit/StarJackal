@@ -12,6 +12,9 @@ public class EnemySpawner : MonoBehaviour
         public int waveQuota; // Total number of enemies to spawn in a wave
         public float spawnInterval; // Spawn delay
         public int spawnCount; // Count of enemies spawned so far
+
+        public NextWaveCondition nextWaveCondition; 
+        public int enemiesLeftThreshold; 
     }
 
     [System.Serializable]
@@ -55,6 +58,12 @@ public class EnemySpawner : MonoBehaviour
             spawnTimer = 0f;
             SpawnEnemies();
         }
+    }
+
+    public enum NextWaveCondition
+    {
+        AllEnemiesDefeated,  // All enemies must be defeated (e.g., for single boss wave)
+        EnemiesBelowThreshold // Move to next wave when enemies alive are below a set threshold
     }
 
     IEnumerator BeginNextWave()
@@ -102,25 +111,38 @@ public class EnemySpawner : MonoBehaviour
         }
 
         // Check if all enemies in the wave have been spawned
-        if (waves[currentWaveCount].spawnCount >= waves[currentWaveCount].waveQuota && enemyAlive < 2)
+        if (ShouldProgressToNextWave())
         {
             isWaveActive = false;
             currentWaveCount++;
 
-            // If there are more waves, prepare the next wave
             if (currentWaveCount < waves.Count)
             {
                 StartCoroutine(BeginNextWave());
             }
             else
             {
-                // If no more waves, repeat the last wave indefinitely
                 currentWaveCount = waves.Count - 1;
                 StartCoroutine(BeginNextWave());
             }
         }
     }
+    bool ShouldProgressToNextWave()
+    {
+        var currentWave = waves[currentWaveCount];
 
+        switch (currentWave.nextWaveCondition)
+        {
+            case NextWaveCondition.AllEnemiesDefeated:
+                return (enemyAlive == 0); // Only progress if all enemies are defeated
+
+            case NextWaveCondition.EnemiesBelowThreshold:
+                return (enemyAlive <= currentWave.enemiesLeftThreshold); // Use the specified threshold
+
+            default:
+                return false;
+        }
+    }
     // Reset the spawn counts for the current wave and its enemy groups
     void ResetWaveSpawnCounts()
     {

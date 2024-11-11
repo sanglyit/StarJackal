@@ -21,6 +21,7 @@ public class EnemyStat : MonoBehaviour
     Color originalColor;
     SpriteRenderer sr;
     EnemyMovement movement; 
+    GameManager manager;
 
     private void Awake()
     {
@@ -69,9 +70,9 @@ public class EnemyStat : MonoBehaviour
             //Gets the direction of knockback
             Vector2 dir = (Vector2)transform.position - (Vector2)player.position;
             movement.KnockBack(dir.normalized * knockbackForce, knockbackDuration);
+            
         }
 
-        
         if (currentHealth <= 0)
         {
             Kill();
@@ -87,6 +88,7 @@ public class EnemyStat : MonoBehaviour
 
     public void Kill()
     {
+        GameManager.instance.RegisterEnemyKill();
         PlayDedEffect();
         Destroy(gameObject);
     }

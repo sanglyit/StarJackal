@@ -8,7 +8,7 @@ public class MapController : MonoBehaviour
     public GameObject Player;                 // Player GameObject
     public int mapWidth = 5;                  // Number of chunks in the horizontal direction
     public int mapHeight = 5;                 // Number of chunks in the vertical direction
-    public float chunkSize = 30.1f;           // Size of each chunk
+    public float chunkSize = 30f;           // Size of each chunk
 
     private GameObject[,] mapChunks;          // 2D array to hold the chunks
     private Vector2 mapSize;                  // Size of the map in world coordinates
