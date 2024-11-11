@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public PlayerStat playerStat;
     //State of the game
     public enum GameState
     {
@@ -22,6 +23,21 @@ public class GameManager : MonoBehaviour
     public GameState currentState;
     //Store the previous game state
     public GameState previousState;
+
+    [Header("Extraction Settings")]
+    public GameObject extractionExit; // Extraction exit object in the scene
+    public GameObject requiredBoss; // Specific enemy keal required to unlock extraction 
+    public int requiredEnemyKills; // Number of enemies needed for extraction
+    private bool extractionUnlocked = false;
+
+    [Header("Objective Display")]
+    public TextMeshProUGUI objectiveTextDisplay;
+    public TextMeshProUGUI objectiveTextBrief;
+    public GameObject briefObjectiveText;
+    public GameObject objectiveCompletionPanel; 
+    private int totalEnemiesToKill;
+    private int enemiesKilled = 0;
+    private bool objectiveMessageShown = false;
 
     [Header("Damage Text Settings")]
     public Canvas damageTextCanvas;
@@ -42,6 +58,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentStrengthDisplay;
 
     [Header("Result Screen Displays")]
+    public TextMeshProUGUI ResultState;
     public Image chosenCharacterImage;
     public TextMeshProUGUI chosenCharacterName;
     public TextMeshProUGUI timeSurvivedDisplay;
@@ -50,7 +67,6 @@ public class GameManager : MonoBehaviour
     public List<Image> chosenPassiveItemsUI = new List<Image>(6);
 
     [Header("Stop Watch")]
-    public float timeLimits; //time limit in seconds
     float stopwatchTime; //current time elapsed
     public TextMeshProUGUI stopwatchDisplay;
     //Flag to check if game is over 
@@ -67,19 +83,24 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Extra" + this + " Deleted");
             Destroy(gameObject);
         }
         DisableScreens();    
+    }
+    private void Start()
+    {
+        totalEnemiesToKill = requiredEnemyKills;
+        StartCoroutine(ShowObjectiveBriefly(3f));
+        UpdateObjectiveText();
     }
     private void Update()
     {
         
         switch (currentState)
-        { 
+        {
             case GameState.Gameplay:
-                CheckForPauseAndResume();
                 UpdateStopWatch();
+                CheckForPauseAndResume();
                 break;    
 
             case GameState.Paused:
@@ -91,7 +112,6 @@ public class GameManager : MonoBehaviour
                 {
                     isGameOver = true;
                     Time.timeScale = 0f; //Stop the game
-                    Debug.Log("Game is Over");
                     DisplayResults();
                 }
                 break;
@@ -100,7 +120,6 @@ public class GameManager : MonoBehaviour
                 {
                     choosingUpgrade = true;
                     Time.timeScale = 0f; //pause the game for upgrading
-                    Debug.Log("Upgrading...");
                     levelUpScreen.SetActive(true);
                 }
                 break;
@@ -213,6 +232,7 @@ public class GameManager : MonoBehaviour
         pauseScreen.SetActive(false);
         resultsScreen.SetActive(false);
         levelUpScreen.SetActive(false);
+        extractionExit.SetActive(false);
     }
 
     public void GameOver()
@@ -225,23 +245,19 @@ public class GameManager : MonoBehaviour
     {
         resultsScreen.SetActive(true);
     }
-
     public void AssignChosenCharacterUI(PlayerScriptableObject chosenCharacterData)
     {
         chosenCharacterImage.sprite = chosenCharacterData.Icon; 
         chosenCharacterName.text = chosenCharacterData.name;
     }
-
     public void AssignLevelReachedUI(int levelReachedData)
     {
         levelReachedDisplay.text = levelReachedData.ToString();
     }
-
     public void AssignChosenWeaponsAndPassiveItemUI(List<Image> chosenWeaponsData, List<Image> chosenPassiveItemsData)
     {
         if (chosenWeaponsData.Count != chosenWeaponsUI.Count || chosenPassiveItemsData.Count != chosenPassiveItemsUI.Count)
         {
-            Debug.Log("Chosen weapons and passive items data lists have different lengths");
             return;
         }
         // Assign chosen weapons data to chosenWeaponsUI
@@ -277,17 +293,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     void UpdateStopWatch()
     {
         stopwatchTime += Time.deltaTime;
 
         UpdateStopWatchDisplay();
-
-        if (stopwatchTime >= timeLimits)
-        {
-            GameOver();
-        }
     }
 
     void UpdateStopWatchDisplay()
@@ -313,5 +323,78 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; //continue da game
         levelUpScreen.SetActive(false);
         ChangeState(GameState.Gameplay);
+    }
+
+    private IEnumerator ShowObjectiveBriefly(float displayTime)
+    {
+        ObjectiveBrief();
+        briefObjectiveText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(displayTime);
+        briefObjectiveText.gameObject.SetActive(false);
+    }
+    private void ObjectiveBrief()
+    {
+        objectiveTextBrief.text = $"Kill {enemiesKilled}/{totalEnemiesToKill} enemies";
+    }
+    //Display enemy kill objective in pause menu
+    private void UpdateObjectiveText()
+    {
+        if (!extractionUnlocked)
+        {
+            objectiveTextDisplay.text = $"Kill {enemiesKilled}/{totalEnemiesToKill} enemies";
+        } else
+        objectiveTextDisplay.text = "Objective Completed! Permission To Extract Granted, Extraction Location Marked";
+    }
+    private void ShowCompletionMessage()
+    {
+        if (!objectiveMessageShown) // Check if the message was already shown
+        {
+            objectiveCompletionPanel.SetActive(true);
+            objectiveMessageShown = true; // Mark as shown
+            StartCoroutine(HideCompletionMessage(3f)); // Optional: Hide after a delay
+        }
+    }
+    private IEnumerator HideCompletionMessage(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        objectiveCompletionPanel.SetActive(false);
+    }
+    void UpdateEnemyKillCount()
+    {
+        if (enemiesKilled >= requiredEnemyKills || (requiredBoss != null && requiredBoss == null))
+        {
+            UnlockExtraction();
+        }
+    }
+    public void RegisterEnemyKill()
+    {
+        if (extractionUnlocked) return;
+        enemiesKilled++;
+        UpdateEnemyKillCount();
+        UpdateObjectiveText();
+    }
+    void CheckForBossDefeat()
+    {
+        if (requiredBoss == null && !extractionUnlocked)
+        {
+            UnlockExtraction();
+        }
+    }
+    private void UnlockExtraction()
+    {
+        if (!extractionUnlocked) // Check if extraction isn't already unlocked
+        {
+            extractionUnlocked = true;
+            extractionExit.SetActive(true);
+            ShowCompletionMessage();
+        }
+    }
+    public void CompleteExtraction()
+    {
+
+        ResultState.text = "Objective Completed!";
+        ResultState.color = Color.green;
+        //AssignChosenCharacterUI(chosenCharacter);
+        playerStat.kill();
     }
 }
