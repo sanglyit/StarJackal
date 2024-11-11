@@ -16,7 +16,6 @@ public class SceneController : MonoBehaviour
     }
     public void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false; // Stops play mode in the Unity Editor
         Application.Quit(); // Quits the game when built
     }
 }
