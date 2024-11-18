@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 5995651411930683551}
   - component: {fileID: 3675442549584273886}
   - component: {fileID: -8835026306262691534}
-  - component: {fileID: 4671175035325185718}
   - component: {fileID: 3809592575011148596}
+  - component: {fileID: 8230137927634136787}
   m_Layer: 0
   m_Name: Guardian
   m_TagString: Enemy
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 300
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -311,22 +311,10 @@ MonoBehaviour:
   drops:
   - name: Treasure of the void
     itemPrefab: {fileID: 738120056313583693, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
-    dropRate: 100
---- !u!114 &4671175035325185718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7288459855664633026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ee22aa6f59a864386684c1926896b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 2ce1b9d759802fa4aa8f2331576bfe2e, type: 2}
-  player: {fileID: 0}
-  radius: 6
+    dropRate: 99
+  - name: Medkit L
+    itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
+    dropRate: 1
 --- !u!114 &3809592575011148596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,4 +332,18 @@ MonoBehaviour:
   firePoint: {fileID: 3314892830280934663}
   burstCount: 5
   spreadAngle: 20
-  bulletSpeed: 10
+  bulletSpeed: 8
+--- !u!114 &8230137927634136787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7288459855664633026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ee22aa6f59a864386684c1926896b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2ce1b9d759802fa4aa8f2331576bfe2e, type: 2}
+  target: {fileID: 0}

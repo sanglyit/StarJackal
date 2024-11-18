@@ -1814,17 +1814,17 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Void Eyemond
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
-    - enemyName: Guard
-      enemyCount: 1
+      enemyCount: 0
       spawnCount: 0
       enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    - enemyName: Test
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: fe33c52d97a595c4f98e9b24c48bc5cc, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
-    nextWaveCondition: 1
+    nextWaveCondition: 0
     enemiesLeftThreshold: 1
   - waveName: Wave 2
     enemyGroups:

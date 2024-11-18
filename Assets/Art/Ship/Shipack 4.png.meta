@@ -1,39 +1,12 @@
 fileFormatVersion: 2
-guid: 6d04126786e078144aa61bf1fdd5d6e3
+guid: 721abd35243ccf047aea2b6cdc2ac285
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: toon_muzzleflash_front_spritesheet_1_0
-  - first:
-      213: 21300002
-    second: toon_muzzleflash_front_spritesheet_1_1
-  - first:
-      213: 21300004
-    second: toon_muzzleflash_front_spritesheet_1_2
-  - first:
-      213: 21300006
-    second: toon_muzzleflash_front_spritesheet_1_3
-  - first:
-      213: 21300008
-    second: toon_muzzleflash_front_spritesheet_1_4
-  - first:
-      213: 21300010
-    second: toon_muzzleflash_front_spritesheet_1_5
-  - first:
-      213: 21300012
-    second: toon_muzzleflash_front_spritesheet_1_6
-  - first:
-      213: 21300014
-    second: toon_muzzleflash_front_spritesheet_1_7
-  - first:
-      213: 21300016
-    second: toon_muzzleflash_front_spritesheet_1_8
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -57,12 +30,12 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: 1
+  maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
-    aniso: 16
+    filterMode: 0
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -90,13 +63,13 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -109,7 +82,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,7 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -137,211 +110,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_0
+      name: Shipack 4_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2731
-        width: 1365
-        height: 1365
+        y: 0
+        width: 141
+        height: 318
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_1
-      rect:
-        serializedVersion: 2
-        x: 1365
-        y: 2731
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_2
-      rect:
-        serializedVersion: 2
-        x: 2730
-        y: 2731
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1366
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_4
-      rect:
-        serializedVersion: 2
-        x: 1365
-        y: 1366
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_5
-      rect:
-        serializedVersion: 2
-        x: 2730
-        y: 1366
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2305410000000000800000000000000
-      internalID: 21300010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2305410000000000800000000000000
-      internalID: 21300012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_7
-      rect:
-        serializedVersion: 2
-        x: 1365
-        y: 1
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2305410000000000800000000000000
-      internalID: 21300014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toon_muzzleflash_front_spritesheet_1_8
-      rect:
-        serializedVersion: 2
-        x: 2730
-        y: 1
-        width: 1365
-        height: 1365
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03305410000000000800000000000000
-      internalID: 21300016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: up
-      rect:
-        serializedVersion: 2
-        x: 1885
-        y: 114
-        width: 326
-        height: 567
-      alignment: 0
-      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da6021ac55ab97c489e8f65fa492aed7
-      internalID: 2081559086
+      spriteID: fa677726011a9964b9976a0f712df967
+      internalID: 817640779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crusher
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 136
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d932488d8d172c4880bcc01b3add2a0
+      internalID: 1430641800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_2
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 234
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9108f3ec6ece66e4da1cafb7227bc377
+      internalID: 24148160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_3
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 234
+        width: 51
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ea279c075e5c54587c42d49ffd919d
+      internalID: -607825338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_4
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 234
+        width: 53
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e800c5be9a50c446956f691a5f6441e
+      internalID: 1424863419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_5
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 234
+        width: 163
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17976dd0b25764a4db5f71ab0944af62
+      internalID: 1546857047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_6
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 0
+        width: 100
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b51f78310c0dd478e45c67bdbc2c9a
+      internalID: 1194232475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_7
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 0
+        width: 95
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd8c84900acd5e448e67ce21d17ba44
+      internalID: -1788795996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_8
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 0
+        width: 45
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc36888d5955b14eb6e6f9dbf1e3f64
+      internalID: -1857803711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_9
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 0
+        width: 133
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a406ae3e2b624f4db8cace2ea14059c
+      internalID: 2106320486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_10
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 0
+        width: 126
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ef2d13ef6a03647b0baf3af46ddbb4
+      internalID: -1076094152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shipack 4_11
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0
+        width: 113
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56039b81f38a1684096c01cb51600c94
+      internalID: -348476021
       vertices: []
       indices: 
       edges: []
@@ -349,7 +364,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3f5459d890183cb47b075b1ee88ca46c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -357,16 +372,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      toon_muzzleflash_front_spritesheet_1_0: 21300000
-      toon_muzzleflash_front_spritesheet_1_1: 21300002
-      toon_muzzleflash_front_spritesheet_1_2: 21300004
-      toon_muzzleflash_front_spritesheet_1_3: 21300006
-      toon_muzzleflash_front_spritesheet_1_4: 21300008
-      toon_muzzleflash_front_spritesheet_1_5: 21300010
-      toon_muzzleflash_front_spritesheet_1_6: 21300012
-      toon_muzzleflash_front_spritesheet_1_7: 21300014
-      toon_muzzleflash_front_spritesheet_1_8: 21300016
-      up: 2081559086
+      Crusher: 1430641800
+      Shipack 4_0: 817640779
+      Shipack 4_10: -1076094152
+      Shipack 4_11: -348476021
+      Shipack 4_12: 93865592
+      Shipack 4_2: 24148160
+      Shipack 4_3: -607825338
+      Shipack 4_4: 1424863419
+      Shipack 4_5: 1546857047
+      Shipack 4_6: 1194232475
+      Shipack 4_7: -1788795996
+      Shipack 4_8: -1857803711
+      Shipack 4_9: 2106320486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

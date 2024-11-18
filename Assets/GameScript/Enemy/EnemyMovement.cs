@@ -8,10 +8,17 @@ public class EnemyMovement : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
     public Transform target;
-    //[SerializeField] private float enemySpeed = 5f;
-    //[SerializeField] private float rotateSpeed = 0.025f;
+
+    public float detectionRange = 6.5f;     // Range within which the enemy will charge
+    public float chargeSpeed = 12f;       // Speed during the charge
+    public float chargeDuration = 1f;     // Duration of the charge
+    public float chargeCooldown = 3f;     // Cooldown before the next charge
+
+    private bool isCharging;
+    private bool isWarning;
+    public GameObject warningParticlePrefab;
     private Rigidbody2D rb;
-    EnemyStat enemy;
+    private EnemyStat enemy;
 
     Vector2 knockbackVelocity;
     float knockbackDuration;
@@ -30,32 +37,41 @@ public class EnemyMovement : MonoBehaviour
             knockbackDuration -= Time.deltaTime;
             return; // Skip further logic while knockback is active
         }
-        //Try to target player 
-        if (!target)
+        // Try to acquire target if not already set
+        if (target == null)
         {
             GetTarget();
-        } else {
+        }
+        // Rotate towards target if not charging
+        if (!isCharging && target != null)
+        {
             RotateTowardsTarget();
+        }
+        // Charge attack logic if conditions are met
+        if (enemyData.CanCharge && !isCharging && !isWarning && target != null &&
+            Vector2.Distance(transform.position, target.position) <= detectionRange)
+        {
+            StartCoroutine(ChargeAttack());
         }
     }
 
     private void FixedUpdate()
     {
         //Move forward till da player is destroyed
-        if (target != null)
+        if (!isCharging && target != null)
         {
             rb.velocity = transform.up * enemy.currentMoveSpeed;
         }
 
-        if (target == null || !target.gameObject.activeInHierarchy)
+        else if (target == null || !target.gameObject.activeInHierarchy)
         {
             target = null;
             rb.velocity = Vector2.zero;
-            return;
         }
     }
     private void RotateTowardsTarget()
     {
+        if (isCharging) return;
         Vector2 targetDirection = target.position - transform.position;
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
         Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
@@ -64,12 +80,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void GetTarget()
     {
-        if (knockbackDuration > 0)
-        {
-            transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
-            knockbackDuration -= Time.deltaTime;
-            return; // Skip targeting while in knockback
-        }
+        if (knockbackDuration > 0) return;
 
         // Cache player transform if not already cached or player is inactive
         if (target == null || !target.gameObject.activeInHierarchy)
@@ -82,12 +93,40 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    private IEnumerator ChargeAttack()
+    {
+        isWarning = true;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.isKinematic = true;
+
+        GameObject instantiatedEffect = Instantiate(warningParticlePrefab, transform.position, Quaternion.identity);
+        Destroy(instantiatedEffect, 2f);
+
+        yield return new WaitForSeconds(1.5f); // Warning duration
+
+        // Start charging toward the player
+        isCharging = true;
+        isWarning = false;
+        rb.isKinematic = false;
+
+        Vector2 chargeDirection = (target.position - transform.position).normalized;
+        rb.velocity = chargeDirection * chargeSpeed;
+
+        yield return new WaitForSeconds(chargeDuration);
+
+        // End charge
+        rb.velocity = Vector2.zero;
+        isCharging = false;
+
+        // Cooldown before next charge
+        yield return new WaitForSeconds(chargeCooldown);
+    }
+
     public void KnockBack(Vector2 velocity, float duration)
     {
-        //ignore knockback if the duration is greater than 0
-        if(knockbackDuration > 0) return;
+        if (knockbackDuration > 0) return;
 
-        //begin knockback
         knockbackVelocity = velocity;
         knockbackDuration = duration;
     }
