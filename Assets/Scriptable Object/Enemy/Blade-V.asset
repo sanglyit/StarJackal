@@ -16,6 +16,7 @@ MonoBehaviour:
   rotateSpeed: 0.85
   maxHealth: 3000
   damage: 25
-  range: 3.5
+  range: 3
   fireRate: 1.5
   canCharge: 1
+  countsTowardWinCondition: 1

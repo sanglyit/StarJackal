@@ -19,6 +19,7 @@ public class PlayerStat : MonoBehaviour
     float currentFireRate;
     float currentStrength;
     float currentMagnet;
+    private float runtimeMaxHealth; // Temporary max health variable
 
     //Level system
     [Header("Experience/Level")]
@@ -60,7 +61,8 @@ public class PlayerStat : MonoBehaviour
         collector = GetComponent <PlayerCollector>();
 
         //Assigning variables
-        CurrentHealth = playerData.MaxHealth;
+        runtimeMaxHealth = playerData.MaxHealth;
+        CurrentHealth = runtimeMaxHealth;
         CurrentHeal = playerData.Heal;
         CurrentMoveSpeed = playerData.MoveSpeed;
         CurrentFireRate = playerData.FireRate;
@@ -126,6 +128,7 @@ public class PlayerStat : MonoBehaviour
         {
             level++;
             experience -= experienceCap;
+            IncreaseMaxHealth(10);
             int experienceCapIncrease = 0;
             foreach (LevelRange range in levelRanges)
             {
@@ -138,16 +141,14 @@ public class PlayerStat : MonoBehaviour
             experienceCap += experienceCapIncrease;
 
             UpdateLevelText();
-
             GameManager.instance.StartLevelUp();
         }
     }
-
     public void LevelUp()
     {
         level++;
+        IncreaseMaxHealth(10);
         int experienceCapIncrease = 0;
-
         foreach (LevelRange range in levelRanges)
         {
             if (level >= range.startLevel && level <= range.endLevel)
@@ -159,11 +160,8 @@ public class PlayerStat : MonoBehaviour
         experienceCap += experienceCapIncrease;
 
         UpdateLevelText();
-
-        // Trigger level-up effects, such as UI updates
         GameManager.instance.StartLevelUp();
     }
-
     public float GetAdjustedCooldown(float baseCooldown)
     {
         // Calculate the adjusted shooting cooldown using the player's fire rate
@@ -223,11 +221,16 @@ public class PlayerStat : MonoBehaviour
             Destroy(instantiatedShield, 3f);
         }
     }
-
+    public void IncreaseMaxHealth(float amount)
+    {
+        runtimeMaxHealth += amount;
+        CurrentHealth = runtimeMaxHealth;
+        UpdateHealthBar(); // Reflect the changes in the UI
+    }
     void UpdateHealthBar()
     {
         //Update the health bar
-        healthBar.fillAmount = currentHealth / playerData.MaxHealth;
+        healthBar.fillAmount = currentHealth / runtimeMaxHealth;
     }
     public void kill()
     {

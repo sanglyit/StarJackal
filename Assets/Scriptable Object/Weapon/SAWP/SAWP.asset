@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Require manual firing due to it cycle nature, Ad big sniper cannon
     put together by pirate
   level: 1
-  damage: 80
+  damage: 50
   shootingCooldown: 1
   spread: 7
   reloadTime: 5

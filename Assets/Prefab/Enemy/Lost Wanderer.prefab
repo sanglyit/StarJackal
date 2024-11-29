@@ -536,6 +536,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 0ef43f183a5f1dd4b9b8d0632eb7a12a, type: 2}
   target: {fileID: 0}
+  detectionRange: 6.5
+  chargeSpeed: 12
+  chargeDuration: 1
+  chargeCooldown: 3
+  warningParticlePrefab: {fileID: 0}
 --- !u!114 &6207707308551475056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,7 +557,7 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
-  despawnDistance: 30
+  despawnDistance: 50
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   DeathEffect: {fileID: 910488959929642725, guid: 3b6a52e676d939443a098bdf276e48ca, type: 3}
@@ -569,9 +574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Small Gold
-    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
-    dropRate: 5
   - name: Small Exp
     itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
     dropRate: 50
@@ -581,3 +583,6 @@ MonoBehaviour:
   - name: Medium exp
     itemPrefab: {fileID: 2065256531555299820, guid: 009ca42447de9da48ba055025aff3c84, type: 3}
     dropRate: 40
+  - name: Big exp
+    itemPrefab: {fileID: 2065256531555299820, guid: 9a6c60cca372bd44bbe24cb032e1c0f0, type: 3}
+    dropRate: 5

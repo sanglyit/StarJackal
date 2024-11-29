@@ -1680,10 +1680,6 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Void Eyemond
-      enemyCount: 1
-      spawnCount: 0
-      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
-    - enemyName: Test
       enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
@@ -1713,7 +1709,7 @@ MonoBehaviour:
       enemyCount: 12
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    - enemyName: Lost Wanderer
+    - enemyName: Eyemond
       enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
@@ -1722,7 +1718,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
     - enemyName: Lost Wanderer
-      enemyCount: 20
+      enemyCount: 12
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     waveQuota: 0
@@ -1737,23 +1733,46 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Ene
-      enemyCount: 20
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: Tomb Keeper
       enemyCount: 4
       spawnCount: 0
       enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
-    - enemyName: Guardian
-      enemyCount: 12
-      spawnCount: 0
-      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
     - enemyName: Kai
-      enemyCount: 10
+      enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Void Eyemond
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     waveQuota: 0
     spawnInterval: 5
+    spawnCount: 0
+    nextWaveCondition: 1
+    enemiesLeftThreshold: 2
+  - waveName: Wave 5
+    enemyGroups:
+    - enemyName: Tomb Keeper
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Kai
+      enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Void Eyemond
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Crusher
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    waveQuota: 0
+    spawnInterval: 3
     spawnCount: 0
     nextWaveCondition: 1
     enemiesLeftThreshold: 2
@@ -1841,11 +1860,11 @@ MonoBehaviour:
   currentState: 0
   previousState: 0
   extractionExit: {fileID: 5401863921699512500}
-  requiredBoss: {fileID: 0}
-  requiredEnemyKills: 5
+  enemyName: Crusher
   objectiveTextBrief: {fileID: 2054926343}
   briefObjectiveText: {fileID: 451192381}
   objectiveCompletionPanel: {fileID: 237739479}
+  objectiveKillTarget: 1
   damageTextCanvas: {fileID: 1243393531}
   textFontSize: 30
   textFont: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2701,8 +2720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 684, y: 473.34753}
-  m_SizeDelta: {x: 350, y: 71.5367}
+  m_AnchoredPosition: {x: 685, y: 480}
+  m_SizeDelta: {x: 350, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451192383
 MonoBehaviour:
@@ -6903,7 +6922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Objective Complete!
+  m_text: Objective Complete! Permission To Extract Granted
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6930,8 +6949,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

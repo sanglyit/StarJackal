@@ -12,7 +12,6 @@ public class EnemySpawner : MonoBehaviour
         public int waveQuota; // Total number of enemies to spawn in a wave
         public float spawnInterval; // Spawn delay
         public int spawnCount; // Count of enemies spawned so far
-
         public NextWaveCondition nextWaveCondition; 
         public int enemiesLeftThreshold; 
     }

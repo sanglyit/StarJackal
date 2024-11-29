@@ -26,17 +26,16 @@ public class GameManager : MonoBehaviour
 
     [Header("Extraction Settings")]
     public GameObject extractionExit; // Extraction exit object in the scene
-    public GameObject requiredBoss; // Specific enemy keal required to unlock extraction 
-    public int requiredEnemyKills; // Number of enemies needed for extraction
     private bool extractionUnlocked = false;
 
     [Header("Objective Display")]
+    public string enemyName;
     public TextMeshProUGUI objectiveTextBrief;
     public GameObject briefObjectiveText;
     public GameObject objectiveCompletionPanel; 
-    private int totalEnemiesToKill;
-    private int enemiesKilled = 0;
     private bool objectiveMessageShown = false;
+    private int objectiveEnemiesKilled = 0;
+    [SerializeField] private int objectiveKillTarget;
 
     [Header("Damage Text Settings")]
     public Canvas damageTextCanvas;
@@ -88,9 +87,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        totalEnemiesToKill = requiredEnemyKills;
         UpdateObjectiveText();
-        briefObjectiveText.gameObject.SetActive(true);
+        briefObjectiveText.SetActive(true);
     }
     private void Update()
     {
@@ -325,53 +323,29 @@ public class GameManager : MonoBehaviour
     }
 
     //Display enemy kill objective in pause menu
+    public void OnObjectiveEnemyKilled()
+    {
+        objectiveEnemiesKilled++;
+
+        if (objectiveEnemiesKilled >= objectiveKillTarget)
+        {
+            UnlockExtraction();
+        }
+    }
     private void UpdateObjectiveText()
     {
         if (!extractionUnlocked)
         {
-            if (totalEnemiesToKill > 0)
-            {
-                objectiveTextBrief.text = $"Kill {enemiesKilled}/{totalEnemiesToKill} enemies";
-            } 
-        } else {
-            objectiveTextBrief.text = "Objective Completed! Permission To Extract Granted";
+           objectiveTextBrief.text = $"Defeat {enemyName}!";
         }
-        // Keep the brief text updated
-        briefObjectiveText.SetActive(true);
-    }
+     }
     private void ShowCompletionMessage()
     {
         if (!objectiveMessageShown) // Check if the message was already shown
         {
             objectiveCompletionPanel.SetActive(true);
             objectiveMessageShown = true; // Mark as shown
-            StartCoroutine(HideCompletionMessage(3f)); // Optional: Hide after a delay
-        }
-    }
-    private IEnumerator HideCompletionMessage(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        objectiveCompletionPanel.SetActive(false);
-    }
-    void UpdateEnemyKillCount()
-    {
-        if (enemiesKilled >= requiredEnemyKills || (requiredBoss != null && requiredBoss == null))
-        {
-            UnlockExtraction();
-        }
-    }
-    public void RegisterEnemyKill()
-    {
-        if (extractionUnlocked) return;
-        enemiesKilled++;
-        UpdateEnemyKillCount();
-        UpdateObjectiveText();
-    }
-    void CheckForBossDefeat()
-    {
-        if (requiredBoss == null && !extractionUnlocked)
-        {
-            UnlockExtraction();
+            
         }
     }
     private void UnlockExtraction()
@@ -381,6 +355,7 @@ public class GameManager : MonoBehaviour
             extractionUnlocked = true;
             extractionExit.SetActive(true);
             ShowCompletionMessage();
+            briefObjectiveText.SetActive(false);
         }
     }
     public void CompleteExtraction()

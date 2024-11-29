@@ -25,6 +25,15 @@ public class EnemyProjectile : MonoBehaviour
             }
             DestroyProjectile();
         }
+        if (collision.CompareTag("Prop"))
+        {
+            Asteroid asteroid = collision.GetComponent<Asteroid>();
+            if (asteroid != null)
+            {
+                asteroid.TakeDamage(damage);
+            }
+            DestroyProjectile();
+        }
     }
 
     private void DestroyProjectile()

@@ -88,7 +88,10 @@ public class EnemyStat : MonoBehaviour
 
     public void Kill()
     {
-        GameManager.instance.RegisterEnemyKill();
+        if (enemyData.CountsTowardWinCondition)
+        {
+            GameManager.instance.OnObjectiveEnemyKilled();
+        }
         PlayDedEffect();
         Destroy(gameObject);
     }

@@ -1198,7 +1198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.3937, y: 22}
+  m_AnchoredPosition: {x: 25.987, y: 14}
   m_SizeDelta: {x: 387.2126, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146596330
@@ -1248,8 +1248,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1749,13 +1749,13 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Void Eyemond
-      enemyCount: 10
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
-    - enemyName: Guard
-      enemyCount: 1
+    - enemyName: kai
+      enemyCount: 3
       spawnCount: 0
-      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
@@ -1768,9 +1768,17 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Void Eyemond
-      enemyCount: 15
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: kai
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: ene
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     waveQuota: 0
     spawnInterval: 3
     spawnCount: 0
@@ -1779,21 +1787,25 @@ MonoBehaviour:
   - waveName: Wave 3
     enemyGroups:
     - enemyName: Lost Wanderer
-      enemyCount: 12
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Lost Wanderer
-      enemyCount: 20
+      enemyCount: 15
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     - enemyName: Tomb Keeper
-      enemyCount: 4
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
     - enemyName: Lost Wanderer
       enemyCount: 20
       spawnCount: 0
-      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Lost Wanderer
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     waveQuota: 0
     spawnInterval: 5
     spawnCount: 0
@@ -1802,21 +1814,21 @@ MonoBehaviour:
   - waveName: Wave 4
     enemyGroups:
     - enemyName: Lost Wanderer
-      enemyCount: 10
+      enemyCount: 7
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Ene
-      enemyCount: 20
+      enemyCount: 30
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: Tomb Keeper
-      enemyCount: 4
+      enemyCount: 6
       spawnCount: 0
       enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
-    - enemyName: Guardian
-      enemyCount: 12
+    - enemyName: Kai
+      enemyCount: 15
       spawnCount: 0
-      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     - enemyName: Kai
       enemyCount: 10
       spawnCount: 0
@@ -1826,8 +1838,132 @@ MonoBehaviour:
     spawnCount: 0
     nextWaveCondition: 1
     enemiesLeftThreshold: 2
+  - waveName: Wave 5
+    enemyGroups:
+    - enemyName: Ene
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Tomb Keeper
+      enemyCount: 3
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Guardian
+      enemyCount: 1
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    waveQuota: 0
+    spawnInterval: 5
+    spawnCount: 0
+    nextWaveCondition: 1
+    enemiesLeftThreshold: 2
+  - waveName: Wave 6
+    enemyGroups:
+    - enemyName: Ene
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Tomb Keeper
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Kai
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Eye
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    waveQuota: 0
+    spawnInterval: 5
+    spawnCount: 0
+    nextWaveCondition: 1
+    enemiesLeftThreshold: 2
+  - waveName: Wave 7
+    enemyGroups:
+    - enemyName: Ene
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Tomb Keeper
+      enemyCount: 3
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Ene
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Crusher
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    waveQuota: 0
+    spawnInterval: 5
+    spawnCount: 0
+    nextWaveCondition: 1
+    enemiesLeftThreshold: 2
+  - waveName: Wave 8
+    enemyGroups:
+    - enemyName: Ene
+      enemyCount: 25
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Tomb Keeper
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Kai
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Ene
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Guardian
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    - enemyName: Guardian
+      enemyCount: 50
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    - enemyName: Crusher
+      enemyCount: 30
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    waveQuota: 0
+    spawnInterval: 5
+    spawnCount: 0
+    nextWaveCondition: 1
+    enemiesLeftThreshold: 2
   currentWaveCount: 0
-  maxEnemyAllowed: 35
+  maxEnemyAllowed: 45
   waveInterval: 5
   enemyAlive: 0
   relativeSpawnPoints:
@@ -1910,14 +2046,11 @@ MonoBehaviour:
   currentState: 0
   previousState: 0
   extractionExit: {fileID: 5401863921699512500}
-  requiredBoss: {fileID: 0}
-  requiredEnemyKills: 5
-  objectiveTextDisplay: {fileID: 0}
+  enemyName: Guardian
   objectiveTextBrief: {fileID: 2054926343}
   briefObjectiveText: {fileID: 451192381}
   objectiveCompletionPanel: {fileID: 237739479}
-  bossPortal: {fileID: 0}
-  bossTimeLimit: 300
+  objectiveKillTarget: 1
   damageTextCanvas: {fileID: 1243393531}
   textFontSize: 30
   textFont: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2773,8 +2906,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 602.36, y: 442.76}
-  m_SizeDelta: {x: 444.7125, y: 94.4823}
+  m_AnchoredPosition: {x: 685, y: 480}
+  m_SizeDelta: {x: 350, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451192383
 MonoBehaviour:
@@ -6918,7 +7051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Objective Complete!
+  m_text: Objective Complete! Permission To Extract Granted
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6945,8 +7078,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11221,8 +11354,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00002265, y: -22.66}
-  m_SizeDelta: {x: 407.63, y: 45.3191}
+  m_AnchoredPosition: {x: -6.3937035, y: -16.25}
+  m_SizeDelta: {x: 322.4519, y: 32.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054926343
 MonoBehaviour:
@@ -11271,8 +11404,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

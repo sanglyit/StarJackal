@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Enemy
   - CollectionTrigger
+  - Prop
   layers:
   - Default
   - TransparentFX
