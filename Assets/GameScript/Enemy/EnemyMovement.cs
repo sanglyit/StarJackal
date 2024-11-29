@@ -99,9 +99,11 @@ public class EnemyMovement : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.isKinematic = true;
+        float originalMoveSpeed = enemy.currentMoveSpeed;
+        enemy.currentMoveSpeed = 0f;
 
         GameObject instantiatedEffect = Instantiate(warningParticlePrefab, transform.position, Quaternion.identity);
-        Destroy(instantiatedEffect, 2f);
+        Destroy(instantiatedEffect, 1.5f);
 
         yield return new WaitForSeconds(1.5f); // Warning duration
 
@@ -118,6 +120,7 @@ public class EnemyMovement : MonoBehaviour
         // End charge
         rb.velocity = Vector2.zero;
         isCharging = false;
+        enemy.currentMoveSpeed = originalMoveSpeed;
 
         // Cooldown before next charge
         yield return new WaitForSeconds(chargeCooldown);

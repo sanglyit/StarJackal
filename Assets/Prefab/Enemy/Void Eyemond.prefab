@@ -265,6 +265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 9248a157d1dd21b42a9ad0c2f1e125c8, type: 2}
   target: {fileID: 0}
+  detectionRange: 6.5
+  chargeSpeed: 12
+  chargeDuration: 1
+  chargeCooldown: 3
+  warningParticlePrefab: {fileID: 0}
 --- !u!114 &3854483024532385997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,18 +303,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: Small Gold
-    itemPrefab: {fileID: 4344431350712014413, guid: 0f6bbc421400c6142886e2602ac02f67, type: 3}
-    dropRate: 5
   - name: Small Exp
     itemPrefab: {fileID: 2065256531555299820, guid: a638cfbb8d5ed6d4e9673619911d5f91, type: 3}
     dropRate: 80
   - name: Medkit
     itemPrefab: {fileID: 5504161510163236709, guid: 5826c5a2292441644bd8267fd5caa5b6, type: 3}
-    dropRate: 5
-  - name: Medium
-    itemPrefab: {fileID: 2065256531555299820, guid: 009ca42447de9da48ba055025aff3c84, type: 3}
-    dropRate: 10
+    dropRate: 20
 --- !u!1 &8510050616942626377
 GameObject:
   m_ObjectHideFlags: 0

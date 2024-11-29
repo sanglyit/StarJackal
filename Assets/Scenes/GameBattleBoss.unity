@@ -198,75 +198,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8141249}
   m_CullTransparentMesh: 1
---- !u!1001 &17720557
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 924985233035683325, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_Name
-      value: Blue Nebula Chunk
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183747564985383412, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 14.514664
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183747564985383412, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 14.44135
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000264751417571515, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
 --- !u!1 &19012133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,7 +1129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.3937, y: 22}
+  m_AnchoredPosition: {x: 0.000017643, y: 27.258}
   m_SizeDelta: {x: 387.2126, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146596330
@@ -1749,83 +1680,29 @@ MonoBehaviour:
   - waveName: Wave 1
     enemyGroups:
     - enemyName: Void Eyemond
-      enemyCount: 10
+      enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
-    - enemyName: Guard
+    - enemyName: Blade
       enemyCount: 1
       spawnCount: 0
-      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+      enemyPrefab: {fileID: 5525241259236142305, guid: fe33c52d97a595c4f98e9b24c48bc5cc, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 3
     spawnCount: 0
     nextWaveCondition: 1
     enemiesLeftThreshold: 1
   - waveName: Wave 2
     enemyGroups:
-    - enemyName: Lost Wanderer
-      enemyCount: 5
-      spawnCount: 0
-      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    - enemyName: Void Eyemond
-      enemyCount: 15
+    - enemyName: void
+      enemyCount: 30
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     waveQuota: 0
-    spawnInterval: 3
+    spawnInterval: 2
     spawnCount: 0
     nextWaveCondition: 1
-    enemiesLeftThreshold: 2
-  - waveName: Wave 3
-    enemyGroups:
-    - enemyName: Lost Wanderer
-      enemyCount: 12
-      spawnCount: 0
-      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    - enemyName: Lost Wanderer
-      enemyCount: 20
-      spawnCount: 0
-      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
-    - enemyName: Tomb Keeper
-      enemyCount: 4
-      spawnCount: 0
-      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
-    - enemyName: Lost Wanderer
-      enemyCount: 20
-      spawnCount: 0
-      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    waveQuota: 0
-    spawnInterval: 5
-    spawnCount: 0
-    nextWaveCondition: 1
-    enemiesLeftThreshold: 2
-  - waveName: Wave 4
-    enemyGroups:
-    - enemyName: Lost Wanderer
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    - enemyName: Ene
-      enemyCount: 20
-      spawnCount: 0
-      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
-    - enemyName: Tomb Keeper
-      enemyCount: 4
-      spawnCount: 0
-      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
-    - enemyName: Guardian
-      enemyCount: 12
-      spawnCount: 0
-      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
-    - enemyName: Kai
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
-    waveQuota: 0
-    spawnInterval: 5
-    spawnCount: 0
-    nextWaveCondition: 1
-    enemiesLeftThreshold: 2
+    enemiesLeftThreshold: 1
   currentWaveCount: 0
   maxEnemyAllowed: 35
   waveInterval: 5
@@ -1910,8 +1787,8 @@ MonoBehaviour:
   currentState: 0
   previousState: 0
   extractionExit: {fileID: 5401863921699512500}
-  requiredBoss: {fileID: 0}
-  requiredEnemyKills: 5
+  requiredBoss: {fileID: 5525241259236142305, guid: fe33c52d97a595c4f98e9b24c48bc5cc, type: 3}
+  requiredEnemyKills: 0
   objectiveTextDisplay: {fileID: 0}
   objectiveTextBrief: {fileID: 2054926343}
   briefObjectiveText: {fileID: 451192381}
@@ -2773,8 +2650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 602.36, y: 442.76}
-  m_SizeDelta: {x: 444.7125, y: 94.4823}
+  m_AnchoredPosition: {x: 612, y: 444.74}
+  m_SizeDelta: {x: 432.816, y: 90.5167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451192383
 MonoBehaviour:
@@ -6176,6 +6053,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126202502}
   m_CullTransparentMesh: 1
+--- !u!1001 &1133630744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 924985233035683325, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_Name
+      value: Boss chunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000264751417571515, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
 --- !u!1 &1154624417
 GameObject:
   m_ObjectHideFlags: 0
@@ -7978,9 +7912,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainChunks:
-  - {fileID: 924985233035683325, guid: f9d75832d14077c428bf2ceda25cec92, type: 3}
-  - {fileID: 924985233035683325, guid: 597cec25a337ce3438a1d3900ca2c465, type: 3}
-  - {fileID: 924985233035683325, guid: 045548c43ab7b9f40be2a47277ca815d, type: 3}
+  - {fileID: 924985233035683325, guid: 92d92619570fe684599812eadd5e0ee8, type: 3}
+  - {fileID: 924985233035683325, guid: 8a730cba54668734d9530de322b4ebb3, type: 3}
+  - {fileID: 924985233035683325, guid: 9064cdc114abf324ea28d17b24b077a4, type: 3}
   Player: {fileID: 530051361}
   mapWidth: 6
   mapHeight: 6
@@ -11221,8 +11155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00002265, y: -22.66}
-  m_SizeDelta: {x: 407.63, y: 45.3191}
+  m_AnchoredPosition: {x: 0.0000061989, y: -21.999}
+  m_SizeDelta: {x: 414.2393, y: 43.9973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054926343
 MonoBehaviour:
@@ -11244,7 +11178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Description
+  m_text: Defeat Blade-V
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11789,4 +11723,4 @@ SceneRoots:
   - {fileID: 237063306}
   - {fileID: 5461311803024123281}
   - {fileID: 2540197450669754511}
-  - {fileID: 17720557}
+  - {fileID: 1133630744}

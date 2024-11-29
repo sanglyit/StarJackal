@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     private bool extractionUnlocked = false;
 
     [Header("Objective Display")]
-    public TextMeshProUGUI objectiveTextDisplay;
     public TextMeshProUGUI objectiveTextBrief;
     public GameObject briefObjectiveText;
     public GameObject objectiveCompletionPanel; 
@@ -90,8 +89,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         totalEnemiesToKill = requiredEnemyKills;
-        StartCoroutine(ShowObjectiveBriefly(3f));
         UpdateObjectiveText();
+        briefObjectiveText.gameObject.SetActive(true);
     }
     private void Update()
     {
@@ -325,25 +324,20 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.Gameplay);
     }
 
-    private IEnumerator ShowObjectiveBriefly(float displayTime)
-    {
-        ObjectiveBrief();
-        briefObjectiveText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(displayTime);
-        briefObjectiveText.gameObject.SetActive(false);
-    }
-    private void ObjectiveBrief()
-    {
-        objectiveTextBrief.text = $"Kill {enemiesKilled}/{totalEnemiesToKill} enemies";
-    }
     //Display enemy kill objective in pause menu
     private void UpdateObjectiveText()
     {
         if (!extractionUnlocked)
         {
-            objectiveTextDisplay.text = $"Kill {enemiesKilled}/{totalEnemiesToKill} enemies";
-        } else
-        objectiveTextDisplay.text = "Objective Completed! Permission To Extract Granted, Extraction Location Marked";
+            if (totalEnemiesToKill > 0)
+            {
+                objectiveTextBrief.text = $"Kill {enemiesKilled}/{totalEnemiesToKill} enemies";
+            } 
+        } else {
+            objectiveTextBrief.text = "Objective Completed! Permission To Extract Granted";
+        }
+        // Keep the brief text updated
+        briefObjectiveText.SetActive(true);
     }
     private void ShowCompletionMessage()
     {

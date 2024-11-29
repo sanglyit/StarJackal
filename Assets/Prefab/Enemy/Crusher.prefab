@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3848467265006747557}
   m_Layer: 0
   m_Name: Crusher
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,10 +52,10 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 9f521f1a39fa34c4ebf2c856cc4ff7da, type: 2}
   target: {fileID: 0}
   detectionRange: 8
-  chargeSpeed: 12
-  chargeDuration: 1
+  chargeSpeed: 11
+  chargeDuration: 1.5
   chargeCooldown: 3
-  warningParticlePrefab: {fileID: 2165552187662702282, guid: d198b8a46665774448186dea7ff1f611, type: 3}
+  warningParticlePrefab: {fileID: 1969432487404268193, guid: 69ad4371f98709c4cb7d3008b4ab9d80, type: 3}
 --- !u!61 &3256213719617043555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5525241259236142305}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -126,7 +126,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &5233025452183648376
 MonoBehaviour:

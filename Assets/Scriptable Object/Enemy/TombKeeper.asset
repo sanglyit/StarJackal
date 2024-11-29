@@ -15,4 +15,7 @@ MonoBehaviour:
   enemySpeed: 3.5
   rotateSpeed: 0.02
   maxHealth: 1100
-  damage: 40
+  damage: 35
+  range: 0
+  fireRate: 0
+  canCharge: 0

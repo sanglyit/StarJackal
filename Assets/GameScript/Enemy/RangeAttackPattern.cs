@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardianAttackPattern : MonoBehaviour
+public class RangeAttackPattern : MonoBehaviour
 {
     [SerializeField] private EnemyScriptableObject enemyData;
     public GameObject bulletPrefab;         // Bullet prefab to instantiate
@@ -51,6 +51,9 @@ public class GuardianAttackPattern : MonoBehaviour
             // Instantiate the bullet and set its direction and speed
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, bulletRotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+            Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
             Vector2 direction = bulletRotation * Vector2.right; // Right direction for 2D shooting
             rb.velocity = direction * bulletSpeed;
 
@@ -60,6 +63,7 @@ public class GuardianAttackPattern : MonoBehaviour
             {
                 bulletScript.damage = enemyData.Damage;
             }
+            Destroy(bullet, 3f);
         }
     }
 }
