@@ -235,12 +235,15 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         timeSurvivedDisplay.text = stopwatchDisplay.text;
+        briefObjectiveText.SetActive(false);
+        objectiveCompletionPanel.SetActive(false);
         ChangeState(GameState.GameOver);
     }
 
     void DisplayResults()
     {
         resultsScreen.SetActive(true);
+        objectiveMessageShown = false;
     }
     public void AssignChosenCharacterUI(PlayerScriptableObject chosenCharacterData)
     {
@@ -363,7 +366,8 @@ public class GameManager : MonoBehaviour
 
         ResultState.text = "Objective Completed!";
         ResultState.color = Color.green;
-        //AssignChosenCharacterUI(chosenCharacter);
+        briefObjectiveText.SetActive(false);
+        objectiveCompletionPanel.SetActive(false);
         playerStat.kill();
     }
 }
