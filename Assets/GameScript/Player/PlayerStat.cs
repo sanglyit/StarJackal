@@ -106,14 +106,6 @@ public class PlayerStat : MonoBehaviour
         }
         Regen();
     }
-    public void IncreaseExperience(int amount)
-    {
-        experience += amount;
-
-        LevelUpChecker();
-        UpdateExpBar();
-    }
-
     void UpdatePlayerSprite()
     {
         if (spriteRenderer != null && playerData.CharacterSprite != null)
@@ -121,6 +113,14 @@ public class PlayerStat : MonoBehaviour
             // Assign the selected character's sprite
             spriteRenderer.sprite = playerData.CharacterSprite;
         }
+    }
+
+    public void IncreaseExperience(int amount)
+    {
+        experience += amount;
+
+        LevelUpChecker();
+        UpdateExpBar();
     }
     void LevelUpChecker()
     {
