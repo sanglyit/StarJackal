@@ -6,6 +6,6 @@ public class WingsPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentMoveSpeed *= 1 + passiveItemData.Multiplier / 160f;
+        player.CurrentMoveSpeed *= 1 + passiveItemData.Modifier / 100f;
     }
 }

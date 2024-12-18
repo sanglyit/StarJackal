@@ -6,8 +6,8 @@ using UnityEngine;
 public class PassiveItemScriptableObject : ScriptableObject
 {
     [SerializeField]
-    float multiplier;
-    public float Multiplier { get => multiplier; private set => multiplier = value; }
+    float modifier;
+    public float Modifier { get => modifier; private set => modifier = value; }
 
     [SerializeField]
     int level; //Not meant to be modified in the game [Only in Editor]

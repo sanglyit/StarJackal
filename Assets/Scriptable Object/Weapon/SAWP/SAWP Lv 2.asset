@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SAWP Lv 2
   m_EditorClassIdentifier: 
   name: SAWP Lv 2
-  description: +20 damage, +2 pierce. Using the real mass-produce SAWP of the ORE.co
+  description: +10 damage, +2 pierce. Using the real mass-produce SAWP of the ORE.co
     PMC
   level: 2
-  damage: 70
+  damage: 60
   shootingCooldown: 1
   spread: 5
   reloadTime: 5

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
   m_Name: Power Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 100
+  multiplier: 1
   level: 1
   nextLevelPrefab: {fileID: 3914814735371176461, guid: 3d09e260fd8dbbf4da225e723f8b6a9c, type: 3}
   name: Power Modification
-  description: Increase ship strength by 100%. Strength boost all weapon damage
+  description: Ship strength +1. Strength boost all weapon damage
   icon: {fileID: -1890991458, guid: 712b6079a35c34d4d937318c4a0f2040, type: 3}
