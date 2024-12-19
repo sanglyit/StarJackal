@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifier: 1
   level: 3
-  nextLevelPrefab: {fileID: 0}
-  name: Power Modification Lv3
-  description: Ship Strength +3. Strength boost all weapon damage
-  icon: {fileID: -59101230, guid: 712b6079a35c34d4d937318c4a0f2040, type: 3}
+  nextLevelPrefab: {fileID: 3914814735371176461, guid: 5bd2b5a9df862b64d9cba49cafe22334, type: 3}
+  name: Power Modification Lv 3
+  description: More damage That's it
+  icon: {fileID: -1890991458, guid: 712b6079a35c34d4d937318c4a0f2040, type: 3}

@@ -3940,17 +3940,20 @@ MonoBehaviour:
     weaponData: {fileID: 11400000, guid: 127845ad6422b864bb43574ceaccc60b, type: 2}
   passiveItemUpgradeOptions:
   - passiveItemUpgradeIndex: 0
-    initialPassiveItem: {fileID: 8796992420236693823, guid: e1478f45cf5361d4c8e626916ac651ff, type: 3}
-    passiveItemData: {fileID: 11400000, guid: b1efec900ed8c9140adfaeac76d3f95e, type: 2}
-  - passiveItemUpgradeIndex: 1
-    initialPassiveItem: {fileID: 3914814735371176461, guid: c383271c28583d44d8257107ff399537, type: 3}
+    initialPassiveItem: {fileID: 3914814735371176461, guid: 781a79b3ff540254f8144a3c0a1d4ab5, type: 3}
     passiveItemData: {fileID: 11400000, guid: 2184bf44b01f4964cb8918a626357ff0, type: 2}
+  - passiveItemUpgradeIndex: 1
+    initialPassiveItem: {fileID: 8796992420236693823, guid: 0769bf3d204a1034aa44a8aa9e7b8723, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 48948ec5082370f4e855e568807fb016, type: 2}
   - passiveItemUpgradeIndex: 2
-    initialPassiveItem: {fileID: 2628203511099005117, guid: d54194ef471e13f4daf89eacd949f660, type: 3}
-    passiveItemData: {fileID: 11400000, guid: ed10791eab24fdd4f85bd53c3211f995, type: 2}
+    initialPassiveItem: {fileID: 1784790831501350901, guid: 837a5732d674b2244b7b20ab844360ec, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 6d28468d0265fb94186f5c8ff6899a93, type: 2}
   - passiveItemUpgradeIndex: 3
     initialPassiveItem: {fileID: 1017820102914099118, guid: 2dea205e555b7e34f966d6bb592c87c8, type: 3}
     passiveItemData: {fileID: 11400000, guid: e99dce7d1023a5546974dea8938eaca9, type: 2}
+  - passiveItemUpgradeIndex: 4
+    initialPassiveItem: {fileID: 2628203511099005117, guid: 233bf7a6adaf1104eacda22a2dbc5a20, type: 3}
+    passiveItemData: {fileID: 11400000, guid: 9bdff90c9c60bab4e87df81d05799ba8, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 740343935}
     upgradeDescriptionDisplay: {fileID: 1570909319}

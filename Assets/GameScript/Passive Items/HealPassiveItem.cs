@@ -6,6 +6,6 @@ public class HealPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentHeal += passiveItemData.Multiplier;
+        player.CurrentHeal += passiveItemData.Modifier;
     }
 }

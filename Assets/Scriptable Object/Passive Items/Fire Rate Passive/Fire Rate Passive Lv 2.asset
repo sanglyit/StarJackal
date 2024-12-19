@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
   m_Name: Fire Rate Passive Lv 2
   m_EditorClassIdentifier: 
-  multiplier: 20
+  modifier: 20
   level: 2
   nextLevelPrefab: {fileID: 2628203511099005117, guid: a87cb901b281bc348a4d5737c3d51580, type: 3}
   name: Shooting Drill Chip Lv 2

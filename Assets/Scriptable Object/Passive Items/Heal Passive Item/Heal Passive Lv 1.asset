@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
   m_Name: Heal Passive Lv 1
   m_EditorClassIdentifier: 
-  multiplier: 0.1
+  modifier: 0.1
   level: 1
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 1784790831501350901, guid: 027a64afa00f3bf4da41ba10984efb35, type: 3}
   name: Repair Kit Lv 1
   description: Your crew use this to repair stuff.
   icon: {fileID: -68442820, guid: 86aece3738f689943905578bffd0bfa9, type: 3}
