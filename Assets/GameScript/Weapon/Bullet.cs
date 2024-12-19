@@ -8,10 +8,10 @@ public class Bullet : MonoBehaviour
     public WeaponScriptableObject weaponData;
 
     // Current stats
-    protected float currentDamage;
-    protected float currentShootingCooldown;
-    protected float currentPierce;
-    protected float currentSpread;
+    public float currentDamage;
+    public float currentShootingCooldown;
+    public float currentPierce;
+    public float currentSpread;
     public GameObject hitEffect;
     private ObjectPool pool;
 

@@ -320,28 +320,23 @@ public class InventoryManager : MonoBehaviour
                 {
                     continue;
                 }
-
-                // Ensure weapon and catalyst match the specific evolution blueprint
-                if (weapon.weaponData == evolution.baseWeaponData &&
-                    catalyst.passiveItemData == evolution.catalystPassiveItemData &&
-                    weapon.weaponData.Level >= evolution.baseWeaponData.Level &&
-                    catalyst.passiveItemData.Level >= evolution.catalystPassiveItemData.Level)
+                if (weapon && catalyst && weapon.weaponData.Level >= evolution.baseWeaponData.Level && catalyst.passiveItemData.Level >= evolution.catalystPassiveItemData.Level)
                 {
                     GameObject evolvedWeapon = Instantiate(evolution.evolvedWeapon, transform.position, Quaternion.identity);
                     GunController evolvedWeaponController = evolvedWeapon.GetComponent<GunController>();
 
-                    evolvedWeapon.transform.SetParent(transform); // Set the weapon to be a child of the player
+                    evolvedWeapon.transform.SetParent(transform); //Set the weapon to be a child of the player
                     evolvedWeapon.transform.localRotation = Quaternion.Euler(0, 0, 0); // Reset local rotation to zero
 
                     AddWeapon(weaponSlotIndex, evolvedWeaponController);
-                    Destroy(weapon.gameObject); // Destroy old weapon after configuration
+                    Destroy(weapon.gameObject);
 
-                    // Update level and icon
+                    //Update level and icon
                     weaponLevels[weaponSlotIndex] = evolvedWeaponController.weaponData.Level;
                     weaponUISlots[weaponSlotIndex].sprite = evolvedWeaponController.weaponData.Icon;
 
                     Debug.LogWarning("Evolved");
-                    return; // Exit once evolution is complete
+                    return;
                 }
             }
         }

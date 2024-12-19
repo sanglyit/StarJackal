@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireRatePassiveItem : PassiveItem
+public class HealPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentFireRate *= 1 + passiveItemData.Multiplier / 100f;
+        player.CurrentHeal += passiveItemData.Multiplier;
     }
 }
