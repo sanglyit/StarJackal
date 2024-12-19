@@ -5,6 +5,7 @@ using UnityEngine;
 public class PassiveItem : MonoBehaviour
 {
     protected PlayerStat player;
+    protected Bullet bullet;
     public PassiveItemScriptableObject passiveItemData;
 
     protected virtual void ApplyModifier()
@@ -14,10 +15,9 @@ public class PassiveItem : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerStat>();
+        bullet = GetComponent<Bullet>();
         ApplyModifier();
     }
-
-    // Update is called once per frame
     void Update()
     {
         

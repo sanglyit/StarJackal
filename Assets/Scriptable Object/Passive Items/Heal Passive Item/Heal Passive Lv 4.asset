@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
+  m_Name: Heal Passive Lv 4
+  m_EditorClassIdentifier: 
+  multiplier: 0.1
+  level: 4
+  nextLevelPrefab: {fileID: 0}
+  name: Repair Kit Lv 4
+  description: Your crew use this to repair stuff.
+  icon: {fileID: -481595381, guid: 86aece3738f689943905578bffd0bfa9, type: 3}

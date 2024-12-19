@@ -6,6 +6,6 @@ public class FireRatePassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentFireRate *= 1 + passiveItemData.Modifier / 100f;
+        player.CurrentFireRate *= 1 + passiveItemData.Multiplier / 100f;
     }
 }

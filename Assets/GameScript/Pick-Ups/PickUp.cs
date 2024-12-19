@@ -24,6 +24,7 @@ public class PickUp : MonoBehaviour
     [Header("Bonuses")]
     public int exp;
     public int health;
+    public int gold;
 
     private bool isBeingPulled = false;
 

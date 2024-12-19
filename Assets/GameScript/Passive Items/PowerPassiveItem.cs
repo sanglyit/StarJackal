@@ -6,6 +6,6 @@ public class PowerPassiveItem : PassiveItem
 {
     protected override void ApplyModifier()
     {
-        player.CurrentStrength += passiveItemData.Modifier;
+        player.CurrentStrength += passiveItemData.Multiplier;
     }
 }

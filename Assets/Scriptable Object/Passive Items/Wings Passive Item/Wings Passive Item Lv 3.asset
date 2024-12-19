@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
   m_Name: Wings Passive Item Lv 3
   m_EditorClassIdentifier: 
-  multiplier: 70
+  multiplier: 20
   level: 3
   nextLevelPrefab: {fileID: 0}
-  name: Wings Lv3
-  description: Increase movement speed by 60%
+  name: Wings Lv 3
+  description: Redbull gives you wings
   icon: {fileID: 1878635425, guid: 15e25ed682923214caca4958e09d4998, type: 3}

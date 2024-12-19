@@ -9,20 +9,6 @@ using Random = UnityEngine.Random;
 public class GunController : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
-    /*[SerializeField] int Damage;
-    [SerializeField] string weaponName;
-
-    [SerializeField] float shootingCooldown;
-    [SerializeField] float spread;
-    [SerializeField] float reloadTime;
-    [SerializeField] float shootForce;
-    [SerializeField] float pierce;
-
-    [SerializeField] int magSize;
-    [SerializeField] bool isAutomatic;
-    [SerializeField] bool AutoReload;
-    [SerializeField] GameObject bulletPrefab;
-    */
     [SerializeField] Transform shootingPoint;
     private float amountOfSpread;
 
