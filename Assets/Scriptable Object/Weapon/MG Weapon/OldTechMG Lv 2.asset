@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: OldTechMG Lv 2
   m_EditorClassIdentifier: 
   name: OT-MG Lv2
-  description: -0.1 fire rate and +1 pierce/damage. Improve barrel size to fit bigger
+  description: Increased fire rate/ pierce/damage. Improve barrel size to fit bigger
     bullet.
   level: 2
-  damage: 6
-  shootingCooldown: 0.3
+  damage: 10
+  shootingCooldown: 0.4
   spread: 5
   reloadTime: 1
   shootForce: 40

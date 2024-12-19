@@ -19,6 +19,6 @@ MonoBehaviour:
   maxHealth: 120
   heal: 0
   moveSpeed: 7
-  fireRate: 0.75
+  fireRate: 0.5
   strength: 1.5
   magnet: 2.5

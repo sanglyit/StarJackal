@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Dual MG
   description: Double the gun double the damage
   level: 1
-  damage: 20
-  shootingCooldown: 0.21
+  damage: 30
+  shootingCooldown: 0.2
   spread: 10
-  reloadTime: 2
+  reloadTime: 1.5
   shootForce: 35
-  pierce: 1
+  pierce: 2
   magSize: 50
   isAutomatic: 1
   autoReload: 1

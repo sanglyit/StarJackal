@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gau-17B Lv 2
   m_EditorClassIdentifier: 
   name: Gau-17B Lv2
-  description: +1 damage, -0.2 fire rate, with a bigger mag
+  description: +1 damage, with a bigger mag
   level: 2
   damage: 8
   shootingCooldown: 0.13

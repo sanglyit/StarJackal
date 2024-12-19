@@ -1554,7 +1554,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
     waveQuota: 0
-    spawnInterval: 1
+    spawnInterval: 5
     spawnCount: 0
     nextWaveCondition: 1
     enemiesLeftThreshold: 2
@@ -1569,15 +1569,15 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     - enemyName: ene
-      enemyCount: 15
+      enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: kai
-      enemyCount: 15
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     waveQuota: 0
-    spawnInterval: 3
+    spawnInterval: 7
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 0
@@ -1587,7 +1587,7 @@ MonoBehaviour:
       enemyCount: 12
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    - enemyName: Lost Wanderer
+    - enemyName: void eye
       enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
@@ -1600,49 +1600,22 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: kai
-      enemyCount: 20
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     - enemyName: ene
-      enemyCount: 35
+      enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: Guer
+      enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
     waveQuota: 0
-    spawnInterval: 5
+    spawnInterval: 10
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 2
-  - waveName: Wave 4
-    enemyGroups:
-    - enemyName: Lost Wanderer
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
-    - enemyName: Ene
-      enemyCount: 20
-      spawnCount: 0
-      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
-    - enemyName: Tomb Keeper
-      enemyCount: 10
-      spawnCount: 0
-      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
-    - enemyName: Guardian
-      enemyCount: 1
-      spawnCount: 0
-      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
-    - enemyName: Kai
-      enemyCount: 15
-      spawnCount: 0
-      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
-    - enemyName: Crusher
-      enemyCount: 1
-      spawnCount: 0
-      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
-    waveQuota: 0
-    spawnInterval: 5
-    spawnCount: 0
-    nextWaveCondition: 1
-    enemiesLeftThreshold: 5
   - waveName: Wave 5
     enemyGroups:
     - enemyName: Lost Wanderer
@@ -1650,7 +1623,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Ene
-      enemyCount: 20
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: Tomb Keeper
@@ -1669,8 +1642,16 @@ MonoBehaviour:
       enemyCount: 1
       spawnCount: 0
       enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: Guer
+      enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Ocea
+      enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: d18c5f656d67f10429b9517f282d1ab0, type: 3}
     waveQuota: 0
-    spawnInterval: 5
+    spawnInterval: 7
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 5
@@ -1720,11 +1701,11 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 5525241259236142305, guid: fe33c52d97a595c4f98e9b24c48bc5cc, type: 3}
     - enemyName: Guardian
-      enemyCount: 3
+      enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
     waveQuota: 0
-    spawnInterval: 5
+    spawnInterval: 10
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 1
@@ -1751,7 +1732,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     waveQuota: 0
-    spawnInterval: 5
+    spawnInterval: 10
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 1
@@ -1770,7 +1751,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
     - enemyName: ene
-      enemyCount: 15
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: kai
@@ -1778,7 +1759,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     - enemyName: Crusher
-      enemyCount: 15
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
     waveQuota: 0
@@ -1786,7 +1767,7 @@ MonoBehaviour:
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 1
-  - waveName: Wave 9
+  - waveName: Wave 10
     enemyGroups:
     - enemyName: Tomb Keeper
       enemyCount: 15
@@ -1797,11 +1778,11 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     - enemyName: Guardian
-      enemyCount: 25
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
     - enemyName: ene
-      enemyCount: 15
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: kai
@@ -1809,20 +1790,205 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     - enemyName: Crusher
-      enemyCount: 25
+      enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
-    - enemyName: Blade V
-      enemyCount: 25
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Ocea
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: d18c5f656d67f10429b9517f282d1ab0, type: 3}
+    - enemyName: Tomb
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    waveQuota: 0
+    spawnInterval: 10
+    spawnCount: 0
+    nextWaveCondition: 0
+    enemiesLeftThreshold: 1
+  - waveName: Wave 11
+    enemyGroups:
+    - enemyName: Tomb Keeper
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: eyemond
+      enemyCount: 35
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Guardian
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    - enemyName: ene
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: kai
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Ocea
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: d18c5f656d67f10429b9517f282d1ab0, type: 3}
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    waveQuota: 0
+    spawnInterval: 10
+    spawnCount: 0
+    nextWaveCondition: 0
+    enemiesLeftThreshold: 1
+  - waveName: Wave 12
+    enemyGroups:
+    - enemyName: Tomb Keeper
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: eyemond
+      enemyCount: 35
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Guardian
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    - enemyName: ene
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: kai
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Ocea
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: d18c5f656d67f10429b9517f282d1ab0, type: 3}
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: blade
+      enemyCount: 1
       spawnCount: 0
       enemyPrefab: {fileID: 5525241259236142305, guid: fe33c52d97a595c4f98e9b24c48bc5cc, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: Tombkeeper
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Void Eyemond
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     waveQuota: 0
-    spawnInterval: 5
+    spawnInterval: 10
+    spawnCount: 0
+    nextWaveCondition: 0
+    enemiesLeftThreshold: 1
+  - waveName: Wave 12
+    enemyGroups:
+    - enemyName: Tomb Keeper
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: eyemond
+      enemyCount: 35
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Guardian
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 7288459855664633026, guid: 889229dc3dd23794fba7cc47818b07cd, type: 3}
+    - enemyName: ene
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
+    - enemyName: kai
+      enemyCount: 15
+      spawnCount: 0
+      enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Ocea
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: d18c5f656d67f10429b9517f282d1ab0, type: 3}
+    - enemyName: Guer
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: a8314c80c71317c439aa9e5e37b65b5a, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: blade
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: fe33c52d97a595c4f98e9b24c48bc5cc, type: 3}
+    - enemyName: Crusher
+      enemyCount: 5
+      spawnCount: 0
+      enemyPrefab: {fileID: 5525241259236142305, guid: 393edcf90683a6147a1fb57e22c94aff, type: 3}
+    - enemyName: Tombkeeper
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
+    - enemyName: Void Eyemond
+      enemyCount: 20
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
+    - enemyName: Ocea
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 3116548056135588423, guid: d18c5f656d67f10429b9517f282d1ab0, type: 3}
+    waveQuota: 0
+    spawnInterval: 10
     spawnCount: 0
     nextWaveCondition: 0
     enemiesLeftThreshold: 1
   currentWaveCount: 0
-  maxEnemyAllowed: 45
+  maxEnemyAllowed: 30
   waveInterval: 5
   enemyAlive: 0
   relativeSpawnPoints:
@@ -11852,11 +12018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209004716800552349, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.1
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6209004716800552349, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.3
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6209004716800552349, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
       propertyPath: m_LocalPosition.z

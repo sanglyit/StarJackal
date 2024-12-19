@@ -115,14 +115,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7174917048418448628}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.99768806, w: 0.06795964}
-  m_LocalPosition: {x: 0.9746, y: 5.041, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8205569012924533780}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -172.206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7848703470560472261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
+  damagePoolPrefab: {fileID: 0}
   despawnDistance: 30
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2

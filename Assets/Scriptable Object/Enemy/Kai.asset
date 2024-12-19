@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050c3cc8924713a4280e4b09eeb7b695, type: 3}
   m_Name: Kai
   m_EditorClassIdentifier: 
-  enemySpeed: 2.5
+  enemySpeed: 2.2
   rotateSpeed: 1
   maxHealth: 190
-  damage: 15
+  damage: 10
   range: 4
   fireRate: 2
   canCharge: 0

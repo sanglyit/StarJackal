@@ -13,13 +13,13 @@ public class PlayerStat : MonoBehaviour
     public GameObject ShieldEffect;
 
     //Current stats
-    float currentHealth;
-    float currentHeal;
-    float currentMoveSpeed;
-    float currentFireRate;
-    float currentStrength;
-    float currentMagnet;
-    private float runtimeMaxHealth; // Temporary max health variable
+    protected float currentHealth;
+    protected float currentHeal;
+    protected float currentMoveSpeed;
+    protected float currentFireRate;
+    protected float currentStrength;
+    protected float currentMagnet;
+    public float runtimeMaxHealth { get; set; } // Temporary max health variable
 
     //Level system
     [Header("Experience/Level")]
@@ -224,10 +224,10 @@ public class PlayerStat : MonoBehaviour
     public void IncreaseMaxHealth(float amount)
     {
         runtimeMaxHealth += amount;
-        CurrentHealth = runtimeMaxHealth;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, runtimeMaxHealth); // Clamp current health to new max
         UpdateHealthBar(); // Reflect the changes in the UI
     }
-    void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         //Update the health bar
         healthBar.fillAmount = currentHealth / runtimeMaxHealth;
@@ -245,28 +245,21 @@ public class PlayerStat : MonoBehaviour
     }
 
     public void HealHealth(float amount)
-    { 
-        if (CurrentHealth < playerData.MaxHealth)
+    {
+        if (CurrentHealth < runtimeMaxHealth) // Use runtimeMaxHealth instead of static MaxHealth
         {
             CurrentHealth += amount;
-
-            if (CurrentHealth > playerData.MaxHealth)
-            {
-                CurrentHealth = playerData.MaxHealth;
-            }
+            CurrentHealth = Mathf.Clamp(CurrentHealth, 0, runtimeMaxHealth); // Clamp to runtimeMaxHealth
             UpdateHealthBar();
         }
-        
+
     }
     void Regen()
     {
-        if (CurrentHealth < playerData.MaxHealth)
+        if (CurrentHealth < runtimeMaxHealth) // Use runtimeMaxHealth
         {
             CurrentHealth += CurrentHeal * Time.deltaTime;
-            if (CurrentHealth > playerData.MaxHealth)
-            { 
-                CurrentHealth = playerData.MaxHealth;
-            }
+            CurrentHealth = Mathf.Clamp(CurrentHealth, 0, runtimeMaxHealth); // Clamp to runtimeMaxHealth
             UpdateHealthBar();
         }
     }

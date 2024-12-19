@@ -15,8 +15,8 @@ MonoBehaviour:
   name: OT-MG
   description: Old-tech machine gun with low damage and fire rate
   level: 1
-  damage: 5
-  shootingCooldown: 0.4
+  damage: 6
+  shootingCooldown: 0.43
   spread: 5
   reloadTime: 1
   shootForce: 25

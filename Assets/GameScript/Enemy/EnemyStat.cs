@@ -10,7 +10,6 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public float currentMoveSpeed;
     [SerializeField] public float currentHealth;
     [SerializeField] public float currentDamage;
-
     public float despawnDistance = 30f;
     Transform player;
 

@@ -21,6 +21,5 @@ public class EnemyScriptableObject : ScriptableObject
     public float Range { get { return range; } set { range = value; } }
     public float FireRate { get { return fireRate; } set { fireRate = value; } }
     public bool CanCharge { get { return canCharge; } set { canCharge = value; } } 
-    public bool CountsTowardWinCondition { get { return countsTowardWinCondition; } set { countsTowardWinCondition = value; }
-    }
+    public bool CountsTowardWinCondition { get { return countsTowardWinCondition; } set { countsTowardWinCondition = value; } }
 }

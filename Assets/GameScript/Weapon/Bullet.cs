@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
     {
         currentPierce = weaponData.Pierce; // Reset pierce to its base value
     }
-
+    
 
     public float GetCurrentDamage()
     {

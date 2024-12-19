@@ -1768,11 +1768,11 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Void Eyemond
-      enemyCount: 5
+      enemyCount: 15
       spawnCount: 0
       enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     - enemyName: kai
-      enemyCount: 15
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     - enemyName: ene
@@ -1818,7 +1818,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 9184092780167846591, guid: 95e376a165ab5d345b7236782cc8b980, type: 3}
     - enemyName: Ene
-      enemyCount: 30
+      enemyCount: 15
       spawnCount: 0
       enemyPrefab: {fileID: 3116548056135588423, guid: 909dacfba18f949428d9942ec156e35f, type: 3}
     - enemyName: Tomb Keeper
@@ -1826,13 +1826,17 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 2878176555574026807, guid: ad7338835afa60a48affef2e5c438bbf, type: 3}
     - enemyName: Kai
-      enemyCount: 15
+      enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
     - enemyName: Kai
       enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1278554029798723930, guid: 4400221e5aac34846b6e6accca3043d1, type: 3}
+    - enemyName: void eyemond
+      enemyCount: 10
+      spawnCount: 0
+      enemyPrefab: {fileID: 7174917048418448628, guid: 541df9dca87e5af4895796efa25bbfb3, type: 3}
     waveQuota: 0
     spawnInterval: 5
     spawnCount: 0
@@ -1963,7 +1967,7 @@ MonoBehaviour:
     nextWaveCondition: 1
     enemiesLeftThreshold: 2
   currentWaveCount: 0
-  maxEnemyAllowed: 45
+  maxEnemyAllowed: 30
   waveInterval: 5
   enemyAlive: 0
   relativeSpawnPoints:
@@ -11797,11 +11801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209004716800552349, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6209004716800552349, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6209004716800552349, guid: 761fc9c7959b62a4982affc4467dd85b, type: 3}
       propertyPath: m_LocalPosition.z

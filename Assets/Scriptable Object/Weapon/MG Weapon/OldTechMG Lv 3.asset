@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: OldTechMG Lv 3
   m_EditorClassIdentifier: 
   name: OT-MG Lv3
-  description: +4 damage and -0.02 fire rate. How did this machine gun fit a cannon
+  description: +4 damage and more fire rate. How did this machine gun fit a cannon
     round?
   level: 3
-  damage: 10
+  damage: 15
   shootingCooldown: 0.25
   spread: 5
   reloadTime: 1

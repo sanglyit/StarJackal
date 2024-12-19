@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db8b0eaffad4044bad23c3b9b3b8221, type: 3}
   m_Name: Power Passive Item
   m_EditorClassIdentifier: 
-  multiplier: 1
+  modifier: 1
   level: 1
   nextLevelPrefab: {fileID: 3914814735371176461, guid: 3d09e260fd8dbbf4da225e723f8b6a9c, type: 3}
   name: Power Modification
